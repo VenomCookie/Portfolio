@@ -1,1 +1,38 @@
-body{font-family:Inter,Arial,sans-serif;background:#0b0c10;color:#eee;margin:0;padding:2rem;}h1,h2{text-align:center;}figure{margin:1rem auto;max-width:800px;}img{width:100%;border-radius:8px;}figcaption{text-align:center;margin-top:.5rem;color:#aaa;}
+
+:root{--bg:#0b0c10;--card:#111217;--muted:#171924;--text:#e8ebf2;--sub:#b6bdcc;--brand:#9ec5ff;--border:#232634;--shadow:0 10px 24px rgba(0,0,0,.35)}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:linear-gradient(180deg,var(--bg),#0e1118);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+/* Navbar */
+.navbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(16,18,26,.6);border-bottom:1px solid var(--border)}
+.navbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{font-weight:700;letter-spacing:.4px;color:var(--text);text-decoration:none}
+.menu{display:flex;gap:14px;align-items:center}
+.menu a{color:var(--text);text-decoration:none;opacity:.9}.menu a:hover{opacity:1}
+.btn{background:var(--brand);color:#0a0d14;border-radius:10px;padding:8px 14px;text-decoration:none;font-weight:600;box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;color:var(--sub);box-shadow:none}
+.btn.outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+/* Hero */
+.hero{padding:64px 0}
+h1{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:0}
+.role{margin-top:6px;color:var(--sub);font-weight:500}
+.tagline{margin-top:14px;color:var(--sub);max-width:60ch}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+/* Cards */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.card{background:linear-gradient(180deg,#0f121a,#0e1016);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#2a2f40}
+.card img{width:100%;height:auto;display:block;aspect-ratio:16/9;object-fit:cover}
+.card-body{padding:14px 14px 16px}
+.card h3{margin:6px 0}.text-link{color:var(--brand);text-decoration:none;font-weight:600}.text-link:hover{text-decoration:underline}
+/* Sections & Footer */
+.section{padding:42px 0}.section h2{margin:0 0 10px}
+.footer{margin-top:64px;border-top:1px solid var(--border)}.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;color:var(--sub)}
+/* Project pages */
+.hero-banner{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--muted)}
+.meta{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0;color:var(--sub)}
+.description{color:var(--sub);font-size:1.05rem;line-height:1.7;margin:16px 0 20px;max-width:65ch}
+.gallery{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));margin:18px 0}
+.callout{background:#0f1420;border:1px solid var(--border);border-radius:14px;padding:14px}
+.collab-list a{color:var(--brand);text-decoration:none}.collab-list a:hover{text-decoration:underline}
+.contact-card{background:linear-gradient(180deg,#0f121a,#0e1016);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
