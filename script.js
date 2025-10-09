@@ -1,5 +1,4 @@
 
-// Simple particle burst
 function dustBurst(x, y, container) {
   for (let i=0; i<12; i++) {
     const p = document.createElement('div');
@@ -19,21 +18,19 @@ function dustBurst(x, y, container) {
     });
   }
 }
-
 function setupRocks() {
   const field = document.querySelector('.rock-field');
   if (!field) return;
-  // Define some positions/sizes
   const rocks = [
-    {x:90,  y:200, w:140},
-    {x:300, y:220, w:160},
-    {x:560, y:190, w:130},
-    {x:820, y:210, w:150},
+    {x:70,  y:200, w:140},
+    {x:280, y:210, w:160},
+    {x:520, y:190, w:130},
+    {x:760, y:205, w:150},
   ];
-  rocks.forEach((r, idx)=>{
+  rocks.forEach((r)=>{
     const img = document.createElement('img');
     img.src = 'assets/images/rock_0.svg';
-    img.className = 'rock';
+    img.className = 'rock reveal';
     img.style.left = r.x+'px';
     img.style.top  = r.y+'px';
     img.style.width= r.w+'px';
@@ -50,7 +47,6 @@ function setupRocks() {
         img.src = `assets/images/rock_${s}.svg`;
         dustBurst(cx, cy, field);
       } else if (s === 2) {
-        // break: swap to broken shards image then fade out
         img.dataset.state = '3';
         img.src = 'assets/images/rock_3.svg';
         dustBurst(cx, cy, field);
@@ -65,5 +61,19 @@ function setupRocks() {
     field.appendChild(img);
   });
 }
-
-document.addEventListener('DOMContentLoaded', setupRocks);
+function setupReveal() {
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
+}
+document.addEventListener('DOMContentLoaded', ()=> {
+  setupRocks();
+  setupReveal();
+});
