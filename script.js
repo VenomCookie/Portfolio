@@ -1,1 +1,1 @@
-/* Placeholder for future interactions */
+/* Placeholder for future enhancements */
