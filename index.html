@@ -1,9 +1,51 @@
-<!DOCTYPE html>
-<html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Yousuf Shahabuddin — Portfolio</title>
-<link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap' rel='stylesheet'>
-<link rel='stylesheet' href='style.css'></head>
-<body><header><h1>Yousuf Shahabuddin</h1><p>Design Engineer — Selected projects in design, engineering, and product</p></header>
-<main><section><h2>Projects</h2><figure><img src='assets/images/project_1.png' alt='Project 1'><figcaption>Project 1</figcaption></figure><figure><img src='assets/images/project_2.png' alt='Project 2'><figcaption>Project 2</figcaption></figure><figure><img src='assets/images/project_3.png' alt='Project 3'><figcaption>Project 3</figcaption></figure><figure><img src='assets/images/project_4.png' alt='Project 4'><figcaption>Project 4</figcaption></figure><figure><img src='assets/images/project_5.png' alt='Project 5'><figcaption>Project 5</figcaption></figure><figure><img src='assets/images/project_6.png' alt='Project 6'><figcaption>Project 6</figcaption></figure><figure><img src='assets/images/project_7.png' alt='Project 7'><figcaption>Project 7</figcaption></figure><figure><img src='assets/images/project_8.png' alt='Project 8'><figcaption>Project 8</figcaption></figure></section></main>
-<footer><p>© Yousuf Shahabuddin <span id='y'></span></p></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script></body></html>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+
+<header class="nav">
+  <div class="container nav-wrap">
+    <div class="nav-left">
+      <a href="projects.html">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a class="brand" href="index.html">Yousuf Shahabuddin</a>
+    <div></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="floaty"><div class="blob"></div><div class="blob"></div><div class="blob"></div></div>
+    <div>
+      <h1>A collection of my projects all in one place</h1>
+      <p>Scroll to see what I've been up to</p>
+      <div class="scroll-cue"></div>
+    </div>
+  </section>
+  <section class="container section" id="about">
+    <h2>About me</h2>
+    <p class="description">Design Engineering student building at the intersection of hardware, software, and human experience. I like turning constraints into clever mechanisms, clean interfaces, and products people actually want to use.</p>
+  </section>
+  <section class="container section" id="projects">
+    <div class="grid"><a class="card" href="drinks-dispenser.html"><div class="media"><img src="assets/images/cover_4.jpg" alt="Drinks Dispenser cover"></div><div class="overlay"><div class="title">Drinks Dispenser</div><div class="meta">2025</div></div></a><a class="card" href="hydromorph.html"><div class="media"><img src="assets/images/cover_2.jpg" alt="HydroMorph cover"></div><div class="overlay"><div class="title">HydroMorph</div><div class="meta">2025</div></div></a><a class="card" href="ipad-stand.html"><div class="media"><img src="assets/images/cover_5.jpg" alt="iPad Stand cover"></div><div class="overlay"><div class="title">iPad Stand</div><div class="meta">2025</div></div></a><a class="card" href="rhythmrush.html"><div class="media"><img src="assets/images/cover_1.jpg" alt="RhythmRush cover"></div><div class="overlay"><div class="title">RhythmRush</div><div class="meta">2025</div></div></a><a class="card" href="pocket-shaver.html"><div class="media"><img src="assets/images/cover_3.jpg" alt="Re-designed pocket shaver cover"></div><div class="overlay"><div class="title">Re-designed pocket shaver</div><div class="meta">2025</div></div></a><a class="card" href="firstgendocs.html"><div class="media"><img src="assets/images/cover_6.jpg" alt="FirstGenDoctors website redesign cover"></div><div class="overlay"><div class="title">FirstGenDoctors website redesign</div><div class="meta">2025</div></div></a><a class="card" href="in-progress.html"><div class="media"><img src="assets/images/page_9.jpg" alt="Projects in progress cover"></div><div class="overlay"><div class="title">Projects in progress</div><div class="meta">2025</div></div></a></div>
+  </section>
+  <section class="container section" id="contact">
+    <h2>Contact</h2>
+    <div class="callout">
+      <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <small>© Yousuf Shahabuddin <span id="year"></span></small>
+    <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  </div>
+</footer>
+
+</body></html>
