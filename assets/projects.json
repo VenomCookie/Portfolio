@@ -8,11 +8,14 @@
       "subtitle": "Selected work",
       "cover": "assets/images/firstgendocs_01.jpg",
       "description": "",
-      "images": [],
+      "images": [
+        "assets/images/firstgendocs_01.jpg"
+      ],
       "videos": [],
       "collaborators": [],
       "order": 80
     },
+
     {
       "slug": "rhythmrush",
       "title": "RhythmRush",
@@ -21,11 +24,47 @@
       "subtitle": "Selected work",
       "cover": "assets/images/rhythmrush_01.jpg",
       "description": "",
-      "images": [],
+      "images": [
+        "assets/images/rhythmrush_01.jpg",
+        "assets/images/rhythmrush_02.jpg",
+        "assets/images/rhythmrush_03.jpg",
+        "assets/images/rhythmrush_04.jpg",
+        "assets/images/rhythmrush_05.jpg",
+        "assets/images/rhythmrush_06.jpg",
+        "assets/images/rhythmrush_07.jpg",
+        "assets/images/rhythmrush_08.jpg",
+        "assets/images/rhythmrush_09.jpg",
+        "assets/images/rhythmrush_10.jpg",
+        "assets/images/rhythmrush_11.jpg",
+        "assets/images/rhythmrush_12.jpg",
+        "assets/images/rhythmrush_13.jpg",
+        "assets/images/rhythmrush_14.jpg",
+        "assets/images/rhythmrush_15.jpg",
+        "assets/images/rhythmrush_16.jpg",
+        "assets/images/rhythmrush_17.jpg",
+        "assets/images/rhythmrush_18.jpg",
+        "assets/images/rhythmrush_19.jpg",
+        "assets/images/rhythmrush_20.jpg",
+        "assets/images/rhythmrush_21.jpg",
+        "assets/images/rhythmrush_22.jpg",
+        "assets/images/rhythmrush_23.jpg",
+        "assets/images/rhythmrush_24.jpg",
+        "assets/images/rhythmrush_25.jpg",
+        "assets/images/rhythmrush_26.jpg",
+        "assets/images/rhythmrush_27.jpg",
+        "assets/images/rhythmrush_28.jpg",
+        "assets/images/rhythmrush_29.jpg",
+        "assets/images/rhythmrush_30.jpg",
+        "assets/images/rhythmrush_31.jpg",
+        "assets/images/rhythmrush_32.jpg",
+        "assets/images/rhythmrush_33.jpg",
+        "assets/images/rhythmrush_34.jpg"
+      ],
       "videos": [],
       "collaborators": [],
       "order": 60
     },
+
     {
       "slug": "pocket-shaver",
       "title": "Pocket Shaver Re-Design",
@@ -34,11 +73,14 @@
       "subtitle": "Selected work",
       "cover": "assets/images/pocket-shaver_01.jpg",
       "description": "",
-      "images": [],
+      "images": [
+        "assets/images/pocket-shaver_01.jpg"
+      ],
       "videos": [],
       "collaborators": [],
       "order": 50
     },
+
     {
       "slug": "ipad-stand",
       "title": "iPad Stand",
@@ -47,11 +89,14 @@
       "subtitle": "Selected work",
       "cover": "assets/images/ipad-stand_01.jpg",
       "description": "",
-      "images": [],
+      "images": [
+        "assets/images/ipad-stand_01.jpg"
+      ],
       "videos": [],
       "collaborators": [],
       "order": 40
     },
+
     {
       "slug": "hydromorph",
       "title": "HydroMorph",
@@ -60,11 +105,46 @@
       "subtitle": "Selected work",
       "cover": "assets/images/hydromorph_01.jpg",
       "description": "",
-      "images": [],
+      "images": [
+        "assets/images/hydromorph_01.jpg",
+        "assets/images/hydromorph_02.jpg",
+        "assets/images/hydromorph_03.jpg",
+        "assets/images/hydromorph_04.jpg",
+        "assets/images/hydromorph_05.jpg",
+        "assets/images/hydromorph_06.jpg",
+        "assets/images/hydromorph_07.jpg",
+        "assets/images/hydromorph_08.jpg",
+        "assets/images/hydromorph_09.jpg",
+        "assets/images/hydromorph_10.jpg",
+        "assets/images/hydromorph_11.jpg",
+        "assets/images/hydromorph_12.jpg",
+        "assets/images/hydromorph_13.jpg",
+        "assets/images/hydromorph_14.jpg",
+        "assets/images/hydromorph_15.jpg",
+        "assets/images/hydromorph_16.jpg",
+        "assets/images/hydromorph_17.jpg",
+        "assets/images/hydromorph_18.jpg",
+        "assets/images/hydromorph_19.jpg",
+        "assets/images/hydromorph_20.jpg",
+        "assets/images/hydromorph_21.jpg",
+        "assets/images/hydromorph_22.jpg",
+        "assets/images/hydromorph_23.jpg",
+        "assets/images/hydromorph_24.jpg",
+        "assets/images/hydromorph_25.jpg",
+        "assets/images/hydromorph_26.jpg",
+        "assets/images/hydromorph_27.jpg",
+        "assets/images/hydromorph_28.jpg",
+        "assets/images/hydromorph_29.jpg",
+        "assets/images/hydromorph_30.jpg",
+        "assets/images/hydromorph_31.jpg",
+        "assets/images/hydromorph_32.jpg",
+        "assets/images/hydromorph_33.jpg"
+      ],
       "videos": [],
       "collaborators": [],
       "order": 30
     },
+
     {
       "slug": "drinks-dispenser",
       "title": "Drinks Dispenser",
@@ -73,11 +153,14 @@
       "subtitle": "Selected work",
       "cover": "assets/images/drinks-dispenser_01.jpg",
       "description": "",
-      "images": [],
+      "images": [
+        "assets/images/drinks-dispenser_01.jpg"
+      ],
       "videos": [],
       "collaborators": [],
       "order": 20
     },
+
     {
       "slug": "in-progress",
       "title": "Projects in Process",
@@ -86,7 +169,9 @@
       "subtitle": "Work in progress",
       "cover": "assets/images/in-progress_01.jpg",
       "description": "",
-      "images": [],
+      "images": [
+        "assets/images/in-progress_01.jpg"
+      ],
       "videos": [],
       "collaborators": [],
       "order": 10
