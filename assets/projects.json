@@ -1,0 +1,95 @@
+{
+  "projects": [
+    {
+      "slug": "firstgendocs",
+      "title": "FirstGenDoctors website redesign",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Selected work",
+      "cover": "assets/images/firstgendocs_01.jpg",
+      "description": "",
+      "images": [],
+      "videos": [],
+      "collaborators": [],
+      "order": 80
+    },
+    {
+      "slug": "rhythmrush",
+      "title": "RhythmRush",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Selected work",
+      "cover": "assets/images/rhythmrush_01.jpg",
+      "description": "",
+      "images": [],
+      "videos": [],
+      "collaborators": [],
+      "order": 60
+    },
+    {
+      "slug": "pocket-shaver",
+      "title": "Pocket Shaver Re-Design",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Selected work",
+      "cover": "assets/images/pocket-shaver_01.jpg",
+      "description": "",
+      "images": [],
+      "videos": [],
+      "collaborators": [],
+      "order": 50
+    },
+    {
+      "slug": "ipad-stand",
+      "title": "iPad Stand",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Selected work",
+      "cover": "assets/images/ipad-stand_01.jpg",
+      "description": "",
+      "images": [],
+      "videos": [],
+      "collaborators": [],
+      "order": 40
+    },
+    {
+      "slug": "hydromorph",
+      "title": "HydroMorph",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Selected work",
+      "cover": "assets/images/hydromorph_01.jpg",
+      "description": "",
+      "images": [],
+      "videos": [],
+      "collaborators": [],
+      "order": 30
+    },
+    {
+      "slug": "drinks-dispenser",
+      "title": "Drinks Dispenser",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Selected work",
+      "cover": "assets/images/drinks-dispenser_01.jpg",
+      "description": "",
+      "images": [],
+      "videos": [],
+      "collaborators": [],
+      "order": 20
+    },
+    {
+      "slug": "in-progress",
+      "title": "Projects in Process",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Work in progress",
+      "cover": "assets/images/in-progress_01.jpg",
+      "description": "",
+      "images": [],
+      "videos": [],
+      "collaborators": [],
+      "order": 10
+    }
+  ]
+}
