@@ -8,20 +8,29 @@ a{color:inherit;text-decoration:none}.container{width:100%;max-width:1120px;marg
 .section{padding:28px 0}.section h2{margin:0 0 6px;text-align:center}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}.reveal.show{opacity:1;transform:none}
 .grid{display:grid;gap:14px}@media(min-width:960px){.grid{grid-template-columns:1fr 1fr}}
+
+/* Card + hover overlay */
 .card{position:relative;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--panel);transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease}
 .card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#2b3039}
-.card .media{aspect-ratio:16/9;background:#0e1014;position:relative}
-.card img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .18s ease, transform .18s ease;will-change:filter,transform}
-.card:hover img{filter:brightness(0.55);transform:scale(1.01)}
-.hover-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(40% 40% at 50% 50%, rgba(0,0,0,.45), rgba(0,0,0,.6));opacity:0;transition:opacity .18s ease}
+.card .media{aspect-ratio:16/9;background:#0e1014;position:relative;overflow:hidden}
+.card .media img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .18s ease, transform .18s ease;will-change:filter,transform}
+.card:hover .media img{filter:brightness(0.55);transform:scale(1.01)}
+.hover-overlay{position:absolute;inset:0;z-index:2;pointer-events:none;display:flex;align-items:center;justify-content:center;background:radial-gradient(40% 40% at 50% 50%, rgba(0,0,0,.45), rgba(0,0,0,.6));opacity:0;transition:opacity .18s ease}
 .card:hover .hover-overlay{opacity:1}
 .hover-title{font-weight:700;letter-spacing:.4px;text-transform:uppercase;text-align:center;line-height:1.25;font-size:clamp(14px,2.4vw,22px);color:#f5f6f7;padding:10px 14px;border-radius:6px}
+
+/* Project page */
 .title-wrap{text-align:center;margin:10px 0 6px}.title-wrap h1{font-size:clamp(26px,4.6vw,44px);margin:0}
 .subtitle{color:var(--sub);margin-top:4px}.meta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:8px 0;color:var(--sub)}
 .description{color:var(--sub);font-size:1.05rem;line-height:1.78;margin:10px auto 18px;max-width:85ch;text-align:center}
+
+/* Centered media */
 .figure{display:flex;justify-content:center;margin:14px 0}
 .figure-inner{width:100%;max-width:900px;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--muted);box-shadow:var(--shadow)}
 .figure-inner img,.figure-inner video{width:100%;height:auto;display:block}
+
+/* Embedded PDF */
 .pdf-wrap{display:flex;justify-content:center;margin:14px 0}
 .pdf-frame{width:100%;max-width:1000px;height:min(1400px,90vh);border:0;background:#0e1014;border-radius:10px;box-shadow:var(--shadow);border:1px solid var(--border)}
+
 .footer{margin-top:36px;border-top:1px solid var(--border)}.footer-inner{display:flex;align-items:center;justify-content:center;padding:12px 0;color:#9ea3ac}
