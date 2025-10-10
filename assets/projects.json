@@ -28,10 +28,11 @@
       "images": [],
       "videos": [],
       "collaborators": [
-        {"name":"Ruaridh Murdoch", "url":"https://www.linkedin.com/in/ruaridh-murdoch-399ba4260/"}
+        {"name":"Ruaridh Murdoch", "url":"https://www.linkedin.com/in/ruaridh-murdoch-399ba4260/"},
         {"name":"Ikem Enebeli", "url":"https://www.linkedin.com/in/ikem-e/"},
         {"name":"Aidan Ryder", "url":"https://www.linkedin.com/in/aidan-ryder-b848aa266/"},
-        {"name":"Ikem Enebeli", "url":"https://www.linkedin.com/in/ikem-e/"}],
+        {"name":"Ikem Enebeli", "url":"https://www.linkedin.com/in/ikem-e/"}
+      ],
       "order": 60,
       "overlayTitle": "Human Centered Design"
     },
