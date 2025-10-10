@@ -2,7 +2,7 @@
   "projects": [
     {
       "slug": "firstgendocs",
-      "title": "FirstGenDoctors website redesign",
+      "title": "FirstGenDoctors Website Re-Design",
       "year": 2025,
       "role": "Design & Engineering",
       "subtitle": "Selected work",
@@ -21,13 +21,17 @@
       "title": "RhythmRush",
       "year": 2025,
       "role": "Design & Engineering",
-      "subtitle": "Selected work",
-      "cover": "assets/images/rhythmrush_01.jpg",
+      "subtitle": "Discovery & Delivery Report",
+      "cover": "assets/images/rhythmrush_coverpage.png",
       "description": "",
       "pdf": "assets/docs/rhythmrush.pdf",
       "images": [],
       "videos": [],
-      "collaborators": [],
+      "collaborators": [
+        {"name":"Ruaridh Murdoch", "url":"https://www.linkedin.com/in/ruaridh-murdoch-399ba4260/"}
+        {"name":"Ikem Enebeli", "url":"https://www.linkedin.com/in/ikem-e/"},
+        {"name":"Aidan Ryder", "url":"https://www.linkedin.com/in/aidan-ryder-b848aa266/"},
+        {"name":"Ikem Enebeli", "url":"https://www.linkedin.com/in/ikem-e/"},],
       "order": 60,
       "overlayTitle": "Human Centered Design"
     },
@@ -65,7 +69,7 @@
     {
       "slug": "hydromorph",
       "title": "HydroMorph",
-      "year": 2025,
+      "year": 2024,
       "role": "Design & Engineering",
       "subtitle": "Selected work",
       "cover": "assets/images/hydromorph_01.png",
@@ -113,7 +117,7 @@
     {
       "slug": "drinks-dispenser",
       "title": "Drinks Dispenser",
-      "year": 2025,
+      "year": 2024,
       "role": "Design & Engineering",
       "subtitle": "Selected work",
       "cover": "assets/images/drinks-dispenser_01.jpg",
