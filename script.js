@@ -1,59 +1,8 @@
 
-async function loadProjects(){
-  const res=await fetch('assets/projects.json',{cache:'no-store'});
-  const data=await res.json();
-  return data.projects||[];
-}
-function getSlug(){return new URL(window.location.href).searchParams.get('p');}
-function setupReveal(){
-  const els=document.querySelectorAll('.reveal');
-  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.1});
-  els.forEach(el=>io.observe(el));
-}
-function setupParallax(){
-  const ps=document.querySelectorAll('.fullbleed');
-  function onScroll(){
-    const vh=window.innerHeight;
-    ps.forEach(el=>{
-      const rect=el.getBoundingClientRect();
-      const c=rect.top+rect.height/2-vh/2;
-      const s=Math.max(-1,Math.min(1,c/(vh*.8)));
-      el.style.transform=`translateX(-50%) translateY(${s*8}px)`;
-    });
-  }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  onScroll();
-}
-function card(p){
-  return `<a class='card reveal' href='project.html?p=${p.slug}'>
-    <img src='${p.cover}' alt='${p.title}'/>
-    <div class='overlay'><div class='title'>${p.title}</div><div class='meta'>${p.year||''}</div></div>
-  </a>`;
-}
-async function renderGrid(){
-  const grid=document.querySelector('#project-grid');
-  if(!grid)return;
-  const ps=await loadProjects();
-  ps.sort((a,b)=>(b.order||0)-(a.order||0)).forEach(p=>grid.insertAdjacentHTML('beforeend',card(p)));
-  setupReveal();
-}
-async function renderProject(){
-  const root=document.querySelector('#project-root');
-  if(!root)return;
-  const ps=await loadProjects();
-  const slug=getSlug();
-  const p=ps.find(x=>x.slug===slug);
-  if(!p){root.innerHTML='<div class=container>Project not found.</div>';return;}
-  document.title=`${p.title} — Portfolio`;
-  const imgs=(p.images||[]).map(s=>`<figure class='fullbleed reveal'><img src='${s}' alt='${p.title}'/></figure>`).join('');
-  const vids=(p.videos||[]).map(s=>`<figure class='fullbleed reveal'><video src='${s}' controls muted playsinline></video></figure>`).join('');
-  root.innerHTML=`
-    <div class='container section'>
-      <div class='title-wrap reveal'><h1>${p.title}</h1><div class='subtitle'>${p.subtitle||''}</div></div>
-      <div class='meta-row reveal'><span>${p.role||''}</span> • <span>${p.year||''}</span></div>
-      <p class='description reveal'>${p.description||''}</p>
-    </div>
-    <section class='section'>${imgs+vids}</section>`;
-  setupReveal();setupParallax();
-}
-document.addEventListener('DOMContentLoaded',()=>{renderGrid();renderProject();setupReveal();setupParallax();});
+async function loadProjects(){ const r=await fetch('assets/projects.json',{cache:'no-store'}); const d=await r.json(); return d.projects||[]; }
+function getSlug(){ const u=new URL(window.location.href); return u.searchParams.get('p'); }
+function setupReveal(){ const els=document.querySelectorAll('.reveal'); const io=new IntersectionObserver(es=>{es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } })},{threshold:.1}); els.forEach(el=>io.observe(el)); }
+function card(p){ return `<a class="card reveal" href="project.html?p=${p.slug}"><div class="media"><img src="${p.cover}" alt="${p.title} cover"></div><div class="overlay"><div class="title">${p.title}</div><div class="meta">${p.year||''}</div></div></a>`; }
+async function renderProjectGrid(){ const grid=document.querySelector('#project-grid'); if(!grid)return; const ps=await loadProjects(); ps.sort((a,b)=>(b.order||0)-(a.order||0)).forEach(p=>grid.insertAdjacentHTML('beforeend',card(p))); setupReveal(); }
+async function renderProjectPage(){ const root=document.querySelector('#project-root'); if(!root)return; const ps=await loadProjects(); const slug=getSlug(); const p=ps.find(x=>x.slug===slug); if(!p){ root.innerHTML=`<div class="container section"><p>Project not found.</p></div>`; return; } document.title=`${p.title} — Yousuf Shahabuddin`; let mediaHtml=''; if(p.pdf){ mediaHtml = `<div class="pdf-wrap reveal"><iframe class="pdf-frame" src="${p.pdf}" title="${p.title} PDF" loading="lazy"></iframe></div><div class="container" style="text-align:center;margin-top:8px"><a href="${p.pdf}" target="_blank" rel="noopener">Open full PDF in new tab</a></div>`; } else { const imgs=(p.images||[]).map(src=>`<figure class="figure reveal"><div class="figure-inner"><img src="${src}" alt="${p.title} image"></div></figure>`).join(''); const vids=(p.videos||[]).map(src=>`<figure class="figure reveal"><div class="figure-inner"><video src="${src}" controls playsinline muted></video></div></figure>`).join(''); mediaHtml = imgs+vids || '<p class="container">Add images/videos in assets/projects.json</p>'; } const collabHtml=(p.collaborators||[]).map(c=>c.url?`<a href="${c.url}" target="_blank" rel="noopener">${c.name}</a>`:(c.name||"")).filter(Boolean).join(', ')||'—'; root.innerHTML=`<section class="container section"><div class="title-wrap reveal"><h1>${p.title}</h1><div class="subtitle">${p.subtitle||'Selected work'}</div></div><div class="meta-row reveal"><span>Role: ${p.role||'—'}</span><span>Year: ${p.year||'—'}</span></div><p class="description reveal">${p.description||''}</p></section><section class="section"><h2 class="reveal" style="text-align:center">Project Media</h2>${mediaHtml}</section><section class="container section"><h2 class="reveal">Collaborators</h2><p class="reveal" style="text-align:center">${collabHtml}</p></section>`; setupReveal(); }
+document.addEventListener('DOMContentLoaded',()=>{ renderProjectGrid(); renderProjectPage(); setupReveal(); });
