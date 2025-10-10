@@ -13,7 +13,8 @@
       ],
       "videos": [],
       "collaborators": [],
-      "order": 80
+      "order": 80,
+      "overlayTitle": "Website Design"
     },
     {
       "slug": "rhythmrush",
@@ -27,7 +28,8 @@
       "images": [],
       "videos": [],
       "collaborators": [],
-      "order": 60
+      "order": 60,
+      "overlayTitle": "Human Centered Design"
     },
     {
       "slug": "pocket-shaver",
@@ -57,7 +59,8 @@
       ],
       "videos": [],
       "collaborators": [],
-      "order": 40
+      "order": 40,
+      "overlayTitle": "CAD"
     },
     {
       "slug": "hydromorph",
@@ -104,7 +107,8 @@
       ],
       "videos": [],
       "collaborators": [],
-      "order": 30
+      "order": 30,
+      "overlayTitle": "Design Engineering Principles"
     },
     {
       "slug": "drinks-dispenser",
@@ -119,7 +123,8 @@
       ],
       "videos": [],
       "collaborators": [],
-      "order": 20
+      "order": 20,
+      "overlayTitle": "Design & Technology"
     },
     {
       "slug": "in-progress",
