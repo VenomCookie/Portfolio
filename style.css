@@ -38,8 +38,7 @@ a{color:inherit;text-decoration:none}.container{width:100%;max-width:1120px;marg
   padding:8px 12px; border:1px solid var(--border);
   border-radius:999px; color:#cfe6ff; background:#0f1a24;
   transition:transform .12s ease, border-color .12s ease, background .12s ease;
-  margin:6px;
-}
+  margin:6px;}
 .btn-linkedin:hover{ transform:translateY(-1px); border-color:#2a66a3; background:#102133; }
 
 
