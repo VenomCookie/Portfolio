@@ -28,10 +28,6 @@
       "overlayTitle": "Electronics",
       "order": 70,
 
-      "introTitle": "Yousuf Shahabuddin",
-      "introText": "Hey, welcome to my website! I'm Yousuf, a 2nd year Design Engineering student at Imperial College, and avid aircraft & F1 enthusiast.",
-      "introImage": "assets/images/portfoliome1.jpeg",
-
       "images": [
         "assets/images/electronics_01.jpg",
       ],
