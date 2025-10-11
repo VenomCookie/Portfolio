@@ -16,6 +16,34 @@
       "order": 80,
       "overlayTitle": "Website Design"
     },
+
+    {
+      "slug": "electronics",
+      "title": "Electronics",
+      "year": 2025,
+      "role": "Embedded / CAD / Prototyping",
+      "subtitle": "Selected experiments & builds",
+      "cover": "assets/images/electronics_cover.jpg",
+      "description": "A snapshot of my ESP32 work. I created a Chimp Memory sequence game with flashing LEDS, where you input the sequence into an app while you try to remember all the previous numbers! We also created a little device that relays messages via hexadecimal, akin to the movie The Martian. Simply send your message to the device, and it will point to the corresponding hex characters to relay it.",
+      "overlayTitle": "Electronics",
+      "order": 70,
+
+      "introTitle": "Yousuf Shahabuddin",
+      "introText": "Hey, welcome to my website! I'm Yousuf, a 2nd year Design Engineering student at Imperial College, and avid aircraft & F1 enthusiast.",
+      "introImage": "assets/images/portfoliome1.jpeg",
+
+      "images": [
+        "assets/images/electronics_01.jpg",
+      ],
+      "videos": [
+        "assets/videos/electronics_01.mp4",
+        "assets/videos/electronics_02.mp4",
+        "assets/videos/electronics_03.mp4",
+        "assets/videos/electronics_04.mp4"
+      ],
+      "collaborators": []
+    },
+
     {
       "slug": "rhythmrush",
       "title": "RhythmRush",
