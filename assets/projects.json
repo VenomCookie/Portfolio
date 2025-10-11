@@ -23,7 +23,7 @@
       "year": 2025,
       "role": "Embedded / CAD / Prototyping",
       "subtitle": "Selected experiments & builds",
-      "cover": "assets/images/electronics_cover.jpg",
+      "cover": "assets/images/electronics_cover.png",
       "description": "A snapshot of my ESP32 work. I created a Chimp Memory sequence game with flashing LEDS, where you input the sequence into an app while you try to remember all the previous numbers! We also created a little device that relays messages via hexadecimal, akin to the movie The Martian. Simply send your message to the device, and it will point to the corresponding hex characters to relay it.",
       "overlayTitle": "Electronics",
       "order": 70,
