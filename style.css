@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 
 :root{--bg:#0b0d10;--panel:#121418;--muted:#15181d;--text:#f5f6f7;--sub:#b7bcc4;--border:#232730;--shadow:0 18px 50px rgba(0,0,0,.45)}
 *{box-sizing:border-box}html,body{margin:0;padding:0}
