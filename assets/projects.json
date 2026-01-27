@@ -16,7 +16,6 @@
       "order": 80,
       "overlayTitle": "Website Design"
     },
-
     {
       "slug": "electronics",
       "title": "Electronics",
@@ -27,7 +26,6 @@
       "description": "A snapshot of my ESP32 work. I created a Chimp Memory sequence game with flashing LEDS, where you input the sequence into an app while you try to remember all the previous numbers! We also created a little device that relays messages via hexadecimal, akin to the movie The Martian. Simply send your message to the device, and it will point to the corresponding hex characters to relay it.",
       "overlayTitle": "Electronics",
       "order": 70,
-
       "images": [
         "assets/images/electronics_01.jpg"
       ],
@@ -39,7 +37,6 @@
       ],
       "collaborators": []
     },
-
     {
       "slug": "rhythmrush",
       "title": "RhythmRush",
@@ -52,10 +49,22 @@
       "images": [],
       "videos": [],
       "collaborators": [
-        {"name":"Ruaridh Murdoch", "url":"https://www.linkedin.com/in/ruaridh-murdoch-399ba4260/"},
-        {"name":"Ikem Enebeli", "url":"https://www.linkedin.com/in/ikem-e/"},
-        {"name":"Aidan Ryder", "url":"https://www.linkedin.com/in/aidan-ryder-b848aa266/"},
-        {"name":"Amarie Fasoro", "url":"https://www.linkedin.com/in/amarie-fasoro-8104a42bb/"}
+        {
+          "name": "Ruaridh Murdoch",
+          "url": "https://www.linkedin.com/in/ruaridh-murdoch-399ba4260/"
+        },
+        {
+          "name": "Ikem Enebeli",
+          "url": "https://www.linkedin.com/in/ikem-e/"
+        },
+        {
+          "name": "Aidan Ryder",
+          "url": "https://www.linkedin.com/in/aidan-ryder-b848aa266/"
+        },
+        {
+          "name": "Amarie Fasoro",
+          "url": "https://www.linkedin.com/in/amarie-fasoro-8104a42bb/"
+        }
       ],
       "order": 60,
       "overlayTitle": "Human Centered Design"
@@ -169,6 +178,34 @@
       "videos": [],
       "collaborators": [],
       "order": 10
+    },
+    {
+      "slug": "sustainable-design-engineering",
+      "title": "Sustainable Design Engineering",
+      "year": 2025,
+      "role": "Design & Engineering",
+      "subtitle": "Selected work",
+      "cover": "assets/images/Untitlett3d (1)_Page_01.png",
+      "description": "",
+      "images": [
+        "assets/images/Untitlett3d (1)_Page_01.png",
+        "assets/images/Untitlett3d (1)_Page_02.png",
+        "assets/images/Untitlett3d (1)_Page_03.png",
+        "assets/images/Untitlett3d (1)_Page_04.png",
+        "assets/images/Untitlett3d (1)_Page_05.png",
+        "assets/images/Untitlett3d (1)_Page_06.png",
+        "assets/images/Untitlett3d (1)_Page_07.png",
+        "assets/images/Untitlett3d (1)_Page_08.png",
+        "assets/images/Untitlett3d (1)_Page_09.png",
+        "assets/images/Untitlett3d (1)_Page_10.png",
+        "assets/images/Untitlett3d (1)_Page_11.png",
+        "assets/images/Untitlett3d (1)_Page_12.png",
+        "assets/images/Untitlett3d (1)_Page_13.png"
+      ],
+      "videos": [],
+      "collaborators": [],
+      "order": 45,
+      "overlayTitle": "Sustainable Design"
     }
   ]
 }
