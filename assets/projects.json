@@ -203,7 +203,20 @@
         "assets/images/Untitlett3d (1)_Page_13.png"
       ],
       "videos": [],
-      "collaborators": [],
+      "collaborators": [
+        {
+          "name": "Leia Whitaker",
+          "url": "https://www.linkedin.com/in/leia-whitaker/"
+        },
+        {
+          "name": "Curtis Light",
+          "url": "https://www.linkedin.com/in/curtis-light/"
+        },
+        {
+          "name": "Karanjeet Singh",
+          "url": "https://www.linkedin.com/in/karanjeet-singh-6aa728364/"
+        }
+      ],
       "order": 999,
       "overlayTitle": "Sustainable Design"
     }
