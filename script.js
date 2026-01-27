@@ -4,7 +4,7 @@ if (!window.__YS_INIT__) {
 
   async function loadProjects(){
     try{
-      const r = await fetch('assets/projects.json?v=20', {cache:'no-store'});
+      const r = await fetch('assets/projects.json?v=21', {cache:'no-store'});
       if(!r.ok) throw new Error(`HTTP ${r.status}`);
       const d = await r.json();
       if(!d || !Array.isArray(d.projects)) throw new Error('projects.json missing "projects" array');
