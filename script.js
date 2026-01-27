@@ -144,7 +144,7 @@ if (!window.__YS_INIT__) {
           <h1>${p.title || ''}</h1>
           <div class="subtitle">${p.subtitle || 'Selected work'}</div>
         </div>
-        <div class="meta-row reveal"><span>Role: ${p.role || '—'}</span><span>Year: ${p.year || '—'}</span></div>
+        <div class="meta-row reveal"><span>Year: ${p.year || '—'}</span></div>
         <p class="description reveal">${p.description || ''}</p>
       </section>
       <section class="section">
