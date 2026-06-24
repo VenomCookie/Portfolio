@@ -1,88 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Yousuf Shahabuddin - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=21">
-  <style>
-    html { scroll-behavior: smooth; }
-    #projects, #contact, #top { scroll-margin-top: 80px; }
-  </style>
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yousuf Shahabuddin | 2nd Year Design Engineer</title>
+  <meta name="description" content="Yousuf Shahabuddin, MEng Design Engineering student at Imperial College London. Product design, CAD and simulation, electronics and firmware, human-centred research." />
 
+  <meta property="og:title" content="Yousuf Shahabuddin | Design Engineer" />
+  <meta property="og:description" content="Design engineering portfolio: products taken from first sketch to working prototype." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://design.yousufshahabuddin.com/" />
+  <meta property="og:image" content="https://design.yousufshahabuddin.com/assets/images/portfoliome1.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=30" />
+</head>
 <body>
+
+  <!-- NAV -->
   <header class="nav">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top">Yousuf Shahabuddin</a>
-      <nav style="display:flex; gap:14px;">
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
+    <div class="wrap nav-in">
+      <a class="brand" href="index.html"><span class="reg"></span>YOUSUF SHAHABUDDIN</a>
+      <nav class="nav-links">
+        <a href="projects.html">My Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cv" href="assets/docs/CV.pdf" target="_blank" rel="noopener">CV &darr;</a>
       </nav>
     </div>
   </header>
 
-  <!-- anchor for top scroll -->
-  <div id="top"></div>
-
   <main>
 
-    <!-- Hero / Intro (HOME PAGE ONLY) -->
+    <!-- HERO -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <h1>Yousuf Shahabuddin</h1>
-          <p class="lead">
-            Hey, I'm Yousuf, currently in my second year of Design Engineering at Imperial College.
-            Here you'll find a collection of my projects, as well as snippets of ones in progress.
-            This website has been designed and coded independent of templates, so feel free to let me know what you think, and any suggestions you may have :)
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow reveal">Design Engineer / Imperial College London</div>
+          <h1 class="hero-name reveal">
+            <span class="ln">Yousuf</span>
+            <span class="ln">Shahabuddin</span>
+          </h1>
+          <p class="hero-thesis reveal">
+            Second Year MEng Design Engineering student. I love being at the intersection of design, 
+            entrepreneurship and technology. I have a passion for solving real-world issues, going 
+            from idea to solution, driven by my love for engineering and the desire to have a positive 
+            impact on the world around me.and the human-centred research that decides what is worth building.
+            
           </p>
-          <div class="scroll-hint">Scroll to see more ↓</div>
+          <div class="hero-disc reveal">
+            <span class="chip">Fusion 360</span>
+            <span class="chip">Ansys</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Prototyping</span>
+            <span class="chip">Python</span>
+            <span class="chip">3D Printing</span>
+          </div>
+          <div class="hero-cta reveal">
+            <a class="btn btn-solid" href="#work">View selected work <span class="arrow">&rarr;</span></a>
+            <a class="btn btn-line" href="assets/docs/CV.pdf" target="_blank" rel="noopener">Download CV <span class="arrow">&darr;</span></a>
+          </div>
         </div>
-        <div class="hero-photo reveal">
-          <img src="assets/images/portfoliome1.jpeg" alt="Yousuf portrait">
+
+        <div class="plate reveal">
+          <div class="dim">
+            <span class="val">SUBJECT</span><span class="rule"></span><span class="val">2026</span>
+          </div>
+          <div class="plate-frame">
+            <img src="assets/images/portfoliome1.jpeg" alt="Yousuf Shahabuddin" />
+          </div>
+          <div class="leader">PIC / aviation</div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="container section faded-start" id="projects">
-      <h2 class="reveal" style="text-align:center">Projects</h2>
-      <div id="project-grid" class="grid"></div>
-    </section>
-
-    <!-- Contact -->
-    <section class="container section" id="contact">
-      <h2 class="reveal" style="text-align:center">Contact</h2>
-      <div class="reveal" style="text-align:center;margin-top:12px;">
-        <a class="btn-contact" href="mailto:yousuf.shahabuddin@gmail.com" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 11l8-6.99V4H4zm16 2.236-8 6.999-8-6.999V20h16V6.236z"/>
-          </svg>
-          <span>Email</span>
-        </a>
-
-        <a class="btn-linkedin" href="https://www.linkedin.com/in/yousuf-shb" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-            <path fill="currentColor" d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5C1.11 6 0 4.881 0 3.5 0 2.12 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.98H4.7V24H.22zM8.9 8.98h4.29v2.05h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.89V24H18.4v-6.66c0-1.59-.03-3.64-2.22-3.64-2.22 0-2.56 1.74-2.56 3.53V24H9.04V8.98z"/>
-          </svg>
-          <span>LinkedIn</span>
-        </a>
-
-
+    <!-- SELECTED WORK -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <div class="eyebrow reveal">01 / My favourite projects</div>
+            <h2 class="reveal">What have I been up to?</h2>
+          </div>
+          <div class="count reveal" id="work-count"></div>
+        </div>
+        <div class="grid" id="work-grid"></div>
+        <div style="margin-top:24px" class="reveal">
+          <a class="btn btn-line" href="projects.html">See all my work <span class="arrow">&rarr;</span></a>
+        </div>
       </div>
     </section>
 
+    <!-- CAPABILITIES -->
+    <section class="section" id="capabilities">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <div class="eyebrow reveal">02 / Capabilities</div>
+            <h2 class="reveal">What I work with</h2>
+          </div>
+          <div class="count reveal">[ DESIGN &middot; MAKE &middot; COMPUTE ]</div>
+        </div>
+        <div class="matrix">
+          <div class="cap reveal">
+            <h3><span>CAD &amp; Modelling</span><span class="ix">A</span></h3>
+            <ul>
+              <li>Fusion 360</li>
+              <li>Blender</li>
+              <li>FEA</li>
+              <li>Prototyping</li>
+            </ul>
+          </div>
+          <div class="cap reveal">
+            <h3><span>Simulation &amp; Analysis</span><span class="ix">B</span></h3>
+            <ul>
+              <li>Ansys (structural, modal, fatigue)</li>
+              <li>CFD studies</li>
+              <li>MATLAB Data Analysis</li>
+            </ul>
+          </div>
+          <div class="cap reveal">
+            <h3><span>Electronics &amp; Firmware</span><span class="ix">C</span></h3>
+            <ul>
+              <li>IMUs, sensors, haptics</li>
+              <li>PCB Design</li>
+              <li>Robotics & Wi-Fi use</li>
+            </ul>
+          </div>
+          <div class="cap reveal">
+            <h3><span>Make &amp; Software</span><span class="ix">D</span></h3>
+            <ul>
+              <li>FDM 3D printing</li>
+              <li>Python, JavaScript</li>
+              <li>Design research &amp; UX</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <div class="eyebrow reveal">03 / About</div>
+            <h2 class="reveal">Life beyond projects</h2>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I am a design engineer at <strong>Imperial College London</strong>, where the
+              course sits right on the line between industrial design and engineering. That suits how I
+              like to work: moving between a sketch, a CAD model, a simulation and a soldering iron in
+              the same afternoon, and caring as much about why a product should exist as how it is made.
+            </p>
+            <p>
+              My projects span morphing footwear, embedded ESP32 builds, sustainable aircraft seating and
+              real client briefs. Alongside the course I help shape strategy and events at
+              <strong>First Gen Doctors</strong>, a non-profit widening access to medicine.
+            </p>
+            <p>
+              Away from the bench I love go karting, climbing and archery. I love aircraft- the engineering, sounds, 
+              smell of jet fuel, and even just being on a plane. Quite often I help book work trips and holidays for people.
+              Eventually, I would love to go for a PPL or even an ATPL. 
+              
+              Rock climbing taught me that the interesting problems are
+              usually the ones that look impossible at first read.
+
+              Other than that, you can catch me at car meets, playing with cats, watching some movies at home or playing some 
+              games snug in my setup.
+            </p>
+          </div>
+          <div class="facts reveal">
+            <div class="row"><span class="k">Course</span><span class="v">MEng Design Engineering</span></div>
+            <div class="row"><span class="k">University</span><span class="v">Imperial College London</span></div>
+            <div class="row"><span class="k">Graduating</span><span class="v">2028</span></div>
+            <div class="row"><span class="k">Based</span><span class="v">London, UK</span></div>
+            <div class="row"><span class="k">Off-bench</span><span class="v">Aviation &middot; Climbing &middot; Archery</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow reveal">04 / Contact</div>
+        <h2 class="reveal">Feel free to reach out</h2>
+        <p class="line reveal">
+          Open to Spring-Summer 2027 internships in design engineering, hardware, project management and product design related roles.
+          The quickest way to reach me is by email.
+        </p>
+        <div class="contact-links reveal">
+          <a class="btn btn-solid" href="mailto:yousuf.shahabuddin@gmail.com">Email me <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-line" href="https://www.linkedin.com/in/yousuf-shb" target="_blank" rel="noopener">LinkedIn <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-line" href="assets/docs/CV.pdf" target="_blank" rel="noopener">CV <span class="arrow">&darr;</span></a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <small>© Yousuf Shahabuddin <span id="year"></span></small>
-      <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <!-- TITLE BLOCK FOOTER -->
+  <footer class="titleblock">
+    <div class="tb-grid">
+      <div class="tb-cell">
+        <div class="k">Drawn by</div>
+        <div class="v big">Yousuf Shahabuddin</div>
+      </div>
+      <div class="tb-cell">
+        <div class="k">This is my:</div>
+        <div class="v">Design Engineering Portfolio</div>
+      </div>
+      <div class="tb-cell">
+        <div class="k">Sheet / Rev</div>
+        <div class="v">01 &middot; HOME / 2026</div>
+      </div>
+    </div>
+    <div class="tb-bar">
+      <span class="mono">&copy; Yousuf Shahabuddin <span data-year></span></span>
+      <span class="mono">design.yousufshahabuddin.com</span>
     </div>
   </footer>
 
-  <script src="script.js?v=21"></script>
+  <button id="toTop" aria-label="Back to top">&uarr; Top</button>
+
+  <script src="projects.js?v=30"></script>
+  <script src="app.js?v=30"></script>
 </body>
 </html>
