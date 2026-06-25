@@ -33,7 +33,7 @@ window.PROJECTS = [
     year: 2025,
     role: "Embedded / Firmware / Prototyping",
     disciplines: ["Embedded", "CAD & Prototyping"],
-    tools: ["ESP32", "C++", "Arduino", "Companion app"],
+    tools: ["ESP32", "C++", "Arduino"],
     featured: true,
     order: 84,
     cover: "assets/images/electronics_cover.png",
@@ -56,7 +56,7 @@ window.PROJECTS = [
     year: 2024,
     role: "Design & Engineering",
     disciplines: ["Product Design", "Sustainability", "CAD & Prototyping"],
-    tools: ["Fusion 360", "Rendering", "Design for manufacture"],
+    tools: ["Rendering", "Design for manufacture", ],
     featured: true,
     order: 69,
     cover: "assets/images/hydromorph_01.png",
@@ -159,10 +159,10 @@ window.PROJECTS = [
     order: 70,
     cover: "assets/images/drinks-dispenser_01.jpg",
     overlayTitle: "Design & Technology",
-    brief: "A countertop drinks dispenser for MEDO Cafe in Jeddah. The client needed to serve specialty coffee quickly and hygienically, at the press of a button, while keeping the unit simple to clean and repair.",
+    brief: "A countertop drinks dispenser for MEDO Cafe in Jeddah. The client needed something to serve customers soft drinks, so that baristas could focus on crfating their specialty coffee, at the press of a button, while keeping the unit simple to clean and repair.",
     contribution: [
-      "Took the brief through research, concept and 3D-printed prototyping.",
-      "Designed for quick cleaning, simple repair and a form that fits behind a cafe counter."
+      "Took the brief through research, concept and prototyped.",
+      "Designed for quick cleaning, simple repair and a form that fits behind a cafe counter. Minimalist branding."
     ],
     outcome: "A resolved concept and working prototype. Gallery below.",
     images: ["assets/images/drinks-dispenser_01.jpg"],
@@ -172,19 +172,18 @@ window.PROJECTS = [
   {
     slug: "pocket-shaver",
     title: "Pocket Shaver Redesign",
-    tagline: "Reverse-engineering a Braun shaver for lighter weight and easier repair.",
+    tagline: "Reverse-engineering a Braun shaver for lighter weight and elevated performance.",
     year: 2025,
     role: "Design & Engineering",
-    disciplines: ["Product Design", "CAD & Prototyping", "Sustainability"],
-    tools: ["Fusion 360", "Reverse engineering", "PCB"],
+    disciplines: ["Product Design", "CAD & Prototyping", "Material Analysis"],
+    tools: ["Fusion 360", "Reverse engineering", "Material Selection"],
     featured: true,
     order: 65,
     cover: "assets/images/pocket-shaver_01.jpg",
     overlayTitle: "Reverse Engineering",
     brief: "A reverse-engineering and redesign of a Braun pocket shaver, re-themed around a chosen character and rebuilt for lighter weight, better repairability and lower end-of-life impact.",
     contribution: [
-      "Reverse-engineered the existing product and rebuilt it in CAD.",
-      "Reworked the PCB layout and component choice, and selected materials for a lighter, more recyclable build."
+      "Theoretically designed a better shaver, with materials and processes detailed."
     ],
     outcome: "A redesigned shaver with reduced mass and improved repairability.",
     images: ["assets/images/pocket-shaver_01.jpg"],
@@ -194,7 +193,7 @@ window.PROJECTS = [
   {
     slug: "ipad-stand",
     title: "iPad Stand",
-    tagline: "A CAD-designed, 3D-printed stand with a curved no-slip front lip.",
+    tagline: "A CAD-designed, adjustable 3D-printed stand with a curved no-slip front lip.",
     year: 2025,
     role: "Design & Engineering",
     disciplines: ["CAD & Prototyping", "Product Design"],
@@ -203,10 +202,10 @@ window.PROJECTS = [
     order: 67,
     cover: "assets/images/ipad-stand_01.jpg",
     overlayTitle: "CAD",
-    brief: "A CAD-designed, 3D-printed iPad stand with a curved front lip, so the device sits securely at a range of angles and your finger never fouls the screen when you swipe up from the bottom.",
+    brief: "A CAD-designed, adjustable 3D-printed iPad stand with a curved front lip, so the device sits securely at a range of angles and your finger never fouls the screen when you swipe up from the bottom.",
     contribution: [
       "Modelled the stand in Fusion 360 with several viewing angles and a no-slip front edge.",
-      "Printed and tested for stability and heat dissipation."
+      "Printed and tested for stability and angle adjustment."
     ],
     outcome: "A printable, adjustable stand. Renders and prints below.",
     images: ["assets/images/ipad-stand_01.jpg"],
