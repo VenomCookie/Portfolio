@@ -80,7 +80,7 @@ window.PROJECTS = [
   {
     slug: "hydromorph",
     title: "HydroMorph",
-    tagline: "A morphing dive fin concept built to cut annual footwear production and waste.",
+    tagline: "A morphing dive fin concept built to cut annual footwear production and waste, whilst being more convenient for the user.",
     year: 2024,
     role: "Design & Engineering",
     disciplines: ["Product Design", "Sustainability", "CAD & Prototyping"],
@@ -89,9 +89,9 @@ window.PROJECTS = [
     order: 69,
     cover: "assets/images/hydromorph_01.png",
     overlayTitle: "Transforming Footwear",
-    brief: "HydroMorph asks whether one versatile, morphing dive fin could do the job of several single-use products, cutting the volume of footwear produced each year and the waste that follows it.",
+    brief: "HydroMorph aims to combine several footwear products, improving convenience while cutting the volume of footwear produced each year and the waste that follows it.",
     contribution: [
-      "Developed the morphing-fin concept and form across multiple iterations in Fusion 360.",
+      "Developed the morphing-fin concept and form through lo-fi prototyping.",
       "Produced the rendered concept set and the design-engineering rationale covering materials, manufacture and end-of-life."
     ],
     outcome: "A resolved concept and a full visual design study. Gallery below.",
@@ -123,7 +123,7 @@ window.PROJECTS = [
     order: 75,
     cover: "assets/images/rhythmrush_coverpage.png",
     overlayTitle: "Human-Centred Design",
-    brief: "A human-centred design project reimagining rhythm games as something you play with your whole body and with other people. Delivered as a discovery and delivery report with Team NEXUS.",
+    brief: "A human-centred design project reimagining concert queues as a lively atmosphere. Play games with strangers and have fun! Delivered as a discovery and delivery report with Team NEXUS.",
     contribution: [
       "Ran discovery research and helped synthesise the findings into a delivery report.",
       "Contributed to concept direction and the final documentation."
@@ -142,7 +142,7 @@ window.PROJECTS = [
   {
     slug: "sustainable-design-engineering",
     title: "Sustainable Aircraft Seating",
-    tagline: "Redesigning economy long-haul seats and the lifecycle around them.",
+    tagline: "Redesigning economy long-haul seats and the systems within which they are in.",
     year: 2025,
     role: "Research & Design",
     disciplines: ["Sustainability", "UX & Research"],
@@ -151,10 +151,10 @@ window.PROJECTS = [
     order: 80,
     cover: "assets/images/Untitlett3d (1)_Page_01.png",
     overlayTitle: "Sustainable Design",
-    brief: "A group study of the long-haul aircraft industry. We set out to find the real pain points in the economy cabin experience and the sustainability gaps around it, then redesign economy seats and the processes that shape their lifecycle.",
+    brief: "A group study of the long-haul aircraft industry. We set out to find the real pain points in the economy cabin experience and the sustainability gaps around it, then redesign the seats and the processes that shape their lifecycle.",
     contribution: [
       "Researched market demand, existing products and lifecycle impact.",
-      "Explored a focused redesign within my area, then integrated it with the team's system view."
+      "Explored a focused redesign within my area, then integrated it with the team's overall system view."
     ],
     outcome: "A 25-page research and design report. Gallery below.",
     images: [
@@ -178,7 +178,7 @@ window.PROJECTS = [
   {
     slug: "drinks-dispenser",
     title: "Drinks Dispenser",
-    tagline: "A countertop coffee dispenser for MEDO Cafe, Jeddah: fast, hygienic, repairable.",
+    tagline: "A countertop coffee dispenser for MEDD Cafe, Jeddah: fast, hygienic, repairable.",
     year: 2024,
     role: "Design & Engineering",
     disciplines: ["Product Design", "CAD & Prototyping"],
@@ -187,10 +187,10 @@ window.PROJECTS = [
     order: 70,
     cover: "assets/images/drinks-dispenser_01.jpg",
     overlayTitle: "Design & Technology",
-    brief: "A countertop drinks dispenser for MEDO Cafe in Jeddah. The client needed something to serve customers soft drinks, so that baristas could focus on crfating their specialty coffee, at the press of a button, while keeping the unit simple to clean and repair.",
+    brief: "A countertop drinks dispenser for MEDD Café in Jeddah. The client needed something to serve customers soft drinks, so that baristas could focus on crfating their specialty coffee, at the press of a button, while keeping the unit simple to clean and repair.",
     contribution: [
       "Took the brief through research, concept and prototyped.",
-      "Designed for quick cleaning, simple repair and a form that fits behind a cafe counter. Minimalist branding."
+      "Designed for quick cleaning, simple repair and a form that fits behind a café counter. Minimalist branding."
     ],
     outcome: "A resolved concept and working prototype. Gallery below.",
     images: ["assets/images/drinks-dispenser_01.jpg"],
