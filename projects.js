@@ -124,16 +124,16 @@ window.PROJECTS = [
 
   {
     slug: "electronics",
-    title: "Electronics & Embedded Systems",
+    title: "Electronics Games",
     tagline: "ESP32 builds: a memory game and a Martian-style hex message relay.",
     year: 2025,
     role: "Embedded / Firmware / Prototyping",
-    disciplines: ["Embedded", "CAD & Prototyping"],
+    disciplines: ["CAD & Prototyping"],
     tools: ["ESP32", "C++", "Arduino"],
     featured: true,
     order: 74,
     cover: "assets/images/electronics_cover.png",
-    overlayTitle: "Embedded Systems",
+    overlayTitle: "Electronics Systems",
     brief: "A set of ESP32 builds exploring physical, embedded interaction. The headline pieces are a Chimp Memory sequence game and a message relay that points out letters in hexadecimal, inspired by the way Mark Watney signals in The Martian.",
     contribution: [
       "Built a memory sequence game with flashing LEDs and a companion app for entering the recalled sequence.",
