@@ -80,7 +80,7 @@ window.PROJECTS = [
     ],
     videos: [],   // e.g. ["assets/videos/my-project_demo.mp4"]
 
-    //pdf: ["assets/docs/PDE (1).pdf"],
+    pdf: "assets/docs/PDE2.pdf",
 
     // ---- OPTIONAL: only include the lines you need ----
     // pdf: "assets/docs/my-project.pdf",          // embeds a report instead of an image gallery
