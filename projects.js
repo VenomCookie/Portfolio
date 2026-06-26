@@ -46,7 +46,7 @@ window.PROJECTS = [
 
     // ---- REQUIRED: placement ----
     featured: true,   // true = also shows on the home page. false = Work page only.
-    order: 86,        // higher number = appears earlier. Use gaps of 5 so you can slot between.
+    order: 95,        // higher number = appears earlier. Use gaps of 5 so you can slot between.
 
     // ---- REQUIRED: cover ----
     cover: "assets/images/pdet2foliocover.png",  // the grid thumbnail. Best at 16:10.
