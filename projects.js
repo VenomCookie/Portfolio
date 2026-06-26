@@ -62,25 +62,25 @@ window.PROJECTS = [
 
     // ---- MEDIA: pick what applies, leave the rest as empty arrays ----
     images: [
-      "assets/images/page 1.png",
-      "assets/images/page 2.png",
-      "assets/images/page 3.png",
-      "assets/images/page 4.png",
-      "assets/images/page 5.png",
-      "assets/images/page 6.png",
-      "assets/images/page 7.png",
-      "assets/images/page 8.png",
-      "assets/images/page 9.png",
-      "assets/images/page 10.png",
-      "assets/images/page 11.png",
-      "assets/images/page 12.png",
-      "assets/images/page 13.png",
-      "assets/images/page 14.png",
-      "assets/images/page 15.png",
+      "assets/images/Page 1.png",
+      "assets/images/Page 2.png",
+      "assets/images/Page 3.png",
+      "assets/images/Page 4.png",
+      "assets/images/Page 5.png",
+      "assets/images/Page 6.png",
+      "assets/images/Page 7.png",
+      "assets/images/Page 8.png",
+      "assets/images/Page 9.png",
+      "assets/images/Page 10.png",
+      "assets/images/Page 11.png",
+      "assets/images/Page 12.png",
+      "assets/images/Page 13.png",
+      "assets/images/Page 14.png",
+      "assets/images/Page 15.png",
     ],
     videos: [],   // e.g. ["assets/videos/my-project_demo.mp4"]
 
-    pdf: ["assets/docs/PDE (1).pdf"],
+    //pdf: ["assets/docs/PDE (1).pdf"],
 
     // ---- OPTIONAL: only include the lines you need ----
     // pdf: "assets/docs/my-project.pdf",          // embeds a report instead of an image gallery
