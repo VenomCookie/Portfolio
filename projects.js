@@ -273,7 +273,7 @@ window.PROJECTS = [
     role: "Design & Engineering",
     disciplines: ["Product Design", "CAD & Prototyping", "Material Analysis"],
     tools: ["Fusion 360", "Reverse engineering", "Material Selection"],
-    featured: true,
+    featured: false,
     order: 65,
     cover: "assets/images/pocket-shaver_01.jpg",
     overlayTitle: "Reverse Engineering",
