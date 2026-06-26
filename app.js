@@ -124,6 +124,23 @@
 
     /* media */
     var media = "";
+
+    /* live, playable embed (for web apps / games) */
+    var live = "";
+    if (p.liveUrl || p.embed) {
+      live =
+        '<div class="live-wrap reveal">' +
+          (p.embed
+            ? '<div class="embed-frame"><iframe src="' + esc(p.embed) + '" title="' +
+                esc(p.title) + '" loading="lazy" allowfullscreen></iframe></div>'
+            : "") +
+          (p.liveUrl
+            ? '<a class="btn btn-solid" style="margin-top:14px" href="' + esc(p.liveUrl) +
+                '" target="_blank" rel="noopener">Open full screen ' + ARROW + "</a>"
+            : "") +
+        "</div>";
+    }
+
     if (p.pdf) {
       media =
         '<div class="pdf-wrap reveal"><iframe class="pdf-frame" src="' + esc(p.pdf) +
@@ -182,7 +199,7 @@
         "</div>" +
       "</section>" +
 
-      '<section class="wrap" style="padding-top:0">' + media + "</section>" +
+      '<section class="wrap" style="padding-top:0">' + live + media + "</section>" +
       collab +
       pager;
 

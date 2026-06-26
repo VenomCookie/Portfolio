@@ -26,6 +26,33 @@
    ===================================================================== */
 
 window.PROJECTS = [
+
+  {
+    slug: "azul",
+    title: "Azul",
+    tagline: "A complete, playable build of the board game Azul: rules engine, UI and accessibility.",
+    year: 2025,
+    role: "Software / Front-end",
+    disciplines: ["Software"],
+    tools: ["JavaScript", "ES Modules", "Ramda", "Mocha tests", "Accessibility"],
+    featured: true,
+    order: 88,
+    cover: "assets/images/azul_cover.png",
+    overlayTitle: "Web App",
+    brief: "A fully playable build of Azul, the tile-laying board game, for two to four players. The ruleset is written as a pure, separately tested module, with the browser interface layered on top, so the game logic and the UI never tangle.",
+    contribution: [
+      "Implemented the complete Azul ruleset as a pure functional module (Azul.js), independent of the interface and covered by unit tests.",
+      "Built the browser UI in vanilla JavaScript with ES modules: factory drafting, pattern lines, wall tiling, scoring and end-of-game bonuses.",
+      "Made it accessible: full keyboard play, ARIA labelling and a high-contrast mode for colour-blind players."
+    ],
+    outcome: "A polished, fully playable game. Try it in the browser below.",
+    liveUrl: "azul/index.html",
+    embed: "azul/index.html",
+    images: [],
+    videos: [],
+    collaborators: []
+  },
+
   {
     slug: "electronics",
     title: "Electronics & Embedded Systems",
@@ -56,7 +83,7 @@ window.PROJECTS = [
     year: 2024,
     role: "Design & Engineering",
     disciplines: ["Product Design", "Sustainability", "CAD & Prototyping"],
-    tools: ["Rendering", "Design for manufacture", ],
+    tools: ["Rendering", "Design for manufacture"],
     featured: true,
     order: 69,
     cover: "assets/images/hydromorph_01.png",

@@ -460,3 +460,6 @@ a:focus-visible, button:focus-visible, .filter:focus-visible{
   *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
   .reveal{ opacity:1; transform:none; }
 }
+.live-wrap{ margin-top:clamp(26px,3vw,40px); }
+.embed-frame{ border:1px solid var(--line-2); background:var(--sheet); padding:10px; box-shadow:0 16px 36px rgba(22,24,27,.10); }
+.embed-frame iframe{ width:100%; height:min(720px,80vh); border:0; background:var(--sheet-2); display:block; }
