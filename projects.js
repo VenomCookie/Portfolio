@@ -30,7 +30,7 @@ window.PROJECTS = [
   {
     slug: "azul",
     title: "Azul",
-    tagline: "A complete, playable build of the board game Azul: rules engine, UI and accessibility.",
+    tagline: "A complete, playable build of the board game Azul, but Minecraft themed",
     year: 2025,
     role: "Software / Front-end",
     disciplines: ["Software"],
@@ -39,13 +39,14 @@ window.PROJECTS = [
     order: 88,
     cover: "assets/images/azul_cover.png",
     overlayTitle: "Web App",
-    brief: "A fully playable build of Azul, the tile-laying board game, for two to four players. The ruleset is written as a pure, separately tested module, with the browser interface layered on top, so the game logic and the UI never tangle.",
+    brief: "A fully playable build of Azul, a tile-based boardgame, for 2 to 4 players. Coded in Javascript, designed as a web app.",
     contribution: [
       "Implemented the complete Azul ruleset as a pure functional module (Azul.js), independent of the interface and covered by unit tests.",
       "Built the browser UI in vanilla JavaScript with ES modules: factory drafting, pattern lines, wall tiling, scoring and end-of-game bonuses.",
-      "Made it accessible: full keyboard play, ARIA labelling and a high-contrast mode for colour-blind players."
+      "Made it accessible: full keyboard play, and a high-contrast mode for colour-blind players.",
+      "Instructions included, and is playable locally (on the same device)."
     ],
-    outcome: "A polished, fully playable game. Try it in the browser below.",
+    outcome: "A polished, fully playable game. Have a go at it.",
     liveUrl: "azul/index.html",
     embed: "azul/index.html",
     images: [],
@@ -62,7 +63,7 @@ window.PROJECTS = [
     disciplines: ["Embedded", "CAD & Prototyping"],
     tools: ["ESP32", "C++", "Arduino"],
     featured: true,
-    order: 84,
+    order: 74,
     cover: "assets/images/electronics_cover.png",
     overlayTitle: "Embedded Systems",
     brief: "A set of ESP32 builds exploring physical, embedded interaction. The headline pieces are a Chimp Memory sequence game and a message relay that points out letters in hexadecimal, inspired by the way Mark Watney signals in The Martian.",
