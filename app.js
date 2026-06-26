@@ -141,20 +141,21 @@
         "</div>";
     }
 
+    var imgs = (p.images || []).map(function (src) {
+      return '<figure class="figure reveal"><img src="' + esc(src) + '" alt="' + esc(p.title) +
+        '" loading="lazy" decoding="async" data-zoom="' + esc(src) + '"></figure>';
+    }).join("");
+    var vids = (p.videos || []).map(function (src) {
+      return '<figure class="figure reveal"><video src="' + esc(src) + '" controls playsinline preload="metadata"></video></figure>';
+    }).join("");
+    if (imgs || vids) media += '<div class="gallery">' + imgs + vids + "</div>";
+
     if (p.pdf) {
-      media =
-        '<div class="pdf-wrap reveal"><iframe class="pdf-frame" src="' + esc(p.pdf) +
+      var pdfUrl = Array.isArray(p.pdf) ? p.pdf[0] : p.pdf;
+      media +=
+        '<div class="pdf-wrap reveal"><iframe class="pdf-frame" src="' + esc(pdfUrl) +
           '" title="' + esc(p.title) + ' report" loading="lazy"></iframe>' +
-          '<a class="pdf-open" href="' + esc(p.pdf) + '" target="_blank" rel="noopener">Open full report ' + ARROW + "</a></div>";
-    } else {
-      var imgs = (p.images || []).map(function (src) {
-        return '<figure class="figure reveal"><img src="' + esc(src) + '" alt="' + esc(p.title) +
-          '" loading="lazy" decoding="async" data-zoom="' + esc(src) + '"></figure>';
-      }).join("");
-      var vids = (p.videos || []).map(function (src) {
-        return '<figure class="figure reveal"><video src="' + esc(src) + '" controls playsinline preload="metadata"></video></figure>';
-      }).join("");
-      if (imgs || vids) media = '<div class="gallery">' + imgs + vids + "</div>";
+          '<a class="pdf-open" href="' + esc(pdfUrl) + '" target="_blank" rel="noopener">Open full report ' + ARROW + "</a></div>";
     }
 
     /* collaborators */
