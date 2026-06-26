@@ -28,6 +28,74 @@
 window.PROJECTS = [
 
   {
+    // ---- REQUIRED: identity ----
+    slug: "pdet2folio",          // unique id, no spaces. Becomes project.html?p=my-project
+    title: "Knee Brace for Beginners in the Gym",         // shown as the card title and page heading
+    tagline: "Ever thought about starting in the gym, but you're worried about injury? Sticking out? Bad form? Look no further!", // shown under the title
+    year: 2026,                  // a number
+    role: "Mechanism design, product assembly & user research.",// your role on it
+
+    // ---- REQUIRED: classification ----
+    disciplines: ["Product Design", "CAD & Prototyping", "UX & Research"],
+    // ^ drives the filter chips on the Work page. Reuse existing names to group with
+    //   others, or invent a new one (e.g. "Robotics") and a new chip appears automatically.
+    //   Current set: Product Design, Embedded, UX & Research, Sustainability,
+    //   CAD & Prototyping, Software.
+
+    tools: ["Fusion 360", "UX", "Electronics"],   // shown as chips on the case study
+
+    // ---- REQUIRED: placement ----
+    featured: true,   // true = also shows on the home page. false = Work page only.
+    order: 86,        // higher number = appears earlier. Use gaps of 5 so you can slot between.
+
+    // ---- REQUIRED: cover ----
+    cover: "assets/images/pdet2foliocover.png",  // the grid thumbnail. Best at 16:10.
+
+    // ---- REQUIRED: the case study copy ----
+    brief: "We looked into the sports industry as a whole, and found at that beginners in the gym are quite an underserved user group. Generic and specialist equipment exists, but they don't help get your foot through the door. After extensive reseach and interviews, we landed upon creating a knee brace that helps you correct your form, and keep to a tempo during squats.",
+    contribution: [
+      "Adapted a one-handed tightening mechanism to a knee brace, and designed the assembly to be manufacturable.",
+      "Extensive research into works for beginners and how to best support them.",
+      "Portfolio of our research and design process, including interviews, sketches, and CAD models."
+    ],
+    outcome: "A knee brcae that helps beginners in the gym, and could be applied to other exercises, whether in the gym, at home, or whilst away on holiday.",
+
+    // ---- MEDIA: pick what applies, leave the rest as empty arrays ----
+    images: [
+      "assets/images/page 1.png",
+      "assets/images/page 2.png",
+      "assets/images/page 3.png",
+      "assets/images/page 4.png",
+      "assets/images/page 5.png",
+      "assets/images/page 6.png",
+      "assets/images/page 7.png",
+      "assets/images/page 8.png",
+      "assets/images/page 9.png",
+      "assets/images/page 10.png",
+      "assets/images/page 11.png",
+      "assets/images/page 12.png",
+      "assets/images/page 13.png",
+      "assets/images/page 14.png",
+      "assets/images/page 15.png",
+    ],
+    videos: [],   // e.g. ["assets/videos/my-project_demo.mp4"]
+
+    pdf: ["assets/docs/PDE (1).pdf"],
+
+    // ---- OPTIONAL: only include the lines you need ----
+    // pdf: "assets/docs/my-project.pdf",          // embeds a report instead of an image gallery
+    // liveUrl: "azul/index.html",                  // adds an "Open full screen" button
+    // embed: "azul/index.html",                    // embeds a live, playable web app
+
+    collaborators: [
+      { name: "Zayn Muntazir", url: "https://www.linkedin.com/in/zayn-muntazir-44721b281/" },
+      //{ name: "Ikem Enebeli", url: "https://www.linkedin.com/in/ikem-e/" },
+      //{ name: "Aidan Ryder", url: "https://www.linkedin.com/in/aidan-ryder-b848aa266/" },
+      //{ name: "Amarie Fasoro", url: "https://www.linkedin.com/in/amarie-fasoro-8104a42bb/" }
+    ]   // e.g. [{ name: "Jane Doe", url: "https://www.linkedin.com/in/janedoe" }]
+  },
+
+  {
     slug: "azul",
     title: "Azul",
     tagline: "A complete, playable build of the board game Azul, but Minecraft themed",
