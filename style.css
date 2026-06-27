@@ -33,7 +33,7 @@
 
   /* metrics */
   --wrap: 1180px;
-  --gut: clamp(18px, 4vw, 44px);
+  --gut: clamp(20px, 4.5vw, 44px);
   --radius: 3px;
 }
 
@@ -133,9 +133,9 @@ img, video{ max-width:100%; display:block; }
 }
 .hero-name{
   font-family:var(--display); font-weight:800;
-  font-size:clamp(2.6rem, 7.2vw, 5.4rem);
-  line-height:.94; letter-spacing:-.02em; margin:.32em 0 0;
-  text-transform:uppercase; overflow-wrap:break-word; word-break:break-word;
+  font-size:clamp(2.2rem, 6vw, 4.3rem);
+  line-height:.96; letter-spacing:-.03em; margin:.32em 0 0;
+  text-transform:uppercase; overflow-wrap:normal; word-break:normal;
 }
 .hero-name .ln{ display:block; }
 .hero-thesis{
