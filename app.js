@@ -14,6 +14,10 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
+  function encURL(s) {
+    // encode spaces/parentheses etc. so iOS Safari loads files with such names
+    return encodeURI(String(s == null ? "" : s)).replace(/\(/g, "%28").replace(/\)/g, "%29");
+  }
   function byId(id) { return document.getElementById(id); }
   function qs(sel, root) { return (root || document).querySelector(sel); }
   function qsa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
@@ -33,7 +37,7 @@
       '<a class="card reveal" href="project.html?p=' + encodeURIComponent(p.slug) + '"' +
         ' data-disc="' + esc((p.disciplines || []).join("|")) + '">' +
         '<span class="num">' + num + "</span>" +
-        '<div class="media"><img src="' + esc(p.cover) + '" alt="' + esc(p.title) +
+        '<div class="media"><img src="' + esc(encURL(p.cover)) + '" alt="' + esc(p.title) +
           '" loading="lazy" decoding="async"></div>' +
         '<div class="body">' +
           '<div class="ttl">' + esc(p.title) + '<span class="yr">' + esc(p.year || "") + "</span></div>" +
@@ -131,7 +135,7 @@
       live =
         '<div class="live-wrap reveal">' +
           (p.embed
-            ? '<div class="embed-frame"><iframe src="' + esc(p.embed) + '" title="' +
+            ? '<div class="embed-frame"><iframe src="' + esc(encURL(p.embed)) + '" title="' +
                 esc(p.title) + '" loading="lazy" allowfullscreen></iframe></div>'
             : "") +
           (p.liveUrl
@@ -142,20 +146,20 @@
     }
 
     var imgs = (p.images || []).map(function (src) {
-      return '<figure class="figure reveal"><img src="' + esc(src) + '" alt="' + esc(p.title) +
-        '" loading="lazy" decoding="async" data-zoom="' + esc(src) + '"></figure>';
+      return '<figure class="figure reveal"><img src="' + esc(encURL(src)) + '" alt="' + esc(p.title) +
+        '" loading="lazy" decoding="async" data-zoom="' + esc(encURL(src)) + '"></figure>';
     }).join("");
     var vids = (p.videos || []).map(function (src) {
-      return '<figure class="figure reveal"><video src="' + esc(src) + '" controls playsinline preload="metadata"></video></figure>';
+      return '<figure class="figure reveal"><video src="' + esc(encURL(src)) + '" controls playsinline preload="metadata"></video></figure>';
     }).join("");
     if (imgs || vids) media += '<div class="gallery">' + imgs + vids + "</div>";
 
     if (p.pdf) {
       var pdfUrl = Array.isArray(p.pdf) ? p.pdf[0] : p.pdf;
       media +=
-        '<div class="pdf-wrap reveal"><iframe class="pdf-frame" src="' + esc(pdfUrl) +
+        '<div class="pdf-wrap reveal"><iframe class="pdf-frame" src="' + esc(encURL(pdfUrl)) +
           '" title="' + esc(p.title) + ' report" loading="lazy"></iframe>' +
-          '<a class="pdf-open" href="' + esc(pdfUrl) + '" target="_blank" rel="noopener">Open full report ' + ARROW + "</a></div>";
+          '<a class="pdf-open" href="' + esc(encURL(pdfUrl)) + '" target="_blank" rel="noopener">Open full report ' + ARROW + "</a></div>";
     }
 
     /* collaborators */
