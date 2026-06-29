@@ -26,6 +26,36 @@
    ===================================================================== */
 
 window.PROJECTS = [
+  {
+    slug: "fea-running-blade",
+    title: "FEA of a Prosthetic Running Blade",
+    tagline: "Fatigue and natural-frequency analysis of a cheetah-style blade across two designs and two materials.",
+    year: 2026,
+    role: "Simulation & Analysis",
+    disciplines: ["Simulation", "CAD & Prototyping"],
+    tools: ["Ansys Mechanical", "Fusion 360", "Fatigue analysis", "Modal analysis"],
+    featured: true,
+    order: 93,
+    cover: "assets/images/fea-blade_cover.png",
+    overlayTitle: "Finite Element Analysis",
+    brief: "A finite element study of a lightweight, cheetah-style prosthetic running blade, assessed against fatigue life and natural frequency under realistic foot-strike loading. Two geometry iterations were evaluated across two materials, unidirectional CFRP and Aluminium 2014 T4, in Ansys Mechanical 2024 R2.",
+    contribution: [
+      "Modelled the blade in Fusion 360 and set up static structural, stress-life fatigue and modal analyses in Ansys, including global and local mesh convergence and quality studies.",
+      "Validated the model with reaction-force, deformation and stress-location sanity checks before comparing designs against a 1,000,000-cycle fatigue target and a 50 Hz frequency floor.",
+      "Applied a Goodman mean-stress correction for the zero-based loading, and critically assessed modelling, discretisation and numerical error against FEA theory."
+    ],
+    outcome: "The CFRP geometry iteration cut peak stress by 25% and raised the fundamental frequency by 29% to 97.4 Hz; aluminium failed both fatigue (minimum life 26,670 cycles) and the 600 g weight limit. CFRP Design 2 was recommended.",
+    images: [
+      "assets/images/fea-blade_01_renders.png",
+      "assets/images/fea-blade_02_mesh.png",
+      "assets/images/fea-blade_03_modeshape.png",
+      "assets/images/fea-blade_04_fatigue.png",
+      "assets/images/fea-blade_05_alu_stress.png"
+    ],
+    videos: [],
+    pdf: "assets/docs/FEA_RunningBlade_YS.pdf",
+    collaborators: []
+  },
 
   {
     // ---- REQUIRED: identity ----
