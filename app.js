@@ -51,6 +51,10 @@
 
   function renderGrid(el, list) {
     el.innerHTML = list.map(card).join("");
+    /* stagger the card entrances */
+    qsa(".card", el).forEach(function (c, i) {
+      c.style.setProperty("--d", (Math.min(i, 5) * 0.07) + "s");
+    });
   }
 
   /* ---- home: featured grid ----------------------------------------- */
@@ -245,9 +249,58 @@
     var btn = byId("toTop");
     if (!btn) return;
     btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
-    var onScroll = function () { btn.style.display = window.scrollY > 500 ? "inline-flex" : "none"; };
+    var onScroll = function () { btn.classList.toggle("on", window.scrollY > 500); };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+  }
+
+  var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setupProgress() {
+    if (REDUCED) return;
+    var bar = document.createElement("div");
+    bar.id = "progress";
+    document.body.appendChild(bar);
+    var ticking = false;
+    function draw() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.transform = "scaleX(" + (max > 0 ? window.scrollY / max : 0) + ")";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(draw); }
+    }, { passive: true });
+    draw();
+  }
+
+  function setupNavHide() {
+    var nav = qs(".nav");
+    if (!nav) return;
+    var last = window.scrollY;
+    window.addEventListener("scroll", function () {
+      var y = window.scrollY;
+      nav.classList.toggle("nav-raise", y > 8);
+      if (REDUCED) { last = y; return; }
+      if (y > last && y > 140) nav.classList.add("nav-hide");
+      else nav.classList.remove("nav-hide");
+      last = y;
+    }, { passive: true });
+  }
+
+  function setupParallax() {
+    if (REDUCED) return;
+    var plate = qs(".plate");
+    if (!plate || window.innerWidth < 880) return;
+    var ticking = false;
+    function draw() {
+      var y = window.scrollY;
+      if (y < window.innerHeight) plate.style.transform = "translateY(" + (y * 0.06) + "px)";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(draw); }
+    }, { passive: true });
   }
 
   function stampYears() {
@@ -261,6 +314,9 @@
     setupReveal();
     setupLightbox();
     setupTop();
+    setupProgress();
+    setupNavHide();
+    setupParallax();
     stampYears();
   });
 })();
