@@ -26,6 +26,72 @@
    ===================================================================== */
 
 window.PROJECTS = [
+
+    {
+    // ---- REQUIRED: identity ----
+    slug: "thermo1",          // unique id, no spaces. Becomes project.html?p=my-project
+    title: "Aerodynamic Pick-up Truck ",         // shown as the card title and page heading
+    tagline: "Pick-up Truck redesigned for reduced drag and improved efficiency", // shown under the title
+    year: 2026,                  // a number
+    role: "Design & CFD",// your role on it
+
+    // ---- REQUIRED: classification ----
+    disciplines: ["CFD", "CAD & Prototyping", "UX & Research"],
+    // ^ drives the filter chips on the Work page. Reuse existing names to group with
+    //   others, or invent a new one (e.g. "Robotics") and a new chip appears automatically.
+    //   Current set: Product Design, Embedded, UX & Research, Sustainability,
+    //   CAD & Prototyping, Software.
+
+    tools: ["Fusion 360", "Ansys Fluent", "Figma"],   // shown as chips on the case study
+
+    // ---- REQUIRED: placement ----
+    featured: true,   // true = also shows on the home page. false = Work page only.
+    order: 88,        // higher number = appears earlier. Use gaps of 5 so you can slot between.
+
+    // ---- REQUIRED: cover ----
+    cover: "assets/images/A4 - 2.png",  // the grid thumbnail. Best at 16:10.
+
+    // ---- REQUIRED: the case study copy ----
+    brief: "Aim was to redesign a vehicle archetype of our choice to reduce drag and improve efficiency. The pick-up truck was chosen as it is a common vehicle type with a high drag coefficient. The design process involved research, sketching, CAD modelling, and CFD analysis to evaluate the aerodynamic performance of the redesigned vehicle.",
+    contribution: [
+      "Conducted CFD analysis to evaluate the aerodynamic performance of the redesigned vehicle.",
+      "Optimized the vehicle design to reduce drag and improve efficiency.",
+      "Presented findings and recommendations for future development."
+    ],
+    outcome: "Pick-up Truck with reduced drag coefficient and improved efficiency.",
+
+    // ---- MEDIA: pick what applies, leave the rest as empty arrays ----
+    images: [
+      "assets/images/A4 - 2.png",
+      "assets/images/A4 - 3.png",
+      "assets/images/A4 - 4.png",
+      "assets/images/A4 - 5.png",
+      "assets/images/A4 - 6.png",
+      "assets/images/A4 - 6.5.png",
+      "assets/images/A4 - 7.png",
+      "assets/images/A4 - 8.png",
+      "assets/images/A4 - 9.png",
+      "assets/images/A4 - 10.png",
+      "assets/images/A4 - 11.png",
+      "assets/images/A4 - 12.png",
+      "assets/images/A4 - 13.png",
+      "assets/images/A4 - 14.png",
+      "assets/images/A4 - 15.png",
+      "assets/images/A4 - 16.png",
+      "assets/images/A4 - 17.png",
+      "assets/images/A4 - 17.5.png",
+      "assets/images/A4 - 18.png",
+      "assets/images/A4 - 19.png",
+    ],
+    videos: [],   // e.g. ["assets/videos/my-project_demo.mp4"]
+
+    // ---- OPTIONAL: only include the lines you need ----
+    // pdf: "assets/docs/my-project.pdf",          // embeds a report instead of an image gallery
+    // liveUrl: "azul/index.html",                  // adds an "Open full screen" button
+    // embed: "azul/index.html",                    // embeds a live, playable web app
+
+    collaborators: []
+  },
   {
     slug: "fea-running-blade",
     title: "FEA of a Prosthetic Running Blade",
@@ -88,7 +154,7 @@ window.PROJECTS = [
       "Extensive research into works for beginners and how to best support them.",
       "Portfolio of our research and design process, including interviews, sketches, and CAD models."
     ],
-    outcome: "A knee brcae that helps beginners in the gym, and could be applied to other exercises, whether in the gym, at home, or whilst away on holiday.",
+    outcome: "A knee brace that helps beginners in the gym, and could be applied to other exercises, whether in the gym, at home, or whilst away on holiday.",
 
     // ---- MEDIA: pick what applies, leave the rest as empty arrays ----
     images: [
