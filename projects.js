@@ -315,7 +315,7 @@ window.PROJECTS = [
     order: 80,
     cover: "assets/images/Untitlett3d (1)_Page_01.png",
     overlayTitle: "Sustainable Design",
-    brief: "A group study of the long-haul aircraft industry. We set out to find the real pain points in the economy cabin experience and the sustainability gaps around it, then redesign the seats and the processes that shape their lifecycle. The second section was my own individual exploration of a focused redesign of the seat and systems, building on the team's view."
+    brief: "A group study of the long-haul aircraft industry. We set out to find the real pain points in the economy cabin experience and the sustainability gaps around it, then redesign the seats and the processes that shape their lifecycle. The second section was my own individual exploration of a focused redesign of the seat and systems, building on the team's view.",
     contribution: [
       "Researched market demand, existing products and lifecycle impact.",
       "Explored a focused redesign within my area, then integrated it with the team's overall system view.",
