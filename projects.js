@@ -315,12 +315,13 @@ window.PROJECTS = [
     order: 80,
     cover: "assets/images/Untitlett3d (1)_Page_01.png",
     overlayTitle: "Sustainable Design",
-    brief: "A group study of the long-haul aircraft industry. We set out to find the real pain points in the economy cabin experience and the sustainability gaps around it, then redesign the seats and the processes that shape their lifecycle.",
+    brief: "A group study of the long-haul aircraft industry. We set out to find the real pain points in the economy cabin experience and the sustainability gaps around it, then redesign the seats and the processes that shape their lifecycle. The second section was my own individual exploration of a focused redesign of the seat and systems, building on the team's view."
     contribution: [
       "Researched market demand, existing products and lifecycle impact.",
-      "Explored a focused redesign within my area, then integrated it with the team's overall system view."
+      "Explored a focused redesign within my area, then integrated it with the team's overall system view.",
+      "Individual report and design rationale produced"
     ],
-    outcome: "A 25-page research and design report. Gallery below.",
+    outcome: "In-dpeth research and a set of design recommendations for the industry, with a focused redesign of the seat and systems. Full report below.",
     images: [
       "assets/images/Untitlett3d (1)_Page_01.png","assets/images/Untitlett3d (1)_Page_02.png","assets/images/Untitlett3d (1)_Page_03.png",
       "assets/images/Untitlett3d (1)_Page_04.png","assets/images/Untitlett3d (1)_Page_05.png","assets/images/Untitlett3d (1)_Page_06.png",
@@ -330,13 +331,16 @@ window.PROJECTS = [
       "assets/images/Untitlett3d (1)_Page_16.png","assets/images/Untitlett3d (1)_Page_17.png","assets/images/Untitlett3d (1)_Page_18.png",
       "assets/images/Untitlett3d (1)_Page_19.png","assets/images/Untitlett3d (1)_Page_20.png","assets/images/Untitlett3d (1)_Page_21.png",
       "assets/images/Untitlett3d (1)_Page_22.png","assets/images/Untitlett3d (1)_Page_23.png","assets/images/Untitlett3d (1)_Page_24.png",
-      "assets/images/Untitlett3d (1)_Page_25.png"
+      "assets/images/Untitlett3d (1)_Page_25.png","assets/images/COVER PAGE.png","assets/images/SLIDE 1.png",
+      "assets/images/SLIDE 2.png","assets/images/SLIDE 3.png","assets/images/SLIDE 4.png",
+      "assets/images/SLIDE 5.png","assets/images/SLIDE 6.png","assets/images/SLIDE 7.png",
+      "assets/images/SLIDE 8.png","assets/images/SLIDE 9.png","assets/images/SLIDE 10.png",
+      "assets/images/Appendix.png"
     ],
     videos: [],
     collaborators: [
       { name: "Leia Whitaker", url: "https://www.linkedin.com/in/leia-whitaker/" },
       { name: "Curtis Light", url: "https://www.linkedin.com/in/curtis-light/" },
-      { name: "Karanjeet Singh", url: "https://www.linkedin.com/in/karanjeet-singh-6aa728364/" }
     ]
   },
   {
