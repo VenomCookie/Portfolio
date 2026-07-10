@@ -417,6 +417,11 @@ img, video{ max-width:100%; display:block; }
 .tb-cell .v{ font-family:var(--mono); font-size:.82rem; color:var(--ink); margin-top:5px; letter-spacing:.02em; }
 .tb-cell .v.big{ font-family:var(--display); font-weight:700; font-size:1.04rem; letter-spacing:0; text-transform:uppercase; }
 .tb-cell a:hover{ color:var(--accent); }
+.tb-sig{
+  height:26px; width:auto; margin-top:8px; opacity:.85;
+  transition:opacity var(--t-fast) ease;
+}
+.tb-cell:hover .tb-sig{ opacity:1; }
 .tb-bar{
   border-top:1px solid var(--line); padding:10px var(--gut);
   display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
