@@ -115,6 +115,24 @@
     }
     var p = ALL[idx];
     document.title = p.title + " | Yousuf Shahabuddin";
+    (function () {
+      var base = "https://design.yousufshahabuddin.com/";
+      function up(sel, attrName, attrVal, content) {
+        var el = document.querySelector(sel);
+        if (!el) {
+          el = document.createElement("meta");
+          el.setAttribute(attrName, attrVal);
+          document.head.appendChild(el);
+        }
+        el.setAttribute("content", content);
+      }
+      up('meta[name="description"]', "name", "description", p.tagline || "");
+      up('meta[property="og:title"]', "property", "og:title", p.title + " | Yousuf Shahabuddin");
+      up('meta[property="og:description"]', "property", "og:description", p.tagline || "");
+      up('meta[property="og:image"]', "property", "og:image", base + encURL(p.cover));
+      up('meta[property="og:type"]', "property", "og:type", "article");
+      up('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
+    })();
 
     /* meta cells */
     var meta =
