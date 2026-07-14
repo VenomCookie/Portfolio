@@ -1,7 +1,4 @@
-/* =====================================================================
-   SITE LOGIC  -  reads window.PROJECTS (from projects.js)
-   Works on GitHub Pages and when opened locally (no fetch needed).
-   ===================================================================== */
+/*SITE LOGIC */
 (function () {
   "use strict";
 

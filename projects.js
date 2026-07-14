@@ -351,7 +351,7 @@ window.PROJECTS = [
     role: "Design & Engineering",
     disciplines: ["Product Design", "CAD & Prototyping"],
     tools: ["Fusion 360", "3D printing", "Design for manufacture"],
-    featured: true,
+    featured: false,
     order: 70,
     cover: "assets/images/drinks-dispenser_01.jpg",
     overlayTitle: "Design & Technology",
