@@ -1,10 +1,3 @@
-/* =====================================================================
-   YOUSUF SHAHABUDDIN  -  DESIGN ENGINEER PORTFOLIO  (v2)
-   Design language: engineering drawing sheet, now with a motion system.
-   Light "print" ground, ink linework, IBM Plex Mono technical voice,
-   Archivo headline weight, brand purple as the CAD "active" colour.
-   ===================================================================== */
-
 :root{
   /* surfaces */
   --ground:      #E7E9EC;
@@ -351,6 +344,26 @@ img, video{ max-width:100%; display:block; }
 }
 .card:hover .go .arrow{ transform:translateX(3px); }
 .card .go .arrow{ transition:transform var(--t-fast) var(--ease); }
+
+/* the all-work tile at the end of the home grid */
+.card-more{
+  align-items:center; justify-content:center; text-align:center;
+  gap:6px; padding:38px 20px; min-height:260px;
+  background:var(--sheet);
+  background-image:linear-gradient(to right, rgba(22,24,27,.05) 1px, transparent 1px),
+                   linear-gradient(to bottom, rgba(22,24,27,.05) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+.card-more .more-num{
+  font-family:var(--display); font-weight:800; letter-spacing:-.02em;
+  font-size:clamp(2.6rem,5vw,4rem); line-height:1; color:var(--ink);
+}
+.card-more .more-label{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+.card-more .go{ margin-top:10px; }
+.card-more:hover .more-num{ color:var(--accent); }
 
 /* =====================================================================
    CAPABILITIES MATRIX

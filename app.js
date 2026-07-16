@@ -55,11 +55,23 @@
   }
 
   /* ---- home: featured grid ----------------------------------------- */
+  var HOME_LIMIT = 5; /* how many projects the homepage shows */
+
   function homeGrid() {
     var el = byId("work-grid");
     if (!el) return;
-    var feat = ALL.filter(function (p) { return p.featured; });
+    var feat = ALL.filter(function (p) { return p.featured; }).slice(0, HOME_LIMIT);
     renderGrid(el, feat);
+    /* final tile: the all-work CTA lives inside the grid scan path */
+    var rest = ALL.length - feat.length;
+    el.insertAdjacentHTML("beforeend",
+      '<a class="card card-more reveal" href="projects.html" style="--d:' + (Math.min(feat.length,5)*0.07) + 's">' +
+        '<span class="more-num">+' + rest + "</span>" +
+        '<span class="more-label">More projects</span>' +
+        '<span class="go">View all work <span class="arrow">&rarr;</span></span>' +
+      "</a>");
+    var mc = el.querySelector(".card-more");
+    if (mc) requestAnimationFrame(function(){ mc.classList.add("show"); });
     var c = byId("work-count");
     if (c) c.textContent = "[ " + ("0" + feat.length).slice(-2) + " SELECTED / " +
       ("0" + ALL.length).slice(-2) + " TOTAL ]";
