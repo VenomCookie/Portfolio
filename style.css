@@ -258,6 +258,7 @@ img, video{ max-width:100%; display:block; }
   display:flex; gap:0; width:max-content;
   animation:marq 30s linear infinite;
 }
+.marquee-group{ display:flex; gap:0; flex:none; }
 .marquee:hover .marquee-track{ animation-play-state:paused; }
 .marquee-track span{
   font-family:var(--mono); font-size:.72rem; letter-spacing:.22em;
@@ -689,17 +690,20 @@ html.sda #progress {
 /* ---- image fade-in + placeholder shimmer ----------------------------
    Gated on html.enh so images are never hidden if enhancements.js
    doesn't run. */
-html.enh .card .media {
-  background: linear-gradient(100deg, var(--sheet) 40%, var(--line) 50%, var(--sheet) 60%);
-  background-size: 220% 100%;
+html.enh .card .media { position: relative; }
+html.enh .card .media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 35%, var(--line) 50%, transparent 65%);
+  transform: translateX(-100%);
   animation: shimmer 1.4s linear infinite;
+  pointer-events: none;
 }
-@keyframes shimmer { from { background-position: 120% 0; } to { background-position: -120% 0; } }
+@keyframes shimmer { to { transform: translateX(100%); } }
+html.enh .card .media:has(img.loaded)::after { animation: none; opacity: 0; }
 html.enh .card .media img,
 html.enh .figure img { opacity: 0; }
 html.enh .card .media img.loaded,
 html.enh .figure img.loaded { opacity: 1; transition: opacity .5s ease; }
-html.enh .card .media:has(img.loaded) { animation: none; }
 @media (prefers-reduced-motion: reduce) {
   html.enh .card .media { animation: none; }
   html.enh .card .media img, html.enh .figure img { opacity: 1; transition: none; }
@@ -716,11 +720,25 @@ html.enh .card .media:has(img.loaded) { animation: none; }
 /* ---- velocity-gated hover -------------------------------------------
    While the cursor sweeps fast, card hover effects stand down so the
    grid doesn't strobe. */
-html.cursor-fast .card,
-html.cursor-fast .card .media img,
-html.cursor-fast .card .num,
-html.cursor-fast .card::before { transition: none !important; }
 html.cursor-fast .card:hover { transform: none; box-shadow: none; background: var(--sheet); }
 html.cursor-fast .card:hover::before { transform: scaleX(0); }
 html.cursor-fast .card:hover .media img { transform: none; }
 html.cursor-fast .card:hover .num { background: transparent; color: inherit; border-color: var(--line); }
+
+/* ---- soft radii -----------------------------------------------------
+   A light rounding pass — enough to soften the card edges without
+   giving up the drawing-sheet aesthetic. */
+.card, .card-more { border-radius: 5px; overflow: hidden; }
+.card .media { border-radius: 3px; }
+.card .num { border-radius: 3px; }
+.figure { border-radius: 4px; }
+.figure img, .figure video { border-radius: 2px; }
+.btn { border-radius: 4px; }
+.filter { border-radius: 4px; }
+.chip { border-radius: 3px; }
+.pdf-frame, .embed-frame iframe, .embed-frame { border-radius: 5px; }
+.pdf-wrap, .live-wrap { border-radius: 5px; }
+#lightbox img { border-radius: 4px; }
+.lb-close { border-radius: 4px; }
+.plate-frame img { border-radius: 3px; }
+.proj-meta { border-radius: 5px; overflow: hidden; }

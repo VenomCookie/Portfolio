@@ -42,64 +42,77 @@
   function setupKineticMarquee() {
     var marquee = document.querySelector(".marquee");
     var track = document.querySelector(".marquee-track");
-    if (!marquee || !track || REDUCED) return;
+    var group = track && track.querySelector(".marquee-group");
+    if (!marquee || !track || !group || REDUCED) return;
 
     track.style.animation = "none";
     marquee.classList.add("grabbable");
 
-    var half = 0;                       /* width of one copy of the content   */
-    function measure() { half = track.scrollWidth / 2; }
-    measure();
-    window.addEventListener("resize", measure);
-
-    var BASE = -32;                     /* idle drift, px/s (leftward)        */
-    var TAU = 0.9;                      /* s — how fast a flick settles back  */
-    var offset = 0, vel = BASE, dragging = false;
-    var lastX = 0, lastT = 0, sampleV = 0;
-
-    function frame(now, prev) {
-      var dt = Math.min((now - prev) / 1000, 0.05);
-      if (!dragging) {
-        /* velocity relaxes exponentially toward the idle drift */
-        vel += (BASE - vel) * (1 - Math.exp(-dt / TAU));
-        offset += vel * dt;
+    /* Wrap by the exact width of one group (not scrollWidth/2, which
+       drifts with flex rounding), and clone groups until the track can
+       cover the widest viewport at any wrap position — this is what
+       kills the blank gaps. */
+    var groupWidth = 0;
+    function fill() {
+      groupWidth = group.offsetWidth;
+      if (groupWidth <= 0) return;
+      var need = window.innerWidth + groupWidth * 2;
+      while (track.scrollWidth < need) {
+        track.appendChild(group.cloneNode(true));
       }
-      if (half > 0) {
-        offset = ((offset % half) + half) % half - half;  /* wrap into [-half, 0) */
-      }
-      track.style.transform = "translateX(" + offset + "px)";
-      requestAnimationFrame(function (n) { frame(n, now); });
     }
-    requestAnimationFrame(function (n) { frame(n, n); });
+    fill();
+    window.addEventListener("resize", fill);
+
+    var AUTO = groupWidth / 30000;        /* px/ms — same pace as the old 30s CSS loop */
+    var HARD_THROW = 0.4;                 /* px/ms — a real fling can flip the idle direction */
+    var pos = 0, velocity = -AUTO, direction = -1;
+    var dragging = false, startX = 0, startPos = 0, lastX = 0, lastT = 0, flingV = 0;
 
     marquee.addEventListener("pointerdown", function (e) {
       dragging = true;
       marquee.setPointerCapture(e.pointerId);
       marquee.classList.add("dragging");
-      lastX = e.clientX; lastT = performance.now(); sampleV = 0;
+      startX = lastX = e.clientX; startPos = pos;
+      lastT = performance.now(); flingV = 0;
     });
     marquee.addEventListener("pointermove", function (e) {
       if (!dragging) return;
       var now = performance.now();
-      var dx = e.clientX - lastX;
-      var dt = (now - lastT) / 1000;
-      offset += dx;
-      if (dt > 0) {
-        /* smooth the sampled velocity a little so one jittery event
-           doesn't decide the launch speed */
-        sampleV = sampleV * 0.6 + (dx / dt) * 0.4;
-      }
+      var dt = (now - lastT) || 16;
+      flingV = (e.clientX - lastX) / dt;
+      pos = startPos + (e.clientX - startX);   /* absolute, so no per-event drift */
       lastX = e.clientX; lastT = now;
     });
     function release() {
       if (!dragging) return;
       dragging = false;
       marquee.classList.remove("dragging");
-      /* below ~20 px/s a "flick" is really a hold — don't launch */
-      vel = Math.abs(sampleV) > 20 ? Math.max(-2200, Math.min(2200, sampleV)) : BASE;
+      var speed = Math.min(Math.abs(flingV), 3);
+      if (speed > HARD_THROW) direction = flingV > 0 ? 1 : -1;
+      velocity = Math.sign(flingV || direction) * Math.max(speed, AUTO);
     }
     marquee.addEventListener("pointerup", release);
     marquee.addEventListener("pointercancel", release);
+
+    var lastFrame = performance.now();
+    function frame(now) {
+      var dt = Math.min(now - lastFrame, 50);
+      lastFrame = now;
+      if (!dragging) {
+        /* momentum eases back into the idle drift (~400 ms time constant) */
+        var target = direction * AUTO;
+        velocity += (target - velocity) * Math.min(dt / 400, 1);
+        pos += velocity * dt;
+      }
+      if (groupWidth > 0) {
+        pos = pos % groupWidth;
+        if (pos > 0) pos -= groupWidth;
+      }
+      track.style.transform = "translate3d(" + pos + "px,0,0)";
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
   }
 
   /* ------------------------------------------------------------------
