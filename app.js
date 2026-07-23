@@ -245,6 +245,7 @@
 
   /* ---- shared behaviour -------------------------------------------- */
   function setupReveal() {
+    if (SDA) return;               /* CSS view() timeline drives .reveal */
     var els = qsa(".reveal:not(.show)");
     if (!("IntersectionObserver" in window)) {
       els.forEach(function (el) { el.classList.add("show"); });
@@ -283,8 +284,22 @@
 
   var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Native CSS scroll-driven animations: when supported, the reveal,
+     progress bar and hero parallax are handled entirely in CSS (see the
+     SCROLL-DRIVEN block in style.css) and the JS versions below bail out.
+     The html.sda class is what switches the stylesheet over. */
+  var SDA = typeof CSS !== "undefined" && CSS.supports &&
+    CSS.supports("animation-timeline: view()");
+  if (SDA) document.documentElement.classList.add("sda");
+
   function setupProgress() {
     if (REDUCED) return;
+    if (SDA) {                     /* CSS scroll() timeline drives the bar */
+      var cssBar = document.createElement("div");
+      cssBar.id = "progress";
+      document.body.appendChild(cssBar);
+      return;
+    }
     var bar = document.createElement("div");
     bar.id = "progress";
     document.body.appendChild(bar);
@@ -316,7 +331,7 @@
   }
 
   function setupParallax() {
-    if (REDUCED) return;
+    if (REDUCED || SDA) return;    /* CSS scroll() timeline drives the plate */
     var plate = qs(".plate");
     if (!plate || window.innerWidth < 880) return;
     var ticking = false;

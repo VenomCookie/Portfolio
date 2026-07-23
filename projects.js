@@ -49,7 +49,7 @@ window.PROJECTS = [
     order: 88,        // higher number = appears earlier. Use gaps of 5 so you can slot between.
 
     // ---- REQUIRED: cover ----
-    cover: "assets/images/A4 - 2.png",  // the grid thumbnail. Best at 16:10.
+    cover: "assets/images/A4 - 2.webp",  // the grid thumbnail. Best at 16:10.
 
     // ---- REQUIRED: the case study copy ----
     brief: "Aim was to redesign a vehicle archetype of our choice to reduce drag and improve efficiency. The pick-up truck was chosen as it is a common vehicle type with a high drag coefficient. The design process involved research, sketching, CAD modelling, and CFD analysis to evaluate the aerodynamic performance of the redesigned vehicle.",
@@ -62,26 +62,26 @@ window.PROJECTS = [
 
     // ---- MEDIA: pick what applies, leave the rest as empty arrays ----
     images: [
-      "assets/images/A4 - 2.png",
-      "assets/images/A4 - 3.png",
-      "assets/images/A4 - 4.png",
-      "assets/images/A4 - 5.png",
-      "assets/images/A4 - 6.png",
-      "assets/images/A4 - 6.5.png",
-      "assets/images/A4 - 7.png",
-      "assets/images/A4 - 8.png",
-      "assets/images/A4 - 9.png",
-      "assets/images/A4 - 10.png",
-      "assets/images/A4 - 11.png",
-      "assets/images/A4 - 12.png",
-      "assets/images/A4 - 13.png",
-      "assets/images/A4 - 14.png",
-      "assets/images/A4 - 15.png",
-      "assets/images/A4 - 16.png",
-      "assets/images/A4 - 17.png",
-      "assets/images/A4 - 17.5.png",
-      "assets/images/A4 - 18.png",
-      "assets/images/A4 - 19.png",
+      "assets/images/A4 - 2.webp",
+      "assets/images/A4 - 3.webp",
+      "assets/images/A4 - 4.webp",
+      "assets/images/A4 - 5.webp",
+      "assets/images/A4 - 6.webp",
+      "assets/images/A4 - 6.5.webp",
+      "assets/images/A4 - 7.webp",
+      "assets/images/A4 - 8.webp",
+      "assets/images/A4 - 9.webp",
+      "assets/images/A4 - 10.webp",
+      "assets/images/A4 - 11.webp",
+      "assets/images/A4 - 12.webp",
+      "assets/images/A4 - 13.webp",
+      "assets/images/A4 - 14.webp",
+      "assets/images/A4 - 15.webp",
+      "assets/images/A4 - 16.webp",
+      "assets/images/A4 - 17.webp",
+      "assets/images/A4 - 17.5.webp",
+      "assets/images/A4 - 18.webp",
+      "assets/images/A4 - 19.webp",
     ],
     videos: [],   // e.g. ["assets/videos/my-project_demo.mp4"]
 
@@ -102,7 +102,7 @@ window.PROJECTS = [
     tools: ["Ansys Mechanical", "Fusion 360", "Fatigue analysis", "Modal analysis"],
     featured: true,
     order: 93,
-    cover: "assets/images/fea-blade_cover.png",
+    cover: "assets/images/fea-blade_cover.webp",
     overlayTitle: "Finite Element Analysis",
     brief: "A finite element study of a lightweight, cheetah-style prosthetic running blade, assessed against fatigue life and natural frequency under realistic foot-strike loading. Two geometry iterations were evaluated across two materials, unidirectional CFRP and Aluminium 2014 T4, in Ansys Mechanical 2024 R2.",
     contribution: [
@@ -112,11 +112,11 @@ window.PROJECTS = [
     ],
     outcome: "The CFRP geometry iteration cut peak stress by 25% and raised the fundamental frequency by 29% to 97.4 Hz; aluminium failed both fatigue (minimum life 26,670 cycles) and the 600 g weight limit. CFRP Design 2 was recommended.",
     images: [
-      "assets/images/fea-blade_01_renders.png",
-      "assets/images/fea-blade_02_mesh.png",
-      "assets/images/fea-blade_03_modeshape.png",
-      "assets/images/fea-blade_04_fatigue.png",
-      "assets/images/fea-blade_05_alu_stress.png"
+      "assets/images/fea-blade_01_renders.webp",
+      "assets/images/fea-blade_02_mesh.webp",
+      "assets/images/fea-blade_03_modeshape.webp",
+      "assets/images/fea-blade_04_fatigue.webp",
+      "assets/images/fea-blade_05_alu_stress.webp"
     ],
     videos: [],
     pdf: "assets/docs/FEA_RunningBlade_YS.pdf",
@@ -145,7 +145,7 @@ window.PROJECTS = [
     order: 95,        // higher number = appears earlier. Use gaps of 5 so you can slot between.
 
     // ---- REQUIRED: cover ----
-    cover: "assets/images/pdet2foliocover.png",  // the grid thumbnail. Best at 16:10.
+    cover: "assets/images/pdet2foliocover.webp",  // the grid thumbnail. Best at 16:10.
 
     // ---- REQUIRED: the case study copy ----
     brief: "We looked into the sports industry as a whole, and found at that beginners in the gym are quite an underserved user group. Generic and specialist equipment exists, but they don't help get your foot through the door. After extensive reseach and interviews, we landed upon creating a knee brace that helps you correct your form, and keep to a tempo during squats.",
@@ -158,21 +158,21 @@ window.PROJECTS = [
 
     // ---- MEDIA: pick what applies, leave the rest as empty arrays ----
     images: [
-      "assets/images/Page 1.png",
-      "assets/images/Page 2.png",
-      "assets/images/Page 3.png",
-      "assets/images/Page 4.png",
-      "assets/images/Page 5.png",
-      "assets/images/Page 6.png",
-      "assets/images/Page 7.png",
-      "assets/images/Page 8.png",
-      "assets/images/Page 9.png",
-      "assets/images/Page 10.png",
-      "assets/images/Page 11.png",
-      "assets/images/Page 12.png",
-      "assets/images/Page 13.png",
-      "assets/images/Page 14.png",
-      "assets/images/Page 15.png",
+      "assets/images/Page 1.webp",
+      "assets/images/Page 2.webp",
+      "assets/images/Page 3.webp",
+      "assets/images/Page 4.webp",
+      "assets/images/Page 5.webp",
+      "assets/images/Page 6.webp",
+      "assets/images/Page 7.webp",
+      "assets/images/Page 8.webp",
+      "assets/images/Page 9.webp",
+      "assets/images/Page 10.webp",
+      "assets/images/Page 11.webp",
+      "assets/images/Page 12.webp",
+      "assets/images/Page 13.webp",
+      "assets/images/Page 14.webp",
+      "assets/images/Page 15.webp",
     ],
     videos: [],   // e.g. ["assets/videos/my-project_demo.mp4"]
 
@@ -201,7 +201,7 @@ window.PROJECTS = [
     tools: ["JavaScript", "ES Modules", "Ramda", "Mocha tests", "Accessibility"],
     featured: true,
     order: 88,
-    cover: "assets/images/azul_cover.png",
+    cover: "assets/images/azul_cover.webp",
     overlayTitle: "Web App",
     brief: "A fully playable build of Azul, a tile-based boardgame, for 2 to 4 players. Coded in Javascript, designed as a web app.",
     contribution: [
@@ -228,7 +228,7 @@ window.PROJECTS = [
     tools: ["ESP32", "C++", "Arduino"],
     featured: true,
     order: 74,
-    cover: "assets/images/electronics_cover.png",
+    cover: "assets/images/electronics_cover.webp",
     overlayTitle: "Electronics Systems",
     brief: "A set of ESP32 builds exploring physical, embedded interaction. The headline pieces are a Chimp Memory sequence game and a message relay that points out letters in hexadecimal, inspired by the way Mark Watney signals in The Martian.",
     contribution: [
@@ -237,7 +237,7 @@ window.PROJECTS = [
       "Handled the firmware, wiring and enclosure prototyping end to end."
     ],
     outcome: "Two working hardware demos. Clips below.",
-    images: ["assets/images/electronics_01.jpg"],
+    images: ["assets/images/electronics_01.webp"],
     videos: ["assets/videos/electronics_01.mp4", "assets/videos/electronics_04.mp4"],
     collaborators: []
   },
@@ -251,7 +251,7 @@ window.PROJECTS = [
     tools: ["Rendering", "Design for manufacture"],
     featured: true,
     order: 69,
-    cover: "assets/images/hydromorph_01.png",
+    cover: "assets/images/hydromorph_01.webp",
     overlayTitle: "Transforming Footwear",
     brief: "HydroMorph aims to combine several footwear products, improving convenience while cutting the volume of footwear produced each year and the waste that follows it.",
     contribution: [
@@ -260,17 +260,17 @@ window.PROJECTS = [
     ],
     outcome: "A resolved concept and a full visual design study. Gallery below.",
     images: [
-      "assets/images/hydromorph_01.png","assets/images/hydromorph_02.png","assets/images/hydromorph_03.png",
-      "assets/images/hydromorph_04.png","assets/images/hydromorph_05.png","assets/images/hydromorph_06.png",
-      "assets/images/hydromorph_07.png","assets/images/hydromorph_08.png","assets/images/hydromorph_09.png",
-      "assets/images/hydromorph_10.png","assets/images/hydromorph_11.png","assets/images/hydromorph_12.png",
-      "assets/images/hydromorph_13.png","assets/images/hydromorph_14.png","assets/images/hydromorph_15.png",
-      "assets/images/hydromorph_16.png","assets/images/hydromorph_17.png","assets/images/hydromorph_18.png",
-      "assets/images/hydromorph_19.png","assets/images/hydromorph_20.png","assets/images/hydromorph_21.png",
-      "assets/images/hydromorph_22.png","assets/images/hydromorph_23.png","assets/images/hydromorph_24.png",
-      "assets/images/hydromorph_25.png","assets/images/hydromorph_26.png","assets/images/hydromorph_27.png",
-      "assets/images/hydromorph_28.png","assets/images/hydromorph_29.png","assets/images/hydromorph_30.png",
-      "assets/images/hydromorph_31.png","assets/images/hydromorph_32.png","assets/images/hydromorph_33.png"
+      "assets/images/hydromorph_01.webp","assets/images/hydromorph_02.webp","assets/images/hydromorph_03.webp",
+      "assets/images/hydromorph_04.webp","assets/images/hydromorph_05.webp","assets/images/hydromorph_06.webp",
+      "assets/images/hydromorph_07.webp","assets/images/hydromorph_08.webp","assets/images/hydromorph_09.webp",
+      "assets/images/hydromorph_10.webp","assets/images/hydromorph_11.webp","assets/images/hydromorph_12.webp",
+      "assets/images/hydromorph_13.webp","assets/images/hydromorph_14.webp","assets/images/hydromorph_15.webp",
+      "assets/images/hydromorph_16.webp","assets/images/hydromorph_17.webp","assets/images/hydromorph_18.webp",
+      "assets/images/hydromorph_19.webp","assets/images/hydromorph_20.webp","assets/images/hydromorph_21.webp",
+      "assets/images/hydromorph_22.webp","assets/images/hydromorph_23.webp","assets/images/hydromorph_24.webp",
+      "assets/images/hydromorph_25.webp","assets/images/hydromorph_26.webp","assets/images/hydromorph_27.webp",
+      "assets/images/hydromorph_28.webp","assets/images/hydromorph_29.webp","assets/images/hydromorph_30.webp",
+      "assets/images/hydromorph_31.webp","assets/images/hydromorph_32.webp","assets/images/hydromorph_33.webp"
     ],
     videos: [],
     collaborators: []
@@ -285,7 +285,7 @@ window.PROJECTS = [
     tools: ["User research", "Concept design", "Prototyping"],
     featured: true,
     order: 75,
-    cover: "assets/images/rhythmrush_coverpage.png",
+    cover: "assets/images/rhythmrush_coverpage.webp",
     overlayTitle: "Human-Centred Design",
     brief: "A human-centred design project reimagining concert queues as a lively atmosphere. Play games with strangers and have fun! Delivered as a discovery and delivery report with Team NEXUS.",
     contribution: [
@@ -313,7 +313,7 @@ window.PROJECTS = [
     tools: ["Lifecycle analysis", "CAD", "Research"],
     featured: true,
     order: 80,
-    cover: "assets/images/Untitlett3d (1)_Page_01.png",
+    cover: "assets/images/Untitlett3d (1)_Page_01.webp",
     overlayTitle: "Sustainable Design",
     brief: "A group study of the long-haul aircraft industry. We set out to find the real pain points in the economy cabin experience and the sustainability gaps around it, then redesign the seats and the processes that shape their lifecycle. The second section was my own individual exploration of a focused redesign of the seat and systems, building on the team's view.",
     contribution: [
@@ -323,19 +323,19 @@ window.PROJECTS = [
     ],
     outcome: "In-dpeth research and a set of design recommendations for the industry, with a focused redesign of the seat and systems. Full report below.",
     images: [
-      "assets/images/Untitlett3d (1)_Page_01.png","assets/images/Untitlett3d (1)_Page_02.png","assets/images/Untitlett3d (1)_Page_03.png",
-      "assets/images/Untitlett3d (1)_Page_04.png","assets/images/Untitlett3d (1)_Page_05.png","assets/images/Untitlett3d (1)_Page_06.png",
-      "assets/images/Untitlett3d (1)_Page_07.png","assets/images/Untitlett3d (1)_Page_08.png","assets/images/Untitlett3d (1)_Page_09.png",
-      "assets/images/Untitlett3d (1)_Page_10.png","assets/images/Untitlett3d (1)_Page_11.png","assets/images/Untitlett3d (1)_Page_12.png",
-      "assets/images/Untitlett3d (1)_Page_13.png","assets/images/Untitlett3d (1)_Page_14.png","assets/images/Untitlett3d (1)_Page_15.png",
-      "assets/images/Untitlett3d (1)_Page_16.png","assets/images/Untitlett3d (1)_Page_17.png","assets/images/Untitlett3d (1)_Page_18.png",
-      "assets/images/Untitlett3d (1)_Page_19.png","assets/images/Untitlett3d (1)_Page_20.png","assets/images/Untitlett3d (1)_Page_21.png",
-      "assets/images/Untitlett3d (1)_Page_22.png","assets/images/Untitlett3d (1)_Page_23.png","assets/images/Untitlett3d (1)_Page_24.png",
-      "assets/images/Untitlett3d (1)_Page_25.png","assets/images/COVER PAGE.png","assets/images/SLIDE 1.png",
-      "assets/images/SLIDE 2.png","assets/images/SLIDE 3.png","assets/images/SLIDE 4.png",
-      "assets/images/SLIDE 5.png","assets/images/SLIDE 6.png","assets/images/SLIDE 7.png",
-      "assets/images/SLIDE 8.png","assets/images/SLIDE 9.png","assets/images/SLIDE 10.png",
-      "assets/images/Appendix.png"
+      "assets/images/Untitlett3d (1)_Page_01.webp","assets/images/Untitlett3d (1)_Page_02.webp","assets/images/Untitlett3d (1)_Page_03.webp",
+      "assets/images/Untitlett3d (1)_Page_04.webp","assets/images/Untitlett3d (1)_Page_05.webp","assets/images/Untitlett3d (1)_Page_06.webp",
+      "assets/images/Untitlett3d (1)_Page_07.webp","assets/images/Untitlett3d (1)_Page_08.webp","assets/images/Untitlett3d (1)_Page_09.webp",
+      "assets/images/Untitlett3d (1)_Page_10.webp","assets/images/Untitlett3d (1)_Page_11.webp","assets/images/Untitlett3d (1)_Page_12.webp",
+      "assets/images/Untitlett3d (1)_Page_13.webp","assets/images/Untitlett3d (1)_Page_14.webp","assets/images/Untitlett3d (1)_Page_15.webp",
+      "assets/images/Untitlett3d (1)_Page_16.webp","assets/images/Untitlett3d (1)_Page_17.webp","assets/images/Untitlett3d (1)_Page_18.webp",
+      "assets/images/Untitlett3d (1)_Page_19.webp","assets/images/Untitlett3d (1)_Page_20.webp","assets/images/Untitlett3d (1)_Page_21.webp",
+      "assets/images/Untitlett3d (1)_Page_22.webp","assets/images/Untitlett3d (1)_Page_23.webp","assets/images/Untitlett3d (1)_Page_24.webp",
+      "assets/images/Untitlett3d (1)_Page_25.webp","assets/images/COVER PAGE.webp","assets/images/SLIDE 1.webp",
+      "assets/images/SLIDE 2.webp","assets/images/SLIDE 3.webp","assets/images/SLIDE 4.webp",
+      "assets/images/SLIDE 5.webp","assets/images/SLIDE 6.webp","assets/images/SLIDE 7.webp",
+      "assets/images/SLIDE 8.webp","assets/images/SLIDE 9.webp","assets/images/SLIDE 10.webp",
+      "assets/images/Appendix.webp"
     ],
     videos: [],
     collaborators: [
@@ -353,7 +353,7 @@ window.PROJECTS = [
     tools: ["Fusion 360", "3D printing", "Design for manufacture"],
     featured: false,
     order: 70,
-    cover: "assets/images/drinks-dispenser_01.jpg",
+    cover: "assets/images/drinks-dispenser_01.webp",
     overlayTitle: "Design & Technology",
     brief: "A countertop drinks dispenser for MEDD Café in Jeddah. The client needed something to serve customers soft drinks, so that baristas could focus on crfating their specialty coffee, at the press of a button, while keeping the unit simple to clean and repair.",
     contribution: [
@@ -361,7 +361,7 @@ window.PROJECTS = [
       "Designed for quick cleaning, simple repair and a form that fits behind a café counter. Minimalist branding."
     ],
     outcome: "A resolved concept and working prototype. Gallery below.",
-    images: ["assets/images/drinks-dispenser_01.jpg"],
+    images: ["assets/images/drinks-dispenser_01.webp"],
     videos: [],
     collaborators: []
   },
@@ -375,14 +375,14 @@ window.PROJECTS = [
     tools: ["Fusion 360", "Reverse engineering", "Material Selection"],
     featured: false,
     order: 65,
-    cover: "assets/images/pocket-shaver_01.jpg",
+    cover: "assets/images/pocket-shaver_01.webp",
     overlayTitle: "Reverse Engineering",
     brief: "A reverse-engineering and redesign of a Braun pocket shaver, re-themed around a chosen character and rebuilt for lighter weight, better repairability and lower end-of-life impact.",
     contribution: [
       "Theoretically designed a better shaver, with materials and processes detailed."
     ],
     outcome: "A redesigned shaver with reduced mass and improved repairability.",
-    images: ["assets/images/pocket-shaver_01.jpg"],
+    images: ["assets/images/pocket-shaver_01.webp"],
     videos: [],
     collaborators: []
   },
@@ -396,7 +396,7 @@ window.PROJECTS = [
     tools: ["Fusion 360", "FDM 3D printing"],
     featured: false,
     order: 67,
-    cover: "assets/images/ipad-stand_01.jpg",
+    cover: "assets/images/ipad-stand_01.webp",
     overlayTitle: "CAD",
     brief: "A CAD-designed, adjustable 3D-printed iPad stand with a curved front lip, so the device sits securely at a range of angles and your finger never fouls the screen when you swipe up from the bottom.",
     contribution: [
@@ -404,7 +404,7 @@ window.PROJECTS = [
       "Printed and tested for stability and angle adjustment."
     ],
     outcome: "A printable, adjustable stand. Renders and prints below.",
-    images: ["assets/images/ipad-stand_01.jpg"],
+    images: ["assets/images/ipad-stand_01.webp"],
     videos: [],
     collaborators: []
   },
@@ -418,7 +418,7 @@ window.PROJECTS = [
     tools: ["Web", "UX", "Visual design"],
     featured: false,
     order: 55,
-    cover: "assets/images/firstgendocs_01.jpg",
+    cover: "assets/images/firstgendocs_01.webp",
     overlayTitle: "Website Design",
     brief: "A redesign of the First Gen Doctors website: sleeker, crisper and more consistent, with colour and depth that react subtly as you scroll. Built desktop-first, with a mobile version in progress.",
     contribution: [
@@ -426,7 +426,7 @@ window.PROJECTS = [
       "Added considered interaction detail, including gradient and shadow shifts on scroll."
     ],
     outcome: "A refreshed direction for the site. Preview below.",
-    images: ["assets/images/firstgendocs_01.jpg"],
+    images: ["assets/images/firstgendocs_01.webp"],
     videos: [],
     collaborators: []
   },
@@ -440,7 +440,7 @@ window.PROJECTS = [
     tools: ["R&D"],
     featured: false,
     order: 10,
-    cover: "assets/images/in-progress_01.jpg",
+    cover: "assets/images/in-progress_01.webp",
     overlayTitle: "Work in Progress",
     brief: "Live explorations I am still building.",
     contribution: [
@@ -448,7 +448,7 @@ window.PROJECTS = [
       "An airline seat-selection tool that helps travellers get value for money."
     ],
     outcome: "More to come.",
-    images: ["assets/images/in-progress_01.jpg"],
+    images: ["assets/images/in-progress_01.webp"],
     videos: [],
     collaborators: []
   }
