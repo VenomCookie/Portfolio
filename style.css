@@ -642,19 +642,6 @@ a:focus-visible, button:focus-visible, .filter:focus-visible{
 }
 
 /* ---- scroll-driven animations (replace the JS versions) ------------- */
-html.sda .reveal {
-  opacity: 1; transform: none; transition: none;
-  animation: sda-reveal ease both;
-  animation-timeline: view();
-  animation-range: entry 5% entry 45%;
-}
-@keyframes sda-reveal {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: none; }
-}
-/* hero name lines were driven by .reveal.show — neutralise under sda */
-html.sda .hero-name.reveal .ln { transform: none; transition: none; }
-
 html.sda #progress {
   animation: sda-progress linear both;
   animation-timeline: scroll(root);
@@ -671,7 +658,7 @@ html.sda #progress {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.sda .reveal, html.sda .plate { animation: none; }
+  html.sda .plate { animation: none; }
 }
 
 /* ---- dimension line draws itself on load ----------------------------
@@ -700,9 +687,12 @@ html.enh .card .media::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(100deg, transparent 35%, var(--line) 50%, transparent 65%);
   transform: translateX(-100%);
-  animation: shimmer 1.4s linear infinite;
   pointer-events: none;
 }
+/* shimmer only ticks once the card has entered the viewport (class set
+   by enhancements.js) — lazy images below the fold no longer keep
+   offscreen animations alive */
+html.enh .card .media.in-view::after { animation: shimmer 1.4s linear infinite; }
 @keyframes shimmer { to { transform: translateX(100%); } }
 html.enh .card .media:has(img.loaded)::after { animation: none; opacity: 0; }
 html.enh .card .media img,
@@ -715,7 +705,7 @@ html.enh .figure img.loaded { opacity: 1; transition: opacity .5s ease; }
 }
 
 /* ---- kinetic marquee ------------------------------------------------ */
-.marquee.grabbable { cursor: grab; touch-action: pan-y; user-select: none; }
+.marquee.grabbable { cursor: grab; touch-action: pan-y; user-select: none; contain: content; }
 .marquee.grabbable.dragging { cursor: grabbing; }
 .marquee.grabbable .marquee-track { will-change: transform; }
 @media (prefers-reduced-motion: reduce) {

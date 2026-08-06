@@ -245,7 +245,10 @@
 
   /* ---- shared behaviour -------------------------------------------- */
   function setupReveal() {
-    if (SDA) return;               /* CSS view() timeline drives .reveal */
+    /* Reveals stay on IntersectionObserver even when scroll-driven
+       animations exist: one observer is cheaper than N view() timelines
+       recomputed on the main thread every scroll frame. SDA is kept for
+       the progress bar and parallax only (two elements, compositor). */
     var els = qsa(".reveal:not(.show)");
     if (!("IntersectionObserver" in window)) {
       els.forEach(function (el) { el.classList.add("show"); });

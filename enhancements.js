@@ -29,6 +29,21 @@
         img.addEventListener("error", function () { img.classList.add("loaded"); }, { once: true });
       }
     });
+    /* shimmer only runs for media that has actually entered the viewport,
+       so lazy-loaded cards below the fold don't keep animations ticking */
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("in-view");
+            io.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: "100px" });
+      Array.prototype.forEach.call(document.querySelectorAll(".card .media"), function (m) {
+        io.observe(m);
+      });
+    }
   }
 
   /* ------------------------------------------------------------------
@@ -95,10 +110,22 @@
     marquee.addEventListener("pointerup", release);
     marquee.addEventListener("pointercancel", release);
 
+    var onScreen = true;
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        onScreen = entries[0].isIntersecting;
+      }).observe(marquee);
+    }
+
     var lastFrame = performance.now();
     function frame(now) {
       var dt = Math.min(now - lastFrame, 50);
       lastFrame = now;
+      /* off-screen or backgrounded: skip all work — nothing to see */
+      if (!onScreen || document.hidden) {
+        requestAnimationFrame(frame);
+        return;
+      }
       if (!dragging) {
         /* momentum eases back into the idle drift (~400 ms time constant) */
         var target = direction * AUTO;
