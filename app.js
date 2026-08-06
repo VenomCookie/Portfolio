@@ -333,7 +333,7 @@
   function setupParallax() {
     if (REDUCED || SDA) return;    /* CSS scroll() timeline drives the plate */
     var plate = qs(".plate");
-    if (!plate || window.innerWidth < 880) return;
+    if (!plate || window.innerWidth < 760) return;
     var ticking = false;
     function draw() {
       var y = window.scrollY;
