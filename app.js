@@ -125,7 +125,7 @@
     var p = ALL[idx];
     document.title = p.title + " | Yousuf Shahabuddin";
     (function () {
-      var base = "https://design.yousufshahabuddin.com/";
+      var base = "https://yousufshahabuddin.com/";
       function up(sel, attrName, attrVal, content) {
         var el = document.querySelector(sel);
         if (!el) {
