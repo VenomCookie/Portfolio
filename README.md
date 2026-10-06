@@ -1,14 +1,9 @@
 # Yousuf Shahabuddin, Design Engineering Portfolio
 
-Static site for **design.yousufshahabuddin.com**, hosted on GitHub Pages.
+Static site for **yousufshahabuddin.com**, hosted on GitHub Pages.
 No build step, no framework. Just HTML, CSS and JavaScript (mostly the game)
 
-## Design language
-An engineering drawing sheet: cool "print" ground, ink linework, IBM Plex Mono
-for the technical voice (title block, callouts, specs), Archivo for headline weight,
-and the brand teal `#3BD8B1` used the way a CAD viewport uses it, as the active /
-selection colour. The signature is the title block in the footer plus the
-dimension-line annotations on the hero portrait.
+Personal Portfolio website
 
 ## Files
 ```
