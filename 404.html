@@ -1,46 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>404 | Yousuf Shahabuddin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Off the drawing | Yousuf Shahabuddin</title>
   <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+  <meta name="theme-color" content="#E7E9EC" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/style.css?v=36" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="/site.css?v=46" />
   <style>
-    .err{ min-height:72vh; display:flex; align-items:center; }
-    .err-code{
-      font-family:var(--mono); font-size:.72rem; letter-spacing:.18em;
-      text-transform:uppercase; color:var(--accent);
-    }
-    .err h1{
-      font-family:var(--display); font-weight:800; text-transform:uppercase;
-      font-size:clamp(2.4rem,7vw,5rem); line-height:.96; letter-spacing:-.02em; margin:.25em 0 .3em;
-    }
-    .err p{ color:var(--ink-2); max-width:46ch; }
+    .err { min-height: 70vh; display: flex; align-items: center; padding-block: 64px; }
+    .err h1 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(2.6rem, 8vw, 5.4rem); line-height: .95; letter-spacing: -.02em; margin: 14px 0 16px; }
+    .err p { color: var(--ink-2); max-width: 46ch; margin: 0 0 24px; }
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-in">
-      <a class="brand" href="/"><span class="reg"></span>YOUSUF SHAHABUDDIN</a>
-      <nav class="nav-links">
-        <a href="/projects.html">Work</a>
-        <a href="/index.html#about">About</a>
-        <a href="/index.html#contact">Contact</a>
-      </nav>
+      <a class="brand" href="/" aria-label="Home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="var(--accent)"/>
+          <g class="plane"><path transform="rotate(45 16 16)" fill="#fff" d="M16 4.5c.9 0 1.5 1.1 1.5 2.4v5.6l8.5 5v2.1l-8.5-2.6-.2 5.6 2.7 2v1.6L16 25.2l-4 1v-1.6l2.7-2-.2-5.6-8.5 2.6v-2.1l8.5-5V6.9c0-1.3.6-2.4 1.5-2.4z"/></g>
+        </svg>
+        <span>YOUSUF SHAHABUDDIN</span>
+      </a>
+      <a class="btn btn-tonal nav-cv" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV ↗</a>
     </div>
   </header>
   <main class="err">
     <div class="wrap">
-      <div class="err-code">Error / Sheet not found</div>
-      <h1>404</h1>
-      <p>This drawing doesn't exist, or it's been revised out. The index has everything that does.</p>
-      <div class="hero-cta">
-        <a class="btn btn-solid" href="/">Back to index <span class="arrow">&rarr;</span></a>
-        <a class="btn btn-line" href="/projects.html">All work <span class="arrow">&rarr;</span></a>
+      <div class="eyebrow">Error 404 / Sheet not found</div>
+      <h1>Off the drawing</h1>
+      <p>This page doesn't exist, or it's been revised out. Everything that does is on the homepage.</p>
+      <div class="cta">
+        <a class="btn btn-solid" href="/">Back to the homepage →</a>
+        <a class="btn btn-tonal" href="/#more">All projects →</a>
       </div>
     </div>
   </main>
