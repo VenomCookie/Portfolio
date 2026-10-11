@@ -29,15 +29,26 @@
       pdf: "assets/docs/PDE2.pdf", credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"]], lab: "tempo"
     },
     {
-      slug: "thermo1", code: "CFD", flagship: true, title: "Ventara: Aerodynamic Pick-up Truck", year: 2026, scope: "Group", role: "Design & CFD",
+      slug: "thermo1", code: "CFD", flagship: true, title: "Ventara: Aerodynamic Pick-up Truck", year: 2026, scope: "Individual", role: "Design & CFD",
       disc: ["Simulation", "CAD & Prototyping", "UX & Research"], tools: ["Ansys Fluent", "Fusion 360", "Polyhedral mesh", "Figma"],
       hook: "A pick-up redesigned for low drag, tested in CFD at 1:18 scale.",
       big: ["0.3864", "drag coefficient of the final design"],
-      summary: "We redesigned a vehicle archetype to cut drag. Pick-ups are common and draggy, so we took one through research, sketching, CAD and CFD, borrowing ideas from the Cybertruck, McLaren Speedtail, Bugatti Bolide dimples and Lotus Evija ducts.",
+      summary: "A vehicle archetype redesigned to cut drag. Pick-ups are common and draggy, so I took one through research, sketching, CAD and CFD, borrowing ideas from the Cybertruck, McLaren Speedtail, Bugatti Bolide dimples and Lotus Evija ducts.",
       did: ["Ran the CFD in Fluent: 1:18 model at 30.5 m/s, 1 mm local mesh, polyhedral fill.", "Iterated the body to reduce drag and improve efficiency.", "Presented findings and recommendations for further development."],
       stats: [["0.3864", "drag coefficient, Cd"], ["0.2396", "lift coefficient, Cl"], ["293.87 N", "full-scale drag estimate at 30.5 m/s"], ["1:18", "scale model in Ansys Fluent"]],
       media: [["thermo0.webp", "Concept and benchmarks"], ["thermo1.webp", "Form development"]],
-      lab: "drag"
+      reports: [["Full report (PDF)", "assets/docs/YousufShahabuddin_Thermo1.pdf"]], lab: "drag"
+    },
+    {
+      slug: "thermo2-battery", code: "TF2", title: "Fastback Aero & Battery Cooling Plate", year: 2026, scope: "Group", role: "Car and battery analysis",
+      disc: ["Simulation", "CAD & Prototyping"], tools: ["Ansys Fluent", "Wind tunnel testing", "3D printing", "Hand calculations", "Thermal resistance networks"],
+      hook: "A fastback sedan checked in CFD and the wind tunnel, plus a multi-pass cooling plate for a battery pack.",
+      summary: "Two linked studies. A fastback sedan designed for low drag and high-speed stability reached a CFD drag coefficient of 0.32 with slight downforce, then a 3D-printed model measured 0.33 in a closed-loop wind tunnel, within 3%. Alongside it we designed a liquid cooling plate for a battery pack: a multi-pass serpentine layout with dual inlets and outlets, sized with hand calculations of pressure drop and a thermal resistance network.",
+      did: ["Worked on the car and the battery analysis sections of the report.", "Charlie Salt led the hand calculations and battery analysis, Zayn Muntazir the car and the CFD comparison, and Zipei Weng the CFD setup, simulation and optimisation."],
+      stats: [["4", "person team"], ["0.32", "CFD drag coefficient at 30.5 m/s"], ["3%", "gap between CFD and wind-tunnel Cd (0.33)"], ["−0.05", "lift coefficient: slight downforce"], ["35.3 °C", "predicted battery temperature"]],
+      media: [["bat0.webp", "Cover: the fastback and the cooling plate"], ["bat1.webp", "Project summary and CFD findings"], ["bat3.webp", "Wind tunnel testing"], ["bat2.webp", "Cooling plate design"], ["bat4.webp", "Cooling plate 3D modelling"]],
+      reports: [["Full report (PDF)", "assets/docs/Battery_Pipeline.pdf"]],
+      credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"], ["Charlie Salt", "https://www.linkedin.com/in/charlie-salt-307168335/"], ["Zipei Weng", "https://www.linkedin.com/in/zipeiweng/"]]
     },
     {
       slug: "azul", code: "AZL", title: "Azul", year: 2025, scope: "Individual", role: "Software / front-end",
@@ -71,8 +82,9 @@
       hook: "Economy long-haul seats redesigned around real pain points and lifecycle impact.",
       summary: "A group study of the long-haul economy cabin, finding pain points and sustainability gaps, followed by my individual redesign of the seat and the systems around it.",
       did: ["Researched market demand, existing products and lifecycle impact.", "Explored a focused seat and systems redesign, then integrated it with the team's view.", "Wrote the individual report and design rationale."],
-      stats: [["3", "person team"]],
-      media: [["sde0.webp", "Report cover"]], credits: [["Leia Whitaker", "https://www.linkedin.com/in/leia-whitaker/"], ["Curtis Light", "https://www.linkedin.com/in/curtis-light/"]]
+      stats: [["4", "person team for the group study"]],
+      media: [["sde0.webp", "Report cover"]], reports: [["Group report (PDF)", "assets/docs/SDE_Group.pdf"], ["My individual exploration (PDF)", "assets/docs/SDE_Solo.pdf"]],
+      credits: [["Leia Whitaker", "https://www.linkedin.com/in/leia-whitaker/"], ["Karanjeet", ""], ["Curtis Light", "https://www.linkedin.com/in/curtis-light/"]]
     },
     {
       slug: "rhythmrush", code: "RR", title: "RhythmRush", year: 2025, scope: "Group", role: "Team project",
@@ -81,7 +93,7 @@
       summary: "A human-centred design project with Team NEXUS that reimagines concert queues as a lively, shared experience: a motion-tracked dance game people play while they wait.",
       didTitle: "Team", did: ["A joint effort across the five of us, from discovery research to the final delivery report.", "3D models and animation by Amarie Fasoro."],
       stats: [["5", "person team"]],
-      media: [["rr0.webp", "Report cover"]], pdf: "assets/docs/rhythmrush.pdf",
+      media: [["rr0.webp", "Report cover"]], reports: [["Discovery report (PDF)", "assets/docs/Project_HCD.pdf"], ["Delivery report (PDF)", "assets/docs/Rhythm_Rush_HCD.pdf"]],
       extra: ["Live body-tracking demo by Ruaridh Murdoch", "https://ruaridhmurdoch.com"],
       credits: [["Ruaridh Murdoch", "https://www.linkedin.com/in/ruaridh-murdoch-399ba4260/"], ["Ikem Enebeli", "https://www.linkedin.com/in/ikem-e/"], ["Aidan Ryder", "https://www.linkedin.com/in/aidan-ryder-b848aa266/"], ["Amarie Fasoro", "https://www.linkedin.com/in/amarie-fasoro-8104a42bb/"]]
     },
@@ -118,7 +130,7 @@
       media: [["fgd0.webp", "Homepage"]]
     }
   ];
-  P.forEach(function (p, i) { p.n = i + 1; });
+  P.forEach(function (p, i) { p.n = i + 1; if (p.pdf && !p.reports) p.reports = [["Full report (PDF)", p.pdf]]; });
   var bySlug = {}; P.forEach(function (p) { bySlug[p.slug] = p; });
 
   function $(id) { return document.getElementById(id); }
@@ -128,9 +140,9 @@
 
   var flagsEl = $("flags");
   flagsEl.innerHTML = P.filter(function (p) { return p.flagship; }).map(function (p, i) {
-    var withLine = p.credits ? '<div class="with">with ' + p.credits.map(function (c) { return '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>'; }).join(" &amp; ") + '</div>' : "";
+    var withLine = p.credits ? '<div class="with">with ' + p.credits.map(function (c) { return c[1] ? '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>' : esc(c[0]); }).join(" &amp; ") + '</div>' : "";
     var links = '<button type="button" class="primary" data-open="' + p.slug + '">Read summary <i>→</i></button>';
-    if (p.pdf) links += '<a href="' + LIVE + p.pdf + '" target="_blank" rel="noopener">Report PDF ↗</a>';
+    if (p.reports) links += '<a href="' + LIVE + p.reports[0][1] + '" target="_blank" rel="noopener">Report PDF ↗</a>';
     if (p.live) links += '<a href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play ↗</a>';
     return '<article class="flag" data-open="' + p.slug + '">' +
       '<div class="media"><img src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"><span class="fig">FIG. ' + pad(i + 1, 2) + '</span></div>' +
@@ -170,7 +182,7 @@
     h += '<div><h3 class="h-sm">Tools & methods</h3><div class="tags">' + p.tools.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join("") + '</div></div>';
     if (p.credits) h += '<div class="credits"><h3 class="h-sm">With</h3>' + p.credits.map(function (c) { return '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>'; }).join(", ") + '</div>';
     var acts = [];
-    if (p.pdf) acts.push('<a class="btn btn-solid" href="' + LIVE + p.pdf + '" target="_blank" rel="noopener">Full report (PDF) ↗</a>');
+    if (p.reports) p.reports.forEach(function (r, i) { acts.push('<a class="btn ' + (i ? 'btn-tonal' : 'btn-solid') + '" href="' + LIVE + r[1] + '" target="_blank" rel="noopener">' + esc(r[0]) + ' ↗</a>'); });
     if (p.live) acts.push('<a class="btn btn-solid" href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play it live ↗</a>');
     if (p.extra) acts.push('<a class="btn btn-tonal" href="' + p.extra[1] + '" target="_blank" rel="noopener">' + esc(p.extra[0]) + ' ↗</a>');
     if (acts.length) h += '<div class="acts">' + acts.join("") + '</div>';
