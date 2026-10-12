@@ -7,18 +7,18 @@
 
   var P = [
     {
-      slug: "fea-running-blade", code: "FEA", flagship: true, title: "FEA of a Prosthetic Running Blade", year: 2026, scope: "Individual", role: "Simulation & analysis",
+      slug: "fea-running-blade", order: 90, code: "FEA", flagship: true, title: "FEA of a Prosthetic Running Blade", year: 2026, scope: "Individual", role: "Simulation & analysis",
       disc: ["Simulation", "CAD & Prototyping"], tools: ["Ansys Mechanical 2024 R2", "Fusion 360", "Stress-life fatigue", "Goodman correction", "Modal analysis"],
       hook: "Fatigue and natural-frequency study of a cheetah-style blade: two geometries, two materials, one recommendation.",
       big: ["97.4 Hz", "fundamental frequency of the recommended CFRP design"],
       summary: "A finite element study of a lightweight, cheetah-style prosthetic running blade under a 2,100 N foot strike with 500 N of friction. I iterated the geometry in CFRP, then tested the improved design in Aluminium 2014-T4. CFRP design 2 cut peak stress by 25.1%, raised the fundamental frequency by 29% to 97.4 Hz and passed every criterion; aluminium failed fatigue and weight.",
       did: ["Modelled the blade in Fusion 360 and set up static structural, stress-life fatigue and modal analyses in Ansys Mechanical.", "Ran global and local mesh convergence studies (5 mm global, 3 mm at the inner radius, 0.09% error) and checked mesh quality.", "Validated the model: reaction force within 0.03% of the applied load, physical deformation, and peak stress where curved-beam theory predicts.", "Iterated the geometry (larger bend radius, variable thickness) and compared three configurations against a 1,000,000-cycle fatigue target, a 50 Hz floor and a 600 g limit."],
       stats: [["−25.1%", "peak stress, design 1 → 2 (403 → 302 MPa)", 10], ["97.4 Hz", "fundamental frequency, CFRP design 2 (floor 50 Hz)", 11], ["4.97", "safety margin on UTS, up from 3.72", 10], ["422 g", "mass of CFRP design 2 (limit 600 g)", 10]],
-      media: [["fea1.webp", "Design 1 and design 2 renders"], ["fea0.webp", "Design 1 CFRP, von Mises stress"], ["fea2.webp", "Converged mesh, design 1"], ["fea3.webp", "Design 2 CFRP, mode 1 at 97.4 Hz"], ["fea4.webp", "Aluminium fatigue life, minimum 26,670 cycles"], ["fea5.webp", "Aluminium von Mises stress, 314 MPa peak"]],
+      media: [["fea5.webp", "Aluminium von Mises stress, 314 MPa peak"], ["fea1.webp", "Design 1 and design 2 renders"], ["fea0.webp", "Design 1 CFRP, von Mises stress"], ["fea2.webp", "Converged mesh, design 1"], ["fea3.webp", "Design 2 CFRP, mode 1 at 97.4 Hz"], ["fea4.webp", "Aluminium fatigue life, minimum 26,670 cycles"]],
       pdf: "assets/docs/FEA_RunningBlade_YS.pdf", lab: "fea"
     },
     {
-      slug: "pdet2folio", code: "PDE", flagship: true, title: "Knee Brace for Gym Beginners", year: 2026, scope: "Pair", role: "Mechanism design, assembly & user research",
+      slug: "pdet2folio", order: 95, code: "PDE", flagship: true, title: "Knee Brace for Gym Beginners", year: 2026, scope: "Pair", role: "Mechanism design, assembly & user research",
       disc: ["Product Design", "CAD & Prototyping", "UX & Research"], tools: ["Fusion 360", "User interviews", "DFM", "Electronics"],
       hook: "A brace that helps beginners hold good form and keep tempo through a squat.",
       big: ["Working", "prototype that guides squat form and tempo"],
@@ -29,7 +29,7 @@
       pdf: "assets/docs/PDE2.pdf", credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"]], lab: "tempo"
     },
     {
-      slug: "thermo1", code: "CFD", flagship: true, title: "Ventara: Aerodynamic Pick-up Truck", year: 2026, scope: "Individual", role: "Design & CFD",
+      slug: "thermo1", order: 92, code: "CFD", flagship: true, title: "Ventara: Aerodynamic Pick-up Truck", year: 2026, scope: "Individual", role: "Design & CFD",
       disc: ["Simulation", "CAD & Prototyping", "UX & Research"], tools: ["Ansys Fluent", "Fusion 360", "Polyhedral mesh", "Figma"],
       hook: "A pick-up redesigned for low drag, tested in CFD at 1:18 scale.",
       big: ["0.3864", "drag coefficient of the final design"],
@@ -40,7 +40,7 @@
       reports: [["Full report (PDF)", "assets/docs/YousufShahabuddin_Thermo1.pdf"]], lab: "drag"
     },
     {
-      slug: "thermo2-battery", code: "TF2", title: "Fastback Aero & Battery Cooling Plate", year: 2026, scope: "Group", role: "Car and battery analysis",
+      slug: "thermo2-battery", order: 85, code: "TF2", title: "Fastback Aero & Battery Cooling Plate", year: 2026, scope: "Group", role: "Car and battery analysis",
       disc: ["Simulation", "CAD & Prototyping"], tools: ["Ansys Fluent", "Wind tunnel testing", "3D printing", "Hand calculations", "Thermal resistance networks"],
       hook: "A fastback sedan checked in CFD and the wind tunnel, plus a multi-pass cooling plate for a battery pack.",
       summary: "Two linked studies. A fastback sedan designed for low drag and high-speed stability reached a CFD drag coefficient of 0.32 with slight downforce, then a 3D-printed model measured 0.33 in a closed-loop wind tunnel, within 3%. Alongside it we designed a liquid cooling plate for a battery pack: a multi-pass serpentine layout with dual inlets and outlets, sized with hand calculations of pressure drop and a thermal resistance network.",
@@ -51,7 +51,7 @@
       credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"], ["Charlie Salt", "https://www.linkedin.com/in/charlie-salt-307168335/"], ["Zipei Weng", "https://www.linkedin.com/in/zipeiweng/"]]
     },
     {
-      slug: "azul", code: "AZL", title: "Azul", year: 2025, scope: "Individual", role: "Software / front-end",
+      slug: "azul", order: 80, code: "AZL", title: "Azul", year: 2025, scope: "Individual", role: "Software / front-end",
       disc: ["Software"], tools: ["JavaScript", "ES Modules", "Ramda", "Mocha", "Accessibility"],
       hook: "A complete, playable web build of the board game, Minecraft themed.",
       summary: "A fully playable build of Azul for 2 to 4 players, written in JavaScript as a web app.",
@@ -60,7 +60,7 @@
       media: [["azul0.webp", "Game board"]], live: "azul/index.html"
     },
     {
-      slug: "electronics", code: "ESP", title: "Electronics Games", year: 2025, scope: "Individual", role: "Embedded, firmware & prototyping",
+      slug: "electronics", order: 75, code: "ESP", title: "Electronics Games", year: 2025, scope: "Individual", role: "Embedded, firmware & prototyping",
       disc: ["Embedded", "CAD & Prototyping"], tools: ["ESP32", "C++", "Arduino"],
       hook: "ESP32 builds: a memory game and a Martian-style hex message relay.",
       summary: "A set of ESP32 builds exploring physical interaction. The headline pieces are a Chimp Memory sequence game and a relay that points out letters in hexadecimal, the way Mark Watney signals in The Martian.",
@@ -69,7 +69,7 @@
       media: [["elec0.webp", "The builds"], ["elec1.webp", "Wiring and enclosure"]], lab: "hex"
     },
     {
-      slug: "hydromorph", code: "HYD", title: "HydroMorph", year: 2024, scope: "Individual", role: "Design & engineering",
+      slug: "hydromorph", order: 70, code: "HYD", title: "HydroMorph", year: 2024, scope: "Individual", role: "Design & engineering",
       disc: ["Product Design", "Sustainability", "CAD & Prototyping"], tools: ["Rendering", "Lo-fi prototyping", "DFM"],
       hook: "A morphing dive-fin shoe that replaces several pairs of footwear.",
       summary: "HydroMorph combines several footwear products in one, for convenience and to cut the volume of footwear made each year and the waste that follows.",
@@ -77,7 +77,7 @@
       media: [["hydro0.webp", "Concept"], ["hydro1.webp", "Mechanism"], ["hydro2.webp", "Materials and end of life"]]
     },
     {
-      slug: "sustainable-design-engineering", code: "SDE", title: "Sustainable Aircraft Seating", year: 2025, scope: "Group", role: "Research & design",
+      slug: "sustainable-design-engineering", order: 65, code: "SDE", title: "Sustainable Aircraft Seating", year: 2025, scope: "Group", role: "Research & design",
       disc: ["Sustainability", "UX & Research"], tools: ["Lifecycle analysis", "CAD", "Research"],
       hook: "Economy long-haul seats redesigned around real pain points and lifecycle impact.",
       summary: "A group study of the long-haul economy cabin, finding pain points and sustainability gaps, followed by my individual redesign of the seat and the systems around it.",
@@ -87,7 +87,7 @@
       credits: [["Leia Whitaker", "https://www.linkedin.com/in/leia-whitaker/"], ["Karanjeet", ""], ["Curtis Light", "https://www.linkedin.com/in/curtis-light/"]]
     },
     {
-      slug: "rhythmrush", code: "RR", title: "RhythmRush", year: 2025, scope: "Group", role: "Team project",
+      slug: "rhythmrush", order: 60, code: "RR", title: "RhythmRush", year: 2025, scope: "Group", role: "Team project",
       disc: ["UX & Research", "Product Design"], tools: ["User research", "Concept design", "Prototyping", "3D modelling"],
       hook: "Concert queues turned into a social, physical rhythm game.",
       summary: "A human-centred design project with Team NEXUS that reimagines concert queues as a lively, shared experience: a motion-tracked dance game people play while they wait.",
@@ -98,7 +98,7 @@
       credits: [["Ruaridh Murdoch", "https://www.linkedin.com/in/ruaridh-murdoch-399ba4260/"], ["Ikem Enebeli", "https://www.linkedin.com/in/ikem-e/"], ["Aidan Ryder", "https://www.linkedin.com/in/aidan-ryder-b848aa266/"], ["Amarie Fasoro", "https://www.linkedin.com/in/amarie-fasoro-8104a42bb/"]]
     },
     {
-      slug: "drinks-dispenser", code: "DRK", title: "Drinks Dispenser", year: 2024, scope: "Individual", role: "Design & engineering",
+      slug: "drinks-dispenser", order: 55, code: "DRK", title: "Drinks Dispenser", year: 2024, scope: "Individual", role: "Design & engineering",
       disc: ["Product Design", "CAD & Prototyping"], tools: ["Fusion 360", "3D printing", "DFM"],
       hook: "A countertop dispenser for MEDD Café, Jeddah: fast, hygienic, repairable.",
       summary: "A countertop soft-drinks dispenser so baristas at MEDD Café in Jeddah can focus on speciality coffee, built to be simple to clean and repair. I'm now in discussion with MEDD about a possible UK branch.",
@@ -106,7 +106,7 @@
       media: [["drinks0.webp", "Prototype"]]
     },
     {
-      slug: "pocket-shaver", code: "SHV", title: "Pocket Shaver Redesign", year: 2025, scope: "Individual", role: "Design & engineering",
+      slug: "pocket-shaver", order: 50, code: "SHV", title: "Pocket Shaver Redesign", year: 2025, scope: "Individual", role: "Design & engineering",
       disc: ["Product Design", "CAD & Prototyping"], tools: ["Fusion 360", "Reverse engineering", "Material selection"],
       hook: "A Braun shaver reverse-engineered for lower mass and better repairability.",
       summary: "A reverse-engineering and redesign of a Braun pocket shaver, rebuilt for lighter weight, better repairability and lower end-of-life impact.",
@@ -114,7 +114,7 @@
       media: [["shaver0.webp", "Redesign"]]
     },
     {
-      slug: "ipad-stand", code: "IPD", title: "iPad Stand", year: 2025, scope: "Individual", role: "Design & engineering",
+      slug: "ipad-stand", order: 45, code: "IPD", title: "iPad Stand", year: 2025, scope: "Individual", role: "Design & engineering",
       disc: ["CAD & Prototyping", "Product Design"], tools: ["Fusion 360", "FDM printing"],
       hook: "An adjustable printed stand with a curved, no-slip front lip.",
       summary: "An adjustable 3D-printed iPad stand with a curved front lip, so the device sits securely at several angles and your finger never fouls the screen when swiping up.",
@@ -122,7 +122,7 @@
       media: [["ipad0.webp", "Render"]]
     },
     {
-      slug: "firstgendocs", code: "FGD", title: "First Gen Doctors Website", year: 2025, scope: "Individual", role: "Design & front-end",
+      slug: "firstgendocs", order: 40, code: "FGD", title: "First Gen Doctors Website", year: 2025, scope: "Individual", role: "Design & front-end",
       disc: ["UX & Research"], tools: ["Web", "UX", "Visual design"],
       hook: "A crisper site with colour and depth that react to scrolling.",
       summary: "A redesign of the First Gen Doctors website: sleeker and more consistent, with colour and depth that shift subtly as you scroll. Desktop first, mobile in progress.",
@@ -130,6 +130,7 @@
       media: [["fgd0.webp", "Homepage"]]
     }
   ];
+  P.sort(function (a, b) { return (b.order || 0) - (a.order || 0); });
   P.forEach(function (p, i) { p.n = i + 1; if (p.pdf && !p.reports) p.reports = [["Full report (PDF)", p.pdf]]; });
   var bySlug = {}; P.forEach(function (p) { bySlug[p.slug] = p; });
 
@@ -155,7 +156,7 @@
   var others = P.filter(function (p) { return !p.flagship; });
   $("moreGrid").innerHTML = others.map(function (p, i) {
     return '<article class="card" data-open="' + p.slug + '">' +
-      '<div class="media"><img src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"><span class="fig">FIG. ' + pad(i + 4, 2) + '</span></div>' +
+      '<div class="media"><img src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"><span class="fig">FIG. ' + pad(i + 4, 2) + '</span>' + (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play now</a>' : '') + '</div>' +
       '<div class="body"><div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + p.year + '</span></div>' +
       '<h3><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3><p>' + esc(p.hook) + '</p></div></article>';
   }).join("") + '<article class="card wipcard"><div class="body"><div class="meta"><span>Currently building</span></div><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div></article>';
@@ -169,10 +170,15 @@
     h += '<div class="tb"><div class="ttl"><small>Title</small><h2 id="shTitle">' + esc(p.title) + '</h2></div>' +
       '<div><small>Year</small><span>' + p.year + '</span></div><div><small>Scope</small><span>' + esc(p.scope) + '</span></div>' +
       '<div><small>Role</small><span>' + esc(p.role) + '</span></div><div><small>Discipline</small><span>' + esc(p.disc[0]) + '</span></div></div>';
-    h += '<div class="gal"><figure class="gal-main"><img id="galImg" src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '"><figcaption><b id="galFig">FIG. 01</b><span id="galCap">' + esc(p.media[0][1]) + '</span></figcaption></figure>';
+    if (p.live) h += '<div class="live-cta"><a class="btn btn-solid" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play it live ↗</a><span>Runs in your browser, nothing to download.</span></div>';
+    h += '<div class="gal"><div class="gal-track' + (p.media.length > 1 ? ' multi' : '') + '" id="galTrack" tabindex="0" aria-label="Figures, scroll sideways">' + p.media.map(function (m, i) {
+      return '<figure class="gal-slide' + (i ? '' : ' on') + '"><img src="/assets/images/web/' + m[0] + '" alt="' + esc(m[1]) + '" decoding="async" draggable="false"></figure>';
+    }).join("") + '</div>';
+    h += '<div class="gal-bar"><b id="galFig">FIG. 01' + (p.media.length > 1 ? ' / ' + pad(p.media.length, 2) : '') + '</b><span id="galCap">' + esc(p.media[0][1]) + '</span>' +
+      (p.media.length > 1 ? '<button class="icon-btn" type="button" id="galPrev" aria-label="Previous figure">←</button><button class="icon-btn" type="button" id="galNext" aria-label="Next figure">→</button>' : '') + '</div>';
     if (p.media.length > 1) {
-      h += '<div class="thumbs" role="group" aria-label="Figures">' + p.media.map(function (m, i) {
-        return '<button type="button" data-i="' + i + '" aria-current="' + (i === 0) + '" aria-label="Show figure ' + (i + 1) + ': ' + esc(m[1]) + '"><img src="/assets/images/web/' + m[0] + '" alt="" loading="lazy"></button>';
+      h += '<div class="thumbs" id="galThumbs" aria-label="All figures">' + p.media.map(function (m, i) {
+        return '<button type="button" data-i="' + i + '" aria-current="' + (i === 0) + '" aria-label="Figure ' + (i + 1) + ': ' + esc(m[1]) + '" title="' + esc(m[1]) + '"><img src="/assets/images/web/' + m[0] + '" alt="" decoding="async" draggable="false"><span>' + pad(i + 1, 2) + '</span></button>';
       }).join("") + '</div>';
     }
     h += '</div>';
@@ -180,10 +186,9 @@
     h += '<div class="cols"><div><h3 class="h-sm">Summary</h3><p>' + p.summary + '</p></div><div><h3 class="h-sm">' + esc(p.didTitle || "What I did") + '</h3><ul class="did">' + p.did.map(function (d) { return '<li>' + esc(d) + '</li>'; }).join("") + '</ul></div></div>';
     if (p.lab) h += '<div id="labMount"></div>';
     h += '<div><h3 class="h-sm">Tools & methods</h3><div class="tags">' + p.tools.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join("") + '</div></div>';
-    if (p.credits) h += '<div class="credits"><h3 class="h-sm">With</h3>' + p.credits.map(function (c) { return '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>'; }).join(", ") + '</div>';
+    if (p.credits) h += '<div class="credits"><h3 class="h-sm">With</h3>' + p.credits.map(function (c) { return c[1] ? '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>' : esc(c[0]); }).join(", ") + '</div>';
     var acts = [];
     if (p.reports) p.reports.forEach(function (r, i) { acts.push('<a class="btn ' + (i ? 'btn-tonal' : 'btn-solid') + '" href="' + LIVE + r[1] + '" target="_blank" rel="noopener">' + esc(r[0]) + ' ↗</a>'); });
-    if (p.live) acts.push('<a class="btn btn-solid" href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play it live ↗</a>');
     if (p.extra) acts.push('<a class="btn btn-tonal" href="' + p.extra[1] + '" target="_blank" rel="noopener">' + esc(p.extra[0]) + ' ↗</a>');
     if (acts.length) h += '<div class="acts">' + acts.join("") + '</div>';
     var i = P.indexOf(p), prev = P[(i - 1 + P.length) % P.length], next = P[(i + 1) % P.length];
@@ -191,16 +196,73 @@
     if (labStop) { labStop(); labStop = null; }
     body.innerHTML = h;
     $("shScroll").scrollTop = 0;
-    var thumbs = body.querySelector(".thumbs");
-    if (thumbs) thumbs.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-i]"); if (!b) return;
-      var k = +b.getAttribute("data-i"), m = p.media[k], img = $("galImg");
-      thumbs.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-current", String(x === b)); });
-      var swap = function () { img.src = "/assets/images/web/" + m[0]; img.alt = m[1]; $("galFig").textContent = "FIG. " + pad(k + 1, 2); $("galCap").textContent = m[1]; };
-      if (!reduced && img.animate) { img.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120 }).onfinish = function () { swap(); img.animate([{ opacity: 0, transform: "translateX(8px)" }, { opacity: 1, transform: "none" }], { duration: 260, easing: "cubic-bezier(.2,.8,.2,1)" }); }; }
-      else swap();
-    });
+    setupGallery(p);
     if (p.lab && LABS[p.lab]) labStop = LABS[p.lab]($("labMount")) || null;
+  }
+
+  function setupGallery(p) {
+    var track = $("galTrack"); if (!track) return;
+    var slides = Array.prototype.slice.call(track.children), n = slides.length, cur = 0;
+    function offsetFor(k) { var sl = slides[k]; return sl.offsetLeft - (track.clientWidth - sl.offsetWidth) / 2; }
+    function nearest() {
+      var mid = track.scrollLeft + track.clientWidth / 2, best = 0, d = Infinity;
+      slides.forEach(function (sl, k) { var c = sl.offsetLeft + sl.offsetWidth / 2, dd = Math.abs(c - mid); if (dd < d) { d = dd; best = k; } });
+      return best;
+    }
+    function show(k) {
+      cur = k;
+      slides.forEach(function (sl, i) { sl.classList.toggle("on", i === k); });
+      $("galFig").textContent = "FIG. " + pad(k + 1, 2) + (n > 1 ? " / " + pad(n, 2) : "");
+      $("galCap").textContent = p.media[k][1];
+      var th = $("galThumbs");
+      if (th) {
+        var btns = th.querySelectorAll("button");
+        btns.forEach(function (b, i) { b.setAttribute("aria-current", String(i === k)); });
+        var b = btns[k];
+        if (b) th.scrollTo({ left: b.offsetLeft - (th.clientWidth - b.offsetWidth) / 2, behavior: reduced ? "auto" : "smooth" });
+      }
+    }
+    function go(k) {
+      k = Math.max(0, Math.min(n - 1, k));
+      track.scrollTo({ left: offsetFor(k), behavior: reduced ? "auto" : "smooth" });
+      show(k);
+    }
+    if (n < 2) return;
+    track.addEventListener("scroll", function () { var k = nearest(); if (k !== cur) show(k); }, { passive: true });
+    slides.forEach(function (sl, k) { sl.addEventListener("click", function () { if (!moved && k !== cur) go(k); }); });
+    $("galPrev").addEventListener("click", function () { go(cur - 1); });
+    $("galThumbs").addEventListener("click", function (e) { var b = e.target.closest("[data-i]"); if (b) go(+b.getAttribute("data-i")); });
+    $("galNext").addEventListener("click", function () { go(cur + 1); });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.stopPropagation(); e.preventDefault(); go(cur + 1); }
+      if (e.key === "ArrowLeft") { e.stopPropagation(); e.preventDefault(); go(cur - 1); }
+    });
+    var drag = null, moved = false;
+    track.addEventListener("pointerdown", function (e) {
+      if (e.pointerType !== "mouse") return;
+      drag = { x: e.clientX, left: track.scrollLeft, start: cur };
+      moved = false;
+      track.setPointerCapture(e.pointerId);
+      track.classList.add("dragging");
+    });
+    track.addEventListener("pointermove", function (e) {
+      if (!drag) return;
+      var dx = e.clientX - drag.x;
+      if (Math.abs(dx) > 4) moved = true;
+      track.scrollLeft = drag.left - dx;
+    });
+    function end(e) {
+      if (!drag) return;
+      var dx = e.clientX - drag.x, w = slides[0].offsetWidth, k = drag.start;
+      if (dx < -w * 0.12) k = Math.max(nearest(), drag.start + 1);
+      else if (dx > w * 0.12) k = Math.min(nearest(), drag.start - 1);
+      drag = null;
+      track.classList.remove("dragging");
+      go(k);
+      setTimeout(function () { moved = false; }, 0);
+    }
+    track.addEventListener("pointerup", end);
+    track.addEventListener("pointercancel", end);
   }
 
   function setHash(slug) {
@@ -400,6 +462,92 @@
   });
 
   if (bySlug[location.hash.slice(1)]) open(location.hash.slice(1), null, false);
+
+  (function () {
+    var marquee = document.querySelector(".marquee");
+    var track = marquee && marquee.querySelector(".marquee-track");
+    var group = track && track.querySelector(".marquee-group");
+    if (!marquee || !track || !group) return;
+    var SECONDS_PER_GROUP = 45, HARD_THROW = 0.4;
+    var gw = 0, direction = -1, pos = 0, velocity = 0;
+    var dragging = false, coasting = false, startX = 0, startPos = 0, lastX = 0, lastT = 0, flingV = 0;
+
+    function measure() {
+      gw = group.getBoundingClientRect().width;
+      if (gw <= 0) return;
+      var need = window.innerWidth + gw * 2;
+      while (track.scrollWidth < need) track.appendChild(group.cloneNode(true));
+      track.style.setProperty("--gw", gw + "px");
+      track.style.animationDuration = SECONDS_PER_GROUP + "s";
+    }
+    function wrap(p) { if (gw <= 0) return p; p = p % gw; if (p > 0) p -= gw; return p; }
+    function currentX() {
+      var t = getComputedStyle(track).transform;
+      if (!t || t === "none") return pos;
+      return new DOMMatrixReadOnly(t).m41;
+    }
+    function idle() {
+      if (reduced || gw <= 0) { track.style.animation = "none"; track.style.transform = "translateX(" + wrap(pos) + "px)"; return; }
+      var progress = -wrap(pos) / gw;
+      var delay = direction < 0 ? -progress * SECONDS_PER_GROUP : -(1 - progress) * SECONDS_PER_GROUP;
+      track.style.transform = "";
+      track.style.animation = "";
+      track.style.animationDirection = direction < 0 ? "normal" : "reverse";
+      track.style.animationDelay = delay + "s";
+      track.classList.add("run");
+    }
+    function hold() {
+      pos = currentX();
+      track.classList.remove("run");
+      track.style.animation = "none";
+      track.style.transform = "translateX(" + pos + "px)";
+    }
+
+    measure();
+    idle();
+    window.addEventListener("resize", function () { hold(); measure(); idle(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { hold(); measure(); idle(); });
+
+    marquee.addEventListener("pointerdown", function (e) {
+      hold();
+      dragging = true; coasting = false;
+      marquee.setPointerCapture(e.pointerId);
+      marquee.classList.add("dragging");
+      startX = lastX = e.clientX; startPos = pos;
+      lastT = performance.now(); flingV = 0;
+    });
+    marquee.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var now = performance.now(), dt = (now - lastT) || 16;
+      flingV = (e.clientX - lastX) / dt;
+      pos = wrap(startPos + (e.clientX - startX));
+      track.style.transform = "translateX(" + pos + "px)";
+      lastX = e.clientX; lastT = now;
+    });
+    function release() {
+      if (!dragging) return;
+      dragging = false;
+      marquee.classList.remove("dragging");
+      var auto = gw / (SECONDS_PER_GROUP * 1000);
+      var speed = Math.min(Math.abs(flingV), 3);
+      if (speed > HARD_THROW) direction = flingV > 0 ? 1 : -1;
+      velocity = Math.sign(flingV || direction) * Math.max(speed, auto);
+      if (reduced) { idle(); return; }
+      coasting = true;
+      var last = performance.now();
+      (function step(now) {
+        if (!coasting) return;
+        var dt = Math.min(now - last, 50); last = now;
+        velocity += (direction * auto - velocity) * Math.min(dt / 400, 1);
+        pos = wrap(pos + velocity * dt);
+        track.style.transform = "translateX(" + pos + "px)";
+        if (Math.abs(velocity - direction * auto) < auto * 0.05) { coasting = false; idle(); return; }
+        requestAnimationFrame(step);
+      })(last);
+    }
+    marquee.addEventListener("pointerup", release);
+    marquee.addEventListener("pointercancel", release);
+  })();
 
   $("year").textContent = new Date().getFullYear();
 
