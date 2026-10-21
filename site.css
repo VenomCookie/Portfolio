@@ -79,9 +79,10 @@ h1, h2, h3 { text-wrap: balance; margin: 0; }
 .nav-links { display: none; gap: 22px; margin-left: auto; }
 .nav-links a { font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; }
 .nav-links a:hover { color: var(--accent-ink); }
-.nav-cv { margin-left: auto; padding: 8px 14px; }
+.nav-li { margin-left: auto; padding: 8px 14px; }
+.nav-cv { margin-left: 8px; padding: 8px 14px; }
 .brand { text-decoration: none; }
-@media (min-width: 720px) { .nav-links { display: flex; gap: clamp(14px, 2vw, 22px); } .nav-cv { margin-left: 8px; } }
+@media (min-width: 720px) { .nav-links { display: flex; gap: clamp(14px, 2vw, 22px); } .nav-li { margin-left: 8px; } }
 
 .hero { position: relative; padding-block: 48px 40px; overflow: hidden; }
 .hero-grid { display: grid; gap: 36px; align-items: center; position: relative; z-index: 2; }
@@ -372,3 +373,9 @@ input[type=range] { width: min(320px, 100%); accent-color: var(--accent); }
 .form { max-width: 960px; }
 @media (min-width: 1300px) { .flag .media { min-height: 400px; } .flags { gap: 34px; } }
 @media (max-width: 420px) { .hero h1 { font-size: 2.3rem; } .tb .ttl h2 { font-size: 1.35rem; } .sh-in { padding-inline: 12px; } }
+
+.btn-linkedin { background: color-mix(in srgb, #0A66C2 10%, transparent); color: #0A66C2; }
+.btn-linkedin::before { background: #0A66C2; }
+.btn.btn-linkedin:hover, .btn.btn-linkedin:focus-visible { color: #fff; }
+.btn-linkedin svg { width: 15px; height: 15px; flex: none; }
+@media (max-width: 520px) { .nav-li span { display: none; } .nav-li { padding: 8px 10px; } .brand span { font-size: .72rem; } }

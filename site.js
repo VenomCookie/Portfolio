@@ -18,7 +18,7 @@
       pdf: "assets/docs/FEA_RunningBlade_YS.pdf", lab: "fea"
     },
     {
-      slug: "pdet2folio", order: 95, code: "PDE", flagship: true, title: "Knee Brace for Gym Beginners", year: 2026, scope: "Pair", role: "Mechanism design, assembly & user research",
+      slug: "pdet2folio", order: 95, code: "PDE", flagship: true, title: "AlignΞd: Knee Brace for Gym Beginners", year: 2026, scope: "Pair", role: "Mechanism design, assembly & user research",
       disc: ["Product Design", "CAD & Prototyping", "UX & Research"], tools: ["Fusion 360", "User interviews", "DFM", "Electronics"],
       hook: "A brace that helps beginners hold good form and keep tempo through a squat.",
       big: ["Working", "prototype that guides squat form and tempo"],
@@ -26,7 +26,7 @@
       did: ["Designed the one-handed tightening mechanism and adapted it to the brace.", "Designed the enclosure with Zayn, who built the sensors and code, then assembled the final product.", "Wrote the A3 report; Zayn wrote the technical report.", "Interviewed members of the public and gym staff with Zayn."],
       stats: [["Working", "prototype, assembled by me"], ["2 gyms", "Equinox and Retro Fit, plus members of the public"], ["2", "person team, with Zayn Muntazir"]],
       media: [["pde0.webp", "Cover render"], ["pde1.webp", "Research and problem framing"], ["pde2.webp", "Concept development"]],
-      pdf: "assets/docs/PDE2.pdf", credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"]], lab: "tempo"
+      reports: [["A3 report (PDF)", "assets/docs/PDE2.pdf"], ["Technical report (PDF)", "assets/docs/PDE_Technical.pdf"]], credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"]], lab: "tempo"
     },
     {
       slug: "thermo1", order: 92, code: "CFD", flagship: true, title: "Ventara: Aerodynamic Pick-up Truck", year: 2026, scope: "Individual", role: "Design & CFD",
