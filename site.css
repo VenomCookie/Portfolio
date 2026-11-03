@@ -381,3 +381,6 @@ input[type=range] { width: min(320px, 100%); accent-color: var(--accent); }
 .nav-icon { padding: 8px 11px; }
 .nav-icon svg { width: 17px; height: 17px; flex: none; display: block; }
 @media (max-width: 520px) { .brand span { font-size: .72rem; } }
+
+.lede a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.lede a:hover { color: var(--accent-ink); }
