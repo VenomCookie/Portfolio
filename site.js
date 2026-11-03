@@ -549,6 +549,80 @@
     marquee.addEventListener("pointercancel", release);
   })();
 
+  (function () {
+    var wrap = $("stickers");
+    if (!wrap) return;
+    var hero = wrap.parentElement;
+    Array.prototype.forEach.call(wrap.querySelectorAll(".sticker"), function (el) {
+      var base = parseFloat(getComputedStyle(el).getPropertyValue("--r")) || 0;
+      var x = 0, y = 0, rot = base, rv = 0, target = base, held = false, raf = null;
+      var startX = 0, startY = 0, ox = 0, oy = 0, lastX = 0, lastT = 0, vx = 0;
+      function paint() {
+        el.style.setProperty("--dx", x + "px");
+        el.style.setProperty("--dy", y + "px");
+        el.style.setProperty("--rot", rot + "deg");
+      }
+      function loop() {
+        var k = held ? 0.16 : 0.09, damp = held ? 0.7 : 0.82;
+        rv = (rv + (target - rot) * k) * damp;
+        rot += rv;
+        if (!held) target = base;
+        paint();
+        if (held || Math.abs(rv) > 0.02 || Math.abs(target - rot) > 0.05) raf = requestAnimationFrame(loop);
+        else { rot = target; paint(); raf = null; }
+      }
+      function kick() { if (!raf && !reduced) raf = requestAnimationFrame(loop); }
+      el.addEventListener("pointerdown", function (e) {
+        if (e.button !== undefined && e.button !== 0) return;
+        e.preventDefault();
+        held = true;
+        wrap.classList.add("touched");
+        el.classList.add("held");
+        el.style.setProperty("--s", "1.08");
+        el.setPointerCapture(e.pointerId);
+        startX = lastX = e.clientX; startY = e.clientY; ox = x; oy = y;
+        lastT = performance.now(); vx = 0;
+        kick();
+      });
+      el.addEventListener("pointermove", function (e) {
+        if (!held) return;
+        var now = performance.now(), dt = Math.max(now - lastT, 8);
+        vx = Math.max(-3, Math.min(3, vx * 0.6 + ((e.clientX - lastX) / dt) * 0.4));
+        lastX = e.clientX; lastT = now;
+        var hb = hero.getBoundingClientRect(), eb = el.getBoundingClientRect();
+        var nx = ox + (e.clientX - startX), ny = oy + (e.clientY - startY);
+        var homeL = eb.left - x, homeT = eb.top - y;
+        nx = Math.max(hb.left - homeL, Math.min(hb.right - eb.width - homeL, nx));
+        ny = Math.max(hb.top - homeT, Math.min(hb.bottom - eb.height - homeT, ny));
+        x = nx; y = ny;
+        target = base + Math.max(-40, Math.min(40, vx * 22));
+        if (reduced) { rot = base; paint(); }
+      });
+      function drop() {
+        if (!held) return;
+        held = false;
+        el.classList.remove("held");
+        el.style.setProperty("--s", "1");
+        rv += Math.max(-8, Math.min(8, vx * 6));
+        target = base;
+        kick();
+      }
+      el.addEventListener("pointerup", drop);
+      el.addEventListener("pointercancel", drop);
+      el.addEventListener("keydown", function (e) {
+        var step = e.shiftKey ? 40 : 12, moved = true;
+        if (e.key === "ArrowLeft") { x -= step; rv -= 6; }
+        else if (e.key === "ArrowRight") { x += step; rv += 6; }
+        else if (e.key === "ArrowUp") y -= step;
+        else if (e.key === "ArrowDown") y += step;
+        else moved = false;
+        if (moved) { e.preventDefault(); wrap.classList.add("touched"); kick(); paint(); }
+      });
+      el.addEventListener("click", function (e) { e.preventDefault(); });
+      paint();
+    });
+  })();
+
   $("year").textContent = new Date().getFullYear();
 
   (function () {
