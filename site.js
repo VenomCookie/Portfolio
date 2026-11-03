@@ -549,6 +549,75 @@
     marquee.addEventListener("pointercancel", release);
   })();
 
+  (function () {
+    var MAX = 3, FRICTION = 0.996, GAIN = 1.6;
+    Array.prototype.forEach.call(document.querySelectorAll(".brand, .nav-icon"), function (host) {
+      var icon = host.querySelector("svg");
+      if (!icon) return;
+      var angle = 0, vel = 0, down = false, moved = false, raf = null;
+      var startX = 0, startA = 0, lastX = 0, lastT = 0;
+      function paint() { icon.style.transform = angle ? "rotate(" + angle + "deg)" : ""; }
+      function stop() { if (raf) cancelAnimationFrame(raf); raf = null; }
+      function settle(last) {
+        var target = Math.round(angle / 360) * 360;
+        (function step(now) {
+          var dt = Math.min(now - last, 40); last = now;
+          vel += (target - angle) * 0.00045 * dt;
+          vel *= Math.pow(0.9, dt / 16);
+          angle += vel * dt;
+          if (Math.abs(target - angle) < 0.3 && Math.abs(vel) < 0.01) { angle = 0; vel = 0; paint(); raf = null; host.classList.remove("spinning"); return; }
+          paint();
+          raf = requestAnimationFrame(step);
+        })(last);
+      }
+      function coast() {
+        if (reduced) { angle = 0; paint(); host.classList.remove("spinning"); return; }
+        var last = performance.now();
+        (function step(now) {
+          var dt = Math.min(now - last, 40); last = now;
+          angle += vel * dt;
+          vel *= Math.pow(FRICTION, dt);
+          paint();
+          if (Math.abs(vel) < 0.06) { settle(now); return; }
+          raf = requestAnimationFrame(step);
+        })(last);
+      }
+      host.addEventListener("pointerdown", function (e) {
+        if (e.button) return;
+        stop();
+        down = true; moved = false;
+        startX = lastX = e.clientX; startA = angle; lastT = performance.now(); vel = 0;
+      });
+      host.addEventListener("pointermove", function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        if (!moved) {
+          if (Math.abs(dx) < 5) return;
+          moved = true;
+          try { host.setPointerCapture(e.pointerId); } catch (err) { }
+          host.classList.add("spinning");
+        }
+        var now = performance.now(), dt = Math.max(now - lastT, 8);
+        var v = (e.clientX - lastX) / dt * GAIN;
+        vel = Math.max(-MAX, Math.min(MAX, vel * 0.5 + v * 0.5));
+        angle = startA + dx * GAIN;
+        lastX = e.clientX; lastT = now;
+        paint();
+      });
+      function release() {
+        if (!down) return;
+        down = false;
+        if (moved) coast();
+      }
+      host.addEventListener("pointerup", release);
+      host.addEventListener("pointercancel", release);
+      host.addEventListener("click", function (e) {
+        if (moved) { e.preventDefault(); e.stopImmediatePropagation(); moved = false; }
+      }, true);
+      host.addEventListener("dragstart", function (e) { e.preventDefault(); });
+    });
+  })();
+
   $("year").textContent = new Date().getFullYear();
 
   (function () {

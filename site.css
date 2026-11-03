@@ -384,3 +384,8 @@ input[type=range] { width: min(320px, 100%); accent-color: var(--accent); }
 
 .lede a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .lede a:hover { color: var(--accent-ink); }
+
+.brand, .nav-icon { touch-action: pan-y; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
+.brand svg, .nav-icon svg { transform-origin: 50% 50%; will-change: transform; }
+.brand.spinning, .nav-icon.spinning { cursor: grabbing; }
+.brand.spinning .plane { animation: none; }
