@@ -3,7 +3,6 @@
 
   var LIVE = "/";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   var P = [
     {
@@ -157,16 +156,17 @@
 
   var others = P.filter(function (p) { return !p.flagship; });
   $("moreGrid").innerHTML = others.map(function (p, i) {
-    var img = "/assets/images/web/" + p.media[0][0];
-    return '<div class="row rv" data-open="' + p.slug + '" data-img="' + img + '">' +
-      '<span class="n">' + pad(i + flags.length + 1, 2) + '</span>' +
-      '<a class="t" href="#' + p.slug + '">' + esc(p.title) + '</a>' +
-      '<span class="d">' + esc(p.disc[0]) + '</span><span class="y">' + p.year + '</span><span class="go" aria-hidden="true">→</span>' +
-      '<p class="h">' + esc(p.hook) + '</p>' +
-      (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play now</a>' : '') +
-      '<img class="thumb" src="' + img + '" alt="" loading="lazy" decoding="async">' +
-      '</div>';
-  }).join("") + '<div class="row wiprow rv"><span class="n">··</span><span class="t">Currently building</span><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div>';
+    var img = '<img src="/assets/images/web/' + p.media[0][0] + '" alt="" loading="lazy" decoding="async">';
+    var fig = '<span class="fig">Fig. ' + pad(i + flags.length + 2, 2) + '</span>';
+    var meta = '<div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + p.year + '</span></div>';
+    return '<article class="tile rv" data-open="' + p.slug + '"><div class="tile-in">' +
+      '<div class="face front" aria-hidden="true"><div class="media">' + img + fig + '</div>' +
+      '<div class="body">' + meta + '<h3>' + esc(p.title) + '</h3><p>' + esc(p.hook) + '</p></div></div>' +
+      '<div class="face back"><div class="media">' + img.replace('alt=""', 'alt="' + esc(p.media[0][1]) + '"') + fig +
+      (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play now</a>' : '') + '</div>' +
+      '<div class="body">' + meta + '<h3><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3><p>' + esc(p.hook) + '</p></div></div>' +
+      '</div></article>';
+  }).join("") + '<article class="tile wip rv"><div class="wip-in"><div class="meta"><span>In progress</span></div><h3>Currently building</h3><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div></article>';
 
   var dlg = $("sheet"), body = $("shBody"), current = null, originImg = null, labStop = null;
 
@@ -651,7 +651,11 @@
     var parts = Array.prototype.slice.call(xv.querySelectorAll(".part"));
     var OFF = [0, -64, -136, -210];
     var cur = 0, target = 0, intro = reduced ? 1 : 0, introStart = 0, raf = null;
+    var painted = null, visible = true;
     function paint(e) {
+      var key = e.toFixed(3);
+      if (key === painted) return;
+      painted = key;
       parts.forEach(function (g, k) { g.style.transform = "translate(0px," + (OFF[k] * e).toFixed(2) + "px)"; });
     }
     function goal() {
@@ -665,45 +669,32 @@
       cur += (target - cur) * 0.12;
       paint(cur * intro);
       if (intro < 1 || Math.abs(target - cur) > 0.0005) raf = requestAnimationFrame(loop);
-      else raf = null;
+      else { cur = target; paint(cur * intro); raf = null; }
     }
-    function kick() { target = goal(); if (reduced) { paint(target); return; } if (!raf) raf = requestAnimationFrame(loop); }
+    function kick() { if (!visible) return; target = goal(); if (reduced) { paint(target); return; } if (!raf) raf = requestAnimationFrame(loop); }
     paint(0);
     target = cur = goal();
     kick();
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible) kick(); }).observe(xv);
     window.addEventListener("scroll", kick, { passive: true });
     window.addEventListener("resize", kick);
   })();
 
   (function () {
-    var peek = $("peek"), img = $("peekImg"), list = $("moreGrid");
-    if (!peek || !list || !finePointer || reduced) return;
-    var x = 0, y = 0, tx = 0, ty = 0, on = false, raf = null;
-    function aim(e) {
-      var w = peek.offsetWidth, h = peek.offsetHeight, vw = window.innerWidth, vh = window.innerHeight;
-      tx = e.clientX + 28; ty = e.clientY - h / 2;
-      if (tx + w > vw - 16) tx = e.clientX - w - 28;
-      ty = Math.max(12, Math.min(vh - h - 12, ty));
-    }
-    function loop() {
-      x += (tx - x) * 0.2; y += (ty - y) * 0.2;
-      peek.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0)";
-      if (on || Math.abs(tx - x) > 0.5 || Math.abs(ty - y) > 0.5) raf = requestAnimationFrame(loop);
-      else raf = null;
-    }
-    function hide() { on = false; peek.classList.remove("on"); }
-    list.addEventListener("mouseover", function (e) {
-      var row = e.target.closest(".row[data-img]");
-      if (!row) { hide(); return; }
-      var src = row.getAttribute("data-img");
-      if (img.getAttribute("src") !== src) img.src = src;
-      if (!on) { aim(e); x = tx; y = ty; }
-      on = true; peek.classList.add("on");
-      if (!raf) raf = requestAnimationFrame(loop);
-    });
-    list.addEventListener("mousemove", function (e) { if (on) aim(e); });
-    list.addEventListener("mouseleave", hide);
-    window.addEventListener("scroll", function () { if (on) hide(); }, { passive: true });
+    var grid = $("moreGrid"); if (!grid || !window.matchMedia("(hover: hover)").matches) return;
+    var t = null;
+    window.addEventListener("scroll", function () {
+      if (!t) grid.classList.add("noflip"); else clearTimeout(t);
+      t = setTimeout(function () { grid.classList.remove("noflip"); t = null; }, 180);
+    }, { passive: true });
+  })();
+
+  (function () {
+    if (reduced || !window.matchMedia("(hover: none)").matches || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("lit"); io.unobserve(en.target); } });
+    }, { rootMargin: "-30% 0px -30% 0px" });
+    document.querySelectorAll(".tile:not(.wip)").forEach(function (t) { io.observe(t); });
   })();
 
   (function () {
