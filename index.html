@@ -3,6 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.className += " js";
+      try { t = localStorage.getItem("ys-theme"); } catch (e) { }
+      if (t === "light" || t === "dark") d.setAttribute("data-theme", t);
+    })();
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHT5H5W4VT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,7 +20,7 @@
   </script>
 
   <title>Yousuf Shahabuddin | Design Engineer</title>
-  <meta name="description" content="Yousuf Shahabuddin, MEng Design Engineering at Imperial College London. Simulation, product design, prototyping and research, with a summary sheet for every project." />
+  <meta name="description" content="Yousuf Shahabuddin, MEng Design Engineering at Imperial College London. Simulation, product design, prototyping and research, with a summary for every project." />
   <meta property="og:title" content="Yousuf Shahabuddin | Design Engineer" />
   <meta property="og:description" content="Design engineering portfolio: FEA, CFD, product design and working prototypes." />
   <meta property="og:type" content="website" />
@@ -23,104 +31,156 @@
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
-  <meta name="theme-color" content="#E7E9EC" />
+  <meta name="theme-color" content="#F3F3F1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="/site.css?v=60" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="/site.css?v=61" />
 </head>
 <body>
 <header class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="Back to top">
       <svg viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="var(--accent)"/>
+        <rect width="32" height="32" rx="9" fill="var(--accent)"/>
         <g class="plane"><path transform="rotate(45 16 16)" fill="#fff" d="M16 4.5c.9 0 1.5 1.1 1.5 2.4v5.6l8.5 5v2.1l-8.5-2.6-.2 5.6 2.7 2v1.6L16 25.2l-4 1v-1.6l2.7-2-.2-5.6-8.5 2.6v-2.1l8.5-5V6.9c0-1.3.6-2.4 1.5-2.4z"/></g>
       </svg>
-      <span>YOUSUF SHAHABUDDIN</span>
+      <span>Yousuf Shahabuddin</span>
     </a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#work">Work</a><a href="#more">More projects</a><a href="#about">About</a>
+      <a href="#work">Work</a><a href="#index">Index</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-tonal nav-icon nav-mail" href="#contact" aria-label="Contact me" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg></a>
-    <a class="btn btn-linkedin nav-icon nav-li" href="https://www.linkedin.com/in/yousuf-shb" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-    <a class="btn btn-tonal nav-cv" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV ↗</a>
+    <div class="nav-tools">
+      <button class="btn btn-tonal nav-icon theme-btn" type="button" id="themeBtn" aria-label="Switch to dark mode" title="Light or dark">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <g class="sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g>
+          <path class="moon" fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/>
+        </svg>
+      </button>
+      <a class="btn btn-tonal nav-icon nav-mail" href="#contact" aria-label="Contact me" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg></a>
+      <a class="btn btn-linkedin nav-icon nav-li" href="https://www.linkedin.com/in/yousuf-shb" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a class="btn btn-solid nav-cv" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+    </div>
   </div>
 </header>
 
 <main>
   <section class="hero" id="top">
     <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">Design Engineer / Imperial College London</div>
+      <div class="hero-copy">
+        <p class="kicker"><span>Design engineer</span><span>Imperial College London</span><span>MEng, 2028</span></p>
         <h1>Yousuf<br>Shahabuddin</h1>
-        <p class="lede"><a href="https://www.imperial.ac.uk/study/courses/undergraduate/design-engineering/" target="_blank" rel="noopener">MEng Design Engineering</a> at Imperial. I take products from interviews and sketches through CAD and simulation to a working prototype, and I like proving each decision with a number.</p>
+        <p class="statement">From <em>sketch</em> to <em>simulation</em> to a working <em>prototype</em>, with a number behind every decision.</p>
+        <p class="lede">Studying <a href="https://www.imperial.ac.uk/study/courses/undergraduate/design-engineering/" target="_blank" rel="noopener">MEng Design Engineering</a> at Imperial. I take products from interviews and sketches through CAD and simulation to something you can pick up and test.</p>
         <div class="cta">
-          <a class="btn btn-solid" href="#work">Flagship work <span aria-hidden="true">→</span></a>
+          <a class="btn btn-solid" href="#work">See the work <span aria-hidden="true">→</span></a>
           <a class="btn btn-tonal" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV (PDF) <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <figure class="portrait" style="margin:0">
-        <div class="dim"><span>SUBJECT</span><span class="ln"></span><span>2026</span></div>
-        <div class="frame">
-          <img src="/assets/images/web/me.webp" alt="Portrait of Yousuf Shahabuddin" width="900" height="900">
-          <figcaption><span>FIG. 00</span><span>that's me!</span></figcaption>
-        </div>
+      <figure class="stage" id="stage">
+        <svg class="xv" id="xv" viewBox="0 -10 560 540" role="img" aria-labelledby="xvTitle">
+          <title id="xvTitle">Exploded view of a four-part assembly, one part for each stage of how I work: research, concept and CAD, simulation, prototype</title>
+          <line class="axis" x1="220" y1="0" x2="220" y2="525"/>
+          <g class="part" data-k="0">
+            <path class="fl" d="M70 380 L220 466.6 L220 496.6 L70 410 Z"/>
+            <path class="fr" d="M220 466.6 L370 380 L370 410 L220 496.6 Z"/>
+            <path class="ft" d="M220 293.4 L370 380 L220 466.6 L70 380 Z"/>
+            <ellipse class="hole" cx="220" cy="319.4" rx="7" ry="4"/><ellipse class="hole" cx="325" cy="380" rx="7" ry="4"/><ellipse class="hole" cx="220" cy="440.6" rx="7" ry="4"/><ellipse class="hole" cx="115" cy="380" rx="7" ry="4"/>
+            <path class="lead" d="M345 409 L420 440 H436"/>
+            <text x="442" y="436"><tspan class="n">01</tspan> Research</text><text class="sub" x="442" y="454">Interviews, field visits</text>
+          </g>
+          <g class="part" data-k="1">
+            <path class="fl" d="M70 372 L220 458.6 L220 466.6 L70 380 Z"/>
+            <path class="fr" d="M220 458.6 L370 372 L370 380 L220 466.6 Z"/>
+            <path class="ft" d="M220 285.4 L370 372 L220 458.6 L70 372 Z"/>
+            <ellipse class="hole" cx="220" cy="372" rx="53" ry="30.6"/>
+            <ellipse class="hole" cx="220" cy="311.4" rx="7" ry="4"/><ellipse class="hole" cx="325" cy="372" rx="7" ry="4"/><ellipse class="hole" cx="220" cy="432.6" rx="7" ry="4"/><ellipse class="hole" cx="115" cy="372" rx="7" ry="4"/>
+            <path class="lead" d="M358 383 L420 376 H436"/>
+            <text x="442" y="372"><tspan class="n">02</tspan> Concept &amp; CAD</text><text class="sub" x="442" y="390">Sketching, Fusion 360</text>
+          </g>
+          <g class="part" data-k="2">
+            <path class="fl" d="M162 346 V372 A58 33.5 0 0 0 278 372 V346 A58 33.5 0 0 1 162 346 Z"/>
+            <ellipse class="ft" cx="220" cy="346" rx="58" ry="33.5"/>
+            <ellipse class="hole" cx="220" cy="346" rx="26" ry="15"/>
+            <path class="lead" d="M278 360 L420 316 H436"/>
+            <text x="442" y="312"><tspan class="n">03</tspan> Simulation</text><text class="sub" x="442" y="330">FEA, CFD, analysis</text>
+          </g>
+          <g class="part" data-k="3">
+            <path class="fl" d="M140 330 L220 376.2 L220 392.2 L140 346 Z"/>
+            <path class="fr" d="M220 376.2 L300 330 L300 346 L220 392.2 Z"/>
+            <path class="ft" d="M220 283.8 L300 330 L220 376.2 L140 330 Z"/>
+            <ellipse class="hole" cx="220" cy="330" rx="12" ry="7"/>
+            <path class="lead" d="M300 338 L420 256 H436"/>
+            <text x="442" y="252"><tspan class="n">04</tspan> Prototype</text><text class="sub" x="442" y="270">Build, test, iterate</text>
+          </g>
+        </svg>
+        <figcaption><span>Fig. 00</span><span>How I work, as an exploded view. Scroll to pull it apart.</span></figcaption>
       </figure>
     </div>
   </section>
 
   <div class="marquee" aria-hidden="true">
-    <div class="marquee-track"><div class="marquee-group"><span>CAD &amp; Modelling</span><span>Simulation &amp; Analysis</span><span>Electronics &amp; Firmware</span><span>Coding &amp; Software</span><span>Design</span><span>Make</span><span>Prototyping</span></div><div class="marquee-group"><span>CAD &amp; Modelling</span><span>Simulation &amp; Analysis</span><span>Electronics &amp; Firmware</span><span>Coding &amp; Software</span><span>Design</span><span>Make</span><span>Prototyping</span></div></div>
+    <div class="marquee-track"><div class="marquee-group"><span>CAD &amp; modelling</span><span>Simulation &amp; analysis</span><span>Electronics &amp; firmware</span><span>Coding &amp; software</span><span>Design</span><span>Make</span><span>Prototyping</span></div><div class="marquee-group"><span>CAD &amp; modelling</span><span>Simulation &amp; analysis</span><span>Electronics &amp; firmware</span><span>Coding &amp; software</span><span>Design</span><span>Make</span><span>Prototyping</span></div></div>
   </div>
-
 
   <section class="sec" id="work">
     <div class="wrap">
-      <div class="sec-head">
-        <div><div class="eyebrow">Sheet 02 / Flagship work</div><h2 class="h-sec">Three projects, in depth</h2></div>
-        <p>Open any project for a one-page summary: figures, important figures, what I did, and the full report.</p>
+      <div class="sec-head rv">
+        <p class="label">01 / Selected work</p>
+        <h2 class="h-sec">Three projects, <em>in depth</em></h2>
+        <p class="sec-note">Open any project for a summary: figures, the key numbers, what I did, and the full report.</p>
       </div>
-      <div class="flags" id="flags"></div>
+      <div class="feats" id="flags"></div>
     </div>
   </section>
 
-  <section class="sec" id="more">
+  <section class="sec" id="index">
     <div class="wrap">
-      <div class="sec-head">
-        <div><div class="eyebrow">Sheet 03 / More projects</div><h2 class="h-sec">More work</h2></div>
-        <p>Smaller and earlier projects. Each one opens a summary sheet.</p>
+      <div class="sec-head rv">
+        <p class="label">02 / Index</p>
+        <h2 class="h-sec">Everything <em>else</em></h2>
+        <p class="sec-note">Smaller and earlier projects. Each one opens a summary.</p>
       </div>
-      <div class="more" id="moreGrid"></div>
+      <div class="idx" id="moreGrid"></div>
     </div>
   </section>
 
   <section class="sec" id="about">
-    <div class="wrap about">
-      <div class="about-copy">
-        <div class="eyebrow" style="margin-bottom:10px">Sheet 04 / About</div>
-        <h2 class="h-sec" style="margin-bottom:18px">Off the drawing board</h2>
-        <p>I'm looking for a 6-month industry placement from April to September 2027, ideally in aerospace, electrification or motorsport.</p>
-        <p>Alongside the degree I'm a mechanic on Imperial's Shell Eco-marathon team, which <a href="https://felixonline.co.uk/articles/imperial-team-2nd-shell-eco-marathon/" target="_blank" rel="noopener">placed 1st in the UK and 2nd in EMEA</a>, and I'm on a UROP research placement. I co-founded FemAI, a B2B healthtech startup, and sit on the STEM Muslims general committee.</p>
-        <p>I love aircraft: the engineering, the sound, even the smell of jet fuel. One day I'd like to earn a PPL. Away from the desk I climb, shoot archery (I won a local competition) and race karts, where I've dug into lap-time data to find where the seconds go.</p>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="label">03 / About</p>
+        <h2 class="h-sec">Off the <em>drawing board</em></h2>
       </div>
-      <dl class="facts" style="align-self:start">
-        <dt>Course</dt><dd><a href="https://www.imperial.ac.uk/study/courses/undergraduate/design-engineering/" target="_blank" rel="noopener" style="color:var(--accent-ink)">MEng Design Engineering ↗</a></dd>
-        <dt>University</dt><dd>Imperial College London</dd>
-        <dt>Graduating</dt><dd>2028</dd>
-        <dt>Placement</dt><dd>Apr to Sep 2027</dd>
-        <dt>Team</dt><dd><a href="https://felixonline.co.uk/articles/imperial-team-2nd-shell-eco-marathon/" target="_blank" rel="noopener" style="color:var(--accent-ink)">Shell Eco-marathon ↗</a></dd>
-        <dt>Research</dt><dd>UROP, Imperial</dd>
-        <dt>Based</dt><dd>London, UK</dd>
-        <dt>Interests</dt><dd>Aviation · Climbing · Archery · Karting</dd>
-        <dt>Tutoring</dt><dd><a href="https://latimertuition.com/find-a-tutor/3998456-yousuf-shahabuddin" target="_blank" rel="noopener" style="color:var(--accent-ink)">STEM, Year 7 to 13 ↗</a></dd>
-      </dl>
-      <div class="skills-block">
-        <h3 class="skills-title">Skills</h3>
-        <div class="tabs" role="tablist" aria-label="Skills">
-          <button class="filter" type="button" role="tab" aria-pressed="true" data-tab="tech">Technical</button>
-          <button class="filter" type="button" role="tab" aria-pressed="false" data-tab="make">Making</button>
-          <button class="filter" type="button" role="tab" aria-pressed="false" data-tab="out">Outside uni</button>
+      <div class="about-grid">
+        <div class="about-copy rv">
+          <p class="about-lead">I'm looking for a <em>6-month placement</em> from April to September 2027, ideally in aerospace, electrification or motorsport.</p>
+          <p>Alongside the degree I'm a mechanic on Imperial's Shell Eco-marathon team, which <a href="https://felixonline.co.uk/articles/imperial-team-2nd-shell-eco-marathon/" target="_blank" rel="noopener">placed 1st in the UK and 2nd in EMEA</a>, and I'm on a UROP research placement. I co-founded FemAI, a B2B healthtech startup, and sit on the STEM Muslims general committee.</p>
+          <p>I love aircraft: the engineering, the sound, even the smell of jet fuel. One day I'd like to earn a PPL. Away from the desk I climb, shoot archery (I won a local competition) and race karts, where I've dug into lap-time data to find where the seconds go.</p>
+        </div>
+        <figure class="portrait rv">
+          <img src="/assets/images/web/me.webp" alt="Portrait of Yousuf Shahabuddin" width="900" height="900">
+          <figcaption><span>Fig. 01</span><span>That's me!</span></figcaption>
+        </figure>
+        <dl class="facts rv">
+          <dt>Course</dt><dd><a href="https://www.imperial.ac.uk/study/courses/undergraduate/design-engineering/" target="_blank" rel="noopener">MEng Design Engineering ↗</a></dd>
+          <dt>University</dt><dd>Imperial College London</dd>
+          <dt>Graduating</dt><dd>2028</dd>
+          <dt>Placement</dt><dd>Apr to Sep 2027</dd>
+          <dt>Team</dt><dd><a href="https://felixonline.co.uk/articles/imperial-team-2nd-shell-eco-marathon/" target="_blank" rel="noopener">Shell Eco-marathon ↗</a></dd>
+          <dt>Research</dt><dd>UROP, Imperial</dd>
+          <dt>Based</dt><dd>London, UK</dd>
+          <dt>Interests</dt><dd>Aviation · Climbing · Archery · Karting</dd>
+          <dt>Tutoring</dt><dd><a href="https://latimertuition.com/find-a-tutor/3998456-yousuf-shahabuddin" target="_blank" rel="noopener">STEM, Year 7 to 13 ↗</a></dd>
+        </dl>
+      </div>
+      <div class="skills-block rv">
+        <div class="skills-head">
+          <h3 class="skills-title">Skills</h3>
+          <div class="tabs" role="tablist" aria-label="Skills">
+            <button class="tab" type="button" role="tab" aria-pressed="true" data-tab="tech">Technical</button>
+            <button class="tab" type="button" role="tab" aria-pressed="false" data-tab="make">Making</button>
+            <button class="tab" type="button" role="tab" aria-pressed="false" data-tab="out">Outside uni</button>
+          </div>
         </div>
         <div class="panel" data-panel="tech">
           <div class="skill"><h3>Design &amp; CAD</h3><p>Fusion 360 · Design for manufacture and assembly · Rapid prototyping · Figma · Adobe</p><div class="proof-links">Proof: <button type="button" data-open="pdet2folio">AlignΞd knee brace</button>, <button type="button" data-open="ipad-stand">iPad stand</button></div></div>
@@ -143,9 +203,11 @@
 
   <section class="sec contact" id="contact">
     <div class="wrap">
-      <div class="eyebrow">Sheet 05 / Contact</div>
-      <h2>Get in touch</h2>
-      <form class="form" id="msgForm" novalidate>
+      <div class="sec-head rv">
+        <p class="label">04 / Contact</p>
+        <h2 class="h-big">Let's <em>talk</em>.</h2>
+      </div>
+      <form class="form rv" id="msgForm" novalidate>
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" aria-hidden="true" autocomplete="off">
         <label class="sr" for="msgText">Your message</label>
         <textarea id="msgText" name="message" placeholder="Placement, project, question or just a hello..." required></textarea>
@@ -170,11 +232,12 @@
   <div class="wrap"><span>© <span id="year">2026</span> Yousuf Shahabuddin. All rights reserved.</span><span class="rev" id="rev" hidden></span></div>
 </footer>
 
+<div class="peek" id="peek" aria-hidden="true"><img alt="" id="peekImg"></div>
 
 <dialog class="sheet" id="sheet" aria-labelledby="shTitle">
   <div class="sh" id="shScroll">
     <div class="sh-bar">
-      <span class="code" id="shCode">SHT</span>
+      <span class="code" id="shCode"></span>
       <button class="icon-btn" type="button" id="shPrev" aria-label="Previous project">←</button>
       <button class="icon-btn" type="button" id="shNext" aria-label="Next project">→</button>
       <button class="icon-btn" type="button" id="shClose" aria-label="Close summary">✕</button>
@@ -183,6 +246,6 @@
   </div>
 </dialog>
 
-<script src="/site.js?v=60"></script>
+<script src="/site.js?v=61"></script>
 </body>
 </html>
