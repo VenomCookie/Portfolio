@@ -115,7 +115,7 @@ em { font-style: normal; }
 .hero h1 { font-weight: 600; font-size: clamp(3rem, 9vw, 8.4rem); line-height: .88; letter-spacing: -.055em; margin: 0 0 26px; }
 .statement { font-size: clamp(1.45rem, 2.6vw, 2.35rem); line-height: 1.12; letter-spacing: -.03em; font-weight: 500; max-width: 22ch; margin: 0 0 20px; }
 .statement em { color: var(--accent-ink); }
-.lede { font-size: 1.02rem; color: var(--ink-2); max-width: 52ch; margin: 0 0 28px; }
+.lede { font-size: clamp(1.05rem, 1.25vw, 1.3rem); color: var(--ink-2); max-width: 50ch; margin: 0 0 28px; }
 .lede a, .about-copy a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 .lede a:hover, .about-copy a:hover { color: var(--accent-ink); }
 .cta { display: flex; flex-wrap: wrap; gap: 10px; }

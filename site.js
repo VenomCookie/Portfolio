@@ -156,7 +156,8 @@
 
   var others = P.filter(function (p) { return !p.flagship; });
   $("moreGrid").innerHTML = others.map(function (p, i) {
-    var img = '<img src="/assets/images/web/' + p.media[0][0] + '" alt="" loading="lazy" decoding="async">';
+    var f = p.media[0][0];
+    var img = '<img src="/assets/images/thumb/' + f + '" srcset="/assets/images/thumb/' + f + ' 600w, /assets/images/web/' + f + ' 900w" sizes="(min-width: 1700px) 300px, (min-width: 1300px) 22vw, (min-width: 980px) 30vw, (min-width: 640px) 45vw, 92vw" alt="" loading="lazy" decoding="async">';
     var fig = '<span class="fig">Fig. ' + pad(i + flags.length + 2, 2) + '</span>';
     var meta = '<div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + p.year + '</span></div>';
     return '<article class="tile rv" data-open="' + p.slug + '"><div class="tile-in">' +
@@ -166,7 +167,7 @@
       (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play now</a>' : '') + '</div>' +
       '<div class="body">' + meta + '<h3><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3><p>' + esc(p.hook) + '</p></div></div>' +
       '</div></article>';
-  }).join("") + '<article class="tile wip rv"><div class="wip-in"><div class="meta"><span>In progress</span></div><h3>Currently building</h3><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div></article>';
+  }).join("") + '<article class="tile wip rv"><div class="wip-in"><div class="meta"><span>Currently building</span></div><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div></article>';
 
   var dlg = $("sheet"), body = $("shBody"), current = null, originImg = null, labStop = null;
 
