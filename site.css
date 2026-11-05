@@ -99,7 +99,7 @@ em { font-style: normal; }
 :root[data-theme="dark"] .theme-btn .moon { display: block; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme-btn .sun { display: none; } :root:not([data-theme="light"]) .theme-btn .moon { display: block; } }
 @media (min-width: 860px) { .nav-links { display: flex; } .nav-tools { margin-left: 12px; } }
-.brand span { white-space: nowrap; }
+.brand span { white-space: nowrap; text-transform: uppercase; letter-spacing: .03em; }
 @media (max-width: 480px) { .brand span { font-size: .84rem; } .nav-mail { display: none; } .nav-in { gap: 10px; } .nav-icon { width: 36px; height: 36px; } .nav-cv { padding: 9px 13px; } .kicker span:nth-child(3) { display: none; } }
 @media (max-width: 360px) { .brand span { display: none; } }
 .brand, .nav-icon { touch-action: pan-y; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
@@ -112,7 +112,7 @@ em { font-style: normal; }
 @media (min-width: 980px) { .hero-grid { grid-template-columns: minmax(min-content, 1.05fr) minmax(0, .95fr); gap: 48px; } }
 .kicker { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 22px; font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
 .kicker span + span::before { content: ""; display: inline-block; width: 5px; height: 5px; margin: 0 18px 2px 0; border-radius: 1px; background: var(--accent); transform: rotate(45deg); vertical-align: middle; }
-.hero h1 { font-weight: 600; font-size: clamp(3rem, 9vw, 8.4rem); line-height: .88; letter-spacing: -.055em; margin: 0 0 26px; }
+.hero h1 { font-weight: 600; font-size: clamp(3rem, 9vw, 8.4rem); line-height: .88; letter-spacing: -.035em; text-transform: uppercase; margin: 0 0 26px; }
 .statement { font-size: clamp(1.45rem, 2.6vw, 2.35rem); line-height: 1.12; letter-spacing: -.03em; font-weight: 500; max-width: 22ch; margin: 0 0 20px; }
 .statement em { color: var(--accent-ink); }
 .lede { font-size: clamp(1.05rem, 1.25vw, 1.3rem); color: var(--ink-2); max-width: 50ch; margin: 0 0 28px; }
