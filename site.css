@@ -152,8 +152,7 @@ section.sec { padding-block: clamp(56px, 8vw, 112px); }
 section.sec + section.sec { border-top: 1px solid var(--line); }
 .sec-head { display: grid; gap: 10px 32px; margin-bottom: clamp(28px, 4vw, 52px); }
 .h-sec { font-size: clamp(2.1rem, 5vw, 4.4rem); line-height: .98; letter-spacing: -.045em; font-weight: 600; }
-.h-big { font-size: clamp(3.4rem, 11vw, 9.5rem); line-height: .9; letter-spacing: -.06em; font-weight: 600; }
-.h-sec em, .h-big em { color: var(--ink-3); }
+.h-sec em { color: var(--ink-3); }
 .sec-note { margin: 0; color: var(--ink-2); max-width: 46ch; }
 @media (min-width: 980px) { .sec-head { grid-template-columns: 1fr auto; align-items: end; } .sec-head .label { grid-column: 1 / -1; } .sec-note { justify-self: end; text-align: right; } }
 
@@ -254,6 +253,7 @@ dl.facts a:hover { text-decoration: underline; }
 .proof-links button:hover { text-decoration-color: currentColor; }
 
 .contact .sec-head { margin-bottom: clamp(24px, 3vw, 40px); }
+.contact .h-sec { max-width: 22ch; }
 .form { display: grid; gap: 14px; max-width: 980px; position: relative; }
 .form textarea, .form input { width: 100%; font: 400 1.05rem/1.5 var(--sans); color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line-2); border-radius: 0; padding: 14px 2px; transition: border-color .2s; }
 .form textarea { min-height: 120px; resize: vertical; font-size: clamp(1.1rem, 1.6vw, 1.35rem); }
