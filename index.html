@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="/site.css?v=69" />
+  <link rel="stylesheet" href="/site.css?v=73" />
 </head>
 <body>
 <header class="nav">
@@ -77,43 +77,9 @@
         </div>
       </div>
       <figure class="stage" id="stage">
-        <svg class="xv" id="xv" viewBox="0 -10 560 540" role="img" aria-labelledby="xvTitle">
-          <title id="xvTitle">Exploded view of a four-part assembly, one part for each stage of how I work: research, concept and CAD, simulation, prototype</title>
-          <line class="axis" x1="220" y1="0" x2="220" y2="525"/>
-          <g class="part" data-k="0">
-            <path class="fl" d="M70 380 L220 466.6 L220 496.6 L70 410 Z"/>
-            <path class="fr" d="M220 466.6 L370 380 L370 410 L220 496.6 Z"/>
-            <path class="ft" d="M220 293.4 L370 380 L220 466.6 L70 380 Z"/>
-            <ellipse class="hole" cx="220" cy="319.4" rx="7" ry="4"/><ellipse class="hole" cx="325" cy="380" rx="7" ry="4"/><ellipse class="hole" cx="220" cy="440.6" rx="7" ry="4"/><ellipse class="hole" cx="115" cy="380" rx="7" ry="4"/>
-            <path class="lead" d="M345 409 L420 440 H436"/>
-            <text x="442" y="436"><tspan class="n">01</tspan> Research</text><text class="sub" x="442" y="454">Interviews, field visits</text>
-          </g>
-          <g class="part" data-k="1">
-            <path class="fl" d="M70 372 L220 458.6 L220 466.6 L70 380 Z"/>
-            <path class="fr" d="M220 458.6 L370 372 L370 380 L220 466.6 Z"/>
-            <path class="ft" d="M220 285.4 L370 372 L220 458.6 L70 372 Z"/>
-            <ellipse class="hole" cx="220" cy="372" rx="53" ry="30.6"/>
-            <ellipse class="hole" cx="220" cy="311.4" rx="7" ry="4"/><ellipse class="hole" cx="325" cy="372" rx="7" ry="4"/><ellipse class="hole" cx="220" cy="432.6" rx="7" ry="4"/><ellipse class="hole" cx="115" cy="372" rx="7" ry="4"/>
-            <path class="lead" d="M358 383 L420 376 H436"/>
-            <text x="442" y="372"><tspan class="n">02</tspan> Concept &amp; CAD</text><text class="sub" x="442" y="390">Sketching, Fusion 360</text>
-          </g>
-          <g class="part" data-k="2">
-            <path class="fl" d="M162 346 V372 A58 33.5 0 0 0 278 372 V346 A58 33.5 0 0 1 162 346 Z"/>
-            <ellipse class="ft" cx="220" cy="346" rx="58" ry="33.5"/>
-            <ellipse class="hole" cx="220" cy="346" rx="26" ry="15"/>
-            <path class="lead" d="M278 360 L420 316 H436"/>
-            <text x="442" y="312"><tspan class="n">03</tspan> Simulation</text><text class="sub" x="442" y="330">FEA, CFD, analysis</text>
-          </g>
-          <g class="part" data-k="3">
-            <path class="fl" d="M140 330 L220 376.2 L220 392.2 L140 346 Z"/>
-            <path class="fr" d="M220 376.2 L300 330 L300 346 L220 392.2 Z"/>
-            <path class="ft" d="M220 283.8 L300 330 L220 376.2 L140 330 Z"/>
-            <ellipse class="hole" cx="220" cy="330" rx="12" ry="7"/>
-            <path class="lead" d="M300 338 L420 256 H436"/>
-            <text x="442" y="252"><tspan class="n">04</tspan> Prototype</text><text class="sub" x="442" y="270">Build, test, iterate</text>
-          </g>
-        </svg>
-        <figcaption><span>Fig. 00</span><span>How I work, as an exploded view. Scroll to pull it apart.</span></figcaption>
+        <canvas class="xv3" id="xv3" data-src="/assets/models/boa.bin?v=73" role="img" aria-label="3D model of the AlignΞd BOA tightening mechanism, exploded into its parts"></canvas>
+        <img class="xv-still" src="/assets/images/web/boa-still.webp" alt="AlignΞd BOA tightening mechanism, exploded into its parts" width="776" height="815" loading="lazy" decoding="async">
+        <figcaption><span>Fig. 00</span><span>AlignΞd tightening mechanism, a BOA-style ratchet. Scroll to pull it apart, drag to turn it.</span></figcaption>
       </figure>
     </div>
   </section>
@@ -244,6 +210,7 @@
   </div>
 </dialog>
 
-<script src="/site.js?v=69"></script>
+<script src="/site.js?v=73"></script>
+<script src="/hero3d.js?v=73" defer></script>
 </body>
 </html>

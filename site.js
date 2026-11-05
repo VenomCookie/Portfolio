@@ -648,40 +648,6 @@
   })();
 
   (function () {
-    var xv = $("xv"); if (!xv) return;
-    var parts = Array.prototype.slice.call(xv.querySelectorAll(".part"));
-    var OFF = [0, -64, -136, -210];
-    var cur = 0, target = 0, intro = reduced ? 1 : 0, introStart = 0, raf = null;
-    var painted = null, visible = true;
-    function paint(e) {
-      var key = e.toFixed(3);
-      if (key === painted) return;
-      painted = key;
-      parts.forEach(function (g, k) { g.style.transform = "translate(0px," + (OFF[k] * e).toFixed(2) + "px)"; });
-    }
-    function goal() {
-      var r = xv.getBoundingClientRect(), vh = window.innerHeight || 1;
-      var c = (r.top + r.height / 2) / vh;
-      return Math.max(0.35, Math.min(1, 0.35 + (0.75 - c) * 0.87));
-    }
-    function loop(now) {
-      if (!introStart) introStart = now;
-      if (intro < 1) { var t = Math.max(0, Math.min(1, (now - introStart - 250) / 1300)); intro = 1 - Math.pow(1 - t, 3); }
-      cur += (target - cur) * 0.12;
-      paint(cur * intro);
-      if (intro < 1 || Math.abs(target - cur) > 0.0005) raf = requestAnimationFrame(loop);
-      else { cur = target; paint(cur * intro); raf = null; }
-    }
-    function kick() { if (!visible) return; target = goal(); if (reduced) { paint(target); return; } if (!raf) raf = requestAnimationFrame(loop); }
-    paint(0);
-    target = cur = goal();
-    kick();
-    if ("IntersectionObserver" in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible) kick(); }).observe(xv);
-    window.addEventListener("scroll", kick, { passive: true });
-    window.addEventListener("resize", kick);
-  })();
-
-  (function () {
     var grid = $("moreGrid"); if (!grid || !window.matchMedia("(hover: hover)").matches) return;
     var t = null;
     window.addEventListener("scroll", function () {
