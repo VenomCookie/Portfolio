@@ -630,28 +630,18 @@
     var root = document.documentElement, btn = $("themeBtn"), meta = document.querySelector('meta[name="theme-color"]');
     var mq = window.matchMedia("(prefers-color-scheme: dark)");
     function current() { return root.getAttribute("data-theme") || (mq.matches ? "dark" : "light"); }
-    var busy = false, drop = null;
     function sync() {
       var t = current();
-      btn.setAttribute("aria-checked", t === "dark" ? "true" : "false");
+      btn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
       if (meta) meta.setAttribute("content", t === "dark" ? "#111213" : "#F3F3F1");
     }
     btn.addEventListener("click", function () {
-      if (busy) return;
-      busy = true;
       var next = current() === "dark" ? "light" : "dark";
-      btn.classList.add("lift");
-      clearTimeout(drop);
-      setTimeout(function () { btn.setAttribute("aria-checked", next === "dark" ? "true" : "false"); }, reduced ? 0 : 140);
-      setTimeout(function () {
-        root.classList.add("theme-fade");
-        root.setAttribute("data-theme", next);
-        try { localStorage.setItem("ys-theme", next); } catch (e) { }
-        sync();
-        busy = false;
-        setTimeout(function () { root.classList.remove("theme-fade"); }, 500);
-      }, reduced ? 0 : 300);
-      drop = setTimeout(function () { btn.classList.remove("lift"); }, 1100);
+      root.classList.add("theme-fade");
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("ys-theme", next); } catch (e) { }
+      sync();
+      setTimeout(function () { root.classList.remove("theme-fade"); }, 500);
     });
     if (mq.addEventListener) mq.addEventListener("change", sync);
     sync();
