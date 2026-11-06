@@ -21,7 +21,7 @@
       slug: "pdet2folio", order: 95, code: "PDE", flagship: true, title: "AlignΞd: Knee Brace for Gym Beginners", year: 2026, scope: "Pair", role: "Mechanism design, assembly & user research",
       disc: ["Product Design", "CAD & Prototyping", "UX & Research"], tools: ["Fusion 360", "User interviews", "DFM", "Electronics"],
       hook: "A brace that helps beginners hold good form and keep tempo through a squat.",
-      big: ["Working", "prototype that guides squat form and tempo"],
+      big: ["Boost", "confidence in gym beginners"],
       summary: "Beginners are an underserved group in the gym: generic and specialist kit exists, but nothing helps you through the door. We interviewed members of the public and high-end gyms in South Kensington, including Equinox and Retro Fit, then designed and built a working knee brace that helps correct form and keep to a tempo during squats.",
       did: ["Designed the one-handed tightening mechanism and adapted it to the brace.", "Designed the enclosure with Zayn, who built the sensors and code, then assembled the final product.", "Wrote the A3 report; Zayn wrote the technical report.", "Interviewed members of the public and gym staff with Zayn."],
       stats: [["Working", "prototype, assembled by me"], ["2 gyms", "Equinox and Retro Fit, plus members of the public"], ["2", "person team, with Zayn Muntazir"]],
