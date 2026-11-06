@@ -7,8 +7,8 @@
     (function () {
       var d = document.documentElement, t = null;
       d.className += " js";
-      try { t = localStorage.getItem("ys-theme"); } catch (e) { }
-      if (t === "light" || t === "dark") d.setAttribute("data-theme", t);
+      try { t = sessionStorage.getItem("ys-theme"); localStorage.removeItem("ys-theme"); } catch (e) { }
+      d.setAttribute("data-theme", t === "dark" ? "dark" : "light");
     })();
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHT5H5W4VT"></script>
@@ -35,28 +35,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="/site.css?v=75" />
+  <link rel="stylesheet" href="/site.css?v=76" />
 </head>
 <body>
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="Back to top">
-      <svg viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="9" fill="var(--accent)"/>
-        <g class="plane"><path transform="rotate(45 16 16)" fill="#fff" d="M16 4.5c.9 0 1.5 1.1 1.5 2.4v5.6l8.5 5v2.1l-8.5-2.6-.2 5.6 2.7 2v1.6L16 25.2l-4 1v-1.6l2.7-2-.2-5.6-8.5 2.6v-2.1l8.5-5V6.9c0-1.3.6-2.4 1.5-2.4z"/></g>
-      </svg>
-      <span>Yousuf Shahabuddin</span>
-    </a>
+    <div class="brand">
+      <button class="brand-mark" type="button" id="themeBtn" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="var(--accent)"/>
+          <g class="plane"><path transform="rotate(45 16 16)" fill="#fff" d="M16 4.5c.9 0 1.5 1.1 1.5 2.4v5.6l8.5 5v2.1l-8.5-2.6-.2 5.6 2.7 2v1.6L16 25.2l-4 1v-1.6l2.7-2-.2-5.6-8.5 2.6v-2.1l8.5-5V6.9c0-1.3.6-2.4 1.5-2.4z"/></g>
+        </svg>
+      </button>
+      <a class="brand-name" href="#top" aria-label="Back to top">Yousuf Shahabuddin</a>
+    </div>
     <nav class="nav-links" aria-label="Sections">
       <a href="#work">Work</a><a href="#index">More projects</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <div class="nav-tools">
-      <button class="btn btn-tonal nav-icon theme-btn" type="button" id="themeBtn" aria-label="Switch to dark mode">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <g class="sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g>
-          <path class="moon" fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/>
-        </svg>
-      </button>
       <a class="btn btn-tonal nav-icon nav-mail" href="#contact" aria-label="Contact me" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg></a>
       <a class="btn btn-linkedin nav-icon nav-li" href="https://www.linkedin.com/in/yousuf-shb" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
       <a class="btn btn-solid nav-cv" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
@@ -210,7 +206,7 @@
   </div>
 </dialog>
 
-<script src="/site.js?v=75"></script>
-<script src="/hero3d.js?v=75" defer></script>
+<script src="/site.js?v=76"></script>
+<script src="/hero3d.js?v=76" defer></script>
 </body>
 </html>

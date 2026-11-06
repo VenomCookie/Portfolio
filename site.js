@@ -559,7 +559,7 @@
 
   (function () {
     var MAX = 3, FRICTION = 0.996, GAIN = 1.6;
-    Array.prototype.forEach.call(document.querySelectorAll(".brand, .nav-icon"), function (host) {
+    Array.prototype.forEach.call(document.querySelectorAll(".brand-mark, .nav-icon"), function (host) {
       var icon = host.querySelector("svg");
       if (!icon) return;
       var angle = 0, vel = 0, down = false, moved = false, raf = null;
@@ -628,22 +628,22 @@
 
   (function () {
     var root = document.documentElement, btn = $("themeBtn"), meta = document.querySelector('meta[name="theme-color"]');
-    var mq = window.matchMedia("(prefers-color-scheme: dark)");
-    function current() { return root.getAttribute("data-theme") || (mq.matches ? "dark" : "light"); }
+    if (!btn) return;
+    function current() { return root.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
     function sync() {
-      var t = current();
-      btn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
-      if (meta) meta.setAttribute("content", t === "dark" ? "#111213" : "#F3F3F1");
+      var dark = current() === "dark";
+      btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+      if (meta) meta.setAttribute("content", dark ? "#111213" : "#F3F3F1");
     }
     btn.addEventListener("click", function () {
       var next = current() === "dark" ? "light" : "dark";
       root.classList.add("theme-fade");
       root.setAttribute("data-theme", next);
-      try { localStorage.setItem("ys-theme", next); } catch (e) { }
+      try { sessionStorage.setItem("ys-theme", next); } catch (e) { }
       sync();
       setTimeout(function () { root.classList.remove("theme-fade"); }, 500);
     });
-    if (mq.addEventListener) mq.addEventListener("change", sync);
     sync();
   })();
 
