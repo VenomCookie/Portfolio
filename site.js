@@ -183,7 +183,7 @@
       return '<figure class="gal-slide' + (i ? '' : ' on') + '"><img src="/assets/images/web/' + m[0] + '" alt="' + esc(m[1]) + '" decoding="async" draggable="false"></figure>';
     }).join("") + '</div>';
     h += '<div class="gal-bar"><b id="galFig">Fig. 01' + (p.media.length > 1 ? ' / ' + pad(p.media.length, 2) : '') + '</b><span id="galCap">' + esc(p.media[0][1]) + '</span>' +
-      (p.media.length > 1 ? '<button class="icon-btn" type="button" id="galPrev" aria-label="Previous figure">←</button><button class="icon-btn" type="button" id="galNext" aria-label="Next figure">→</button>' : '') + '</div>';
+      (p.media.length > 1 ? '<button class="icon-btn" type="button" id="galPrev" aria-label="Previous figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="icon-btn" type="button" id="galNext" aria-label="Next figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>' : '') + '</div>';
     if (p.media.length > 1) {
       h += '<div class="thumbs" id="galThumbs" aria-label="All figures">' + p.media.map(function (m, i) {
         return '<button type="button" data-i="' + i + '" aria-current="' + (i === 0) + '" aria-label="Figure ' + (i + 1) + ': ' + esc(m[1]) + '" title="' + esc(m[1]) + '"><img src="/assets/images/web/' + m[0] + '" alt="" decoding="async" draggable="false"><span>' + pad(i + 1, 2) + '</span></button>';
