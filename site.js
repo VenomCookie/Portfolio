@@ -3,7 +3,6 @@
 
   var LIVE = "/";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   var P = [
     {
@@ -139,42 +138,51 @@
   function pad(n, w) { n = String(n); while (n.length < w) n = "0" + n; return n; }
   function valHtml(v) { return v === "NEEDS" ? '<span class="needs">NEEDS</span>' : esc(v); }
 
-  var flagsEl = $("flags");
-  flagsEl.innerHTML = P.filter(function (p) { return p.flagship; }).map(function (p, i) {
+  var flags = P.filter(function (p) { return p.flagship; });
+  $("flags").innerHTML = flags.map(function (p, i) {
     var withLine = p.credits ? '<div class="with">with ' + p.credits.map(function (c) { return c[1] ? '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>' : esc(c[0]); }).join(" &amp; ") + '</div>' : "";
     var links = '<button type="button" class="primary" data-open="' + p.slug + '">Read summary <i>→</i></button>';
     if (p.reports) links += '<a href="' + LIVE + p.reports[0][1] + '" target="_blank" rel="noopener">Report PDF ↗</a>';
     if (p.live) links += '<a href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play ↗</a>';
-    return '<article class="flag" data-open="' + p.slug + '">' +
-      '<div class="media"><img src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"><span class="fig">FIG. ' + pad(i + 1, 2) + '</span></div>' +
-      '<div class="body"><div class="meta mono"><span>' + esc(p.disc[0]) + '</span><span>' + esc(p.scope) + '</span><span>' + p.year + '</span></div>' +
-      '<h3><a href="#' + p.slug + '" style="text-decoration:none">' + esc(p.title) + '</a></h3>' + withLine + '<p>' + esc(p.hook) + '</p>' +
-      '<div class="bigstat"><b>' + valHtml(p.big[0]) + '</b><span>' + esc(p.big[1]) + '</span></div>' +
-      '<div class="links">' + links + '</div></div></article>';
+    return '<article class="feat rv" data-open="' + p.slug + '">' +
+      '<div class="feat-body"><div>' +
+      '<div class="feat-top"><span class="feat-n">' + pad(i + 1, 2) + '</span><div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + esc(p.scope) + '</span><span>' + p.year + '</span></div></div>' +
+      '<h3 style="margin:14px 0 12px"><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3>' + withLine + '<p style="margin-top:10px">' + esc(p.hook) + '</p></div>' +
+      '<div><div class="feat-stat"><b>' + valHtml(p.big[0]) + '</b><span>' + esc(p.big[1]) + '</span></div>' +
+      '<div class="links" style="margin-top:18px">' + links + '</div></div></div>' +
+      '<figure class="feat-media"><img src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"><span class="fig">Fig. ' + pad(i + 2, 2) + '</span></figure>' +
+      '</article>';
   }).join("");
 
   var others = P.filter(function (p) { return !p.flagship; });
   $("moreGrid").innerHTML = others.map(function (p, i) {
-    return '<article class="card" data-open="' + p.slug + '">' +
-      '<div class="media"><img src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"><span class="fig">FIG. ' + pad(i + 4, 2) + '</span>' + (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play now</a>' : '') + '</div>' +
-      '<div class="body"><div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + p.year + '</span></div>' +
-      '<h3><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3><p>' + esc(p.hook) + '</p></div></article>';
-  }).join("") + '<article class="card wipcard"><div class="body"><div class="meta"><span>Currently building</span></div><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div></article>';
+    var f = p.media[0][0];
+    var img = '<img src="/assets/images/thumb/' + f + '" srcset="/assets/images/thumb/' + f + ' 600w, /assets/images/web/' + f + ' 900w" sizes="(min-width: 1700px) 300px, (min-width: 1300px) 22vw, (min-width: 980px) 30vw, (min-width: 640px) 45vw, 92vw" alt="" loading="lazy" decoding="async">';
+    var fig = '<span class="fig">Fig. ' + pad(i + flags.length + 2, 2) + '</span>';
+    var meta = '<div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + p.year + '</span></div>';
+    return '<article class="tile rv" data-open="' + p.slug + '"><div class="tile-in">' +
+      '<div class="face front" aria-hidden="true"><div class="media">' + img + fig + '</div>' +
+      '<div class="body">' + meta + '<h3>' + esc(p.title) + '</h3><p>' + esc(p.hook) + '</p></div></div>' +
+      '<div class="face back"><div class="media">' + img.replace('alt=""', 'alt="' + esc(p.media[0][1]) + '"') + fig +
+      (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play now</a>' : '') + '</div>' +
+      '<div class="body">' + meta + '<h3><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3><p>' + esc(p.hook) + '</p></div></div>' +
+      '</div></article>';
+  }).join("") + '<article class="tile wip rv"><div class="wip-in"><div class="meta"><span>Currently building</span></div><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div></article>';
 
   var dlg = $("sheet"), body = $("shBody"), current = null, originImg = null, labStop = null;
 
   function render(p) {
     current = p;
-    $("shCode").textContent = "SHT " + p.code + "-" + pad(p.n, 2) + " · ITEM " + pad(p.n, 2) + " OF " + pad(P.length, 2);
+    $("shCode").textContent = pad(p.n, 2) + " / " + pad(P.length, 2);
     var h = "";
-    h += '<div class="tb"><div class="ttl"><small>Title</small><h2 id="shTitle">' + esc(p.title) + '</h2></div>' +
+    h += '<div class="sh-head"><h2 id="shTitle">' + esc(p.title) + '</h2><div class="tb">' +
       '<div><small>Year</small><span>' + p.year + '</span></div><div><small>Scope</small><span>' + esc(p.scope) + '</span></div>' +
-      '<div><small>Role</small><span>' + esc(p.role) + '</span></div><div><small>Discipline</small><span>' + esc(p.disc[0]) + '</span></div></div>';
+      '<div><small>Role</small><span>' + esc(p.role) + '</span></div><div><small>Discipline</small><span>' + esc(p.disc[0]) + '</span></div></div></div>';
     if (p.live) h += '<div class="live-cta"><a class="btn btn-solid" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play it live ↗</a><span>Runs in your browser, nothing to download.</span></div>';
     h += '<div class="gal"><div class="gal-track' + (p.media.length > 1 ? ' multi' : '') + '" id="galTrack" tabindex="0" aria-label="Figures, scroll sideways">' + p.media.map(function (m, i) {
       return '<figure class="gal-slide' + (i ? '' : ' on') + '"><img src="/assets/images/web/' + m[0] + '" alt="' + esc(m[1]) + '" decoding="async" draggable="false"></figure>';
     }).join("") + '</div>';
-    h += '<div class="gal-bar"><b id="galFig">FIG. 01' + (p.media.length > 1 ? ' / ' + pad(p.media.length, 2) : '') + '</b><span id="galCap">' + esc(p.media[0][1]) + '</span>' +
+    h += '<div class="gal-bar"><b id="galFig">Fig. 01' + (p.media.length > 1 ? ' / ' + pad(p.media.length, 2) : '') + '</b><span id="galCap">' + esc(p.media[0][1]) + '</span>' +
       (p.media.length > 1 ? '<button class="icon-btn" type="button" id="galPrev" aria-label="Previous figure">←</button><button class="icon-btn" type="button" id="galNext" aria-label="Next figure">→</button>' : '') + '</div>';
     if (p.media.length > 1) {
       h += '<div class="thumbs" id="galThumbs" aria-label="All figures">' + p.media.map(function (m, i) {
@@ -212,7 +220,7 @@
     function show(k) {
       cur = k;
       slides.forEach(function (sl, i) { sl.classList.toggle("on", i === k); });
-      $("galFig").textContent = "FIG. " + pad(k + 1, 2) + (n > 1 ? " / " + pad(n, 2) : "");
+      $("galFig").textContent = "Fig. " + pad(k + 1, 2) + (n > 1 ? " / " + pad(n, 2) : "");
       $("galCap").textContent = p.media[k][1];
       var th = $("galThumbs");
       if (th) {
@@ -337,13 +345,13 @@
         mount.querySelectorAll("#segV button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-v") === k)); });
         var img = $("feaImg"); img.src = "/assets/images/web/" + v.img; img.alt = v.alt;
         var h = "";
-        h += '<div class="row"><span>Fundamental frequency</span><b>' + v.f.toFixed(1) + ' Hz</b></div>' + bar(v.f / 120 * 100, v.f >= 50, 50 / 120 * 100, "50 Hz floor");
+        h += '<div class="g-row"><span>Fundamental frequency</span><b>' + v.f.toFixed(1) + ' Hz</b></div>' + bar(v.f / 120 * 100, v.f >= 50, 50 / 120 * 100, "50 Hz floor");
         var lifeTxt = v.life ? v.life.toLocaleString("en-GB") + " cycles" : "> 10⁶ cycles (SF " + v.sf.toFixed(2) + ")";
         var lifePct = v.life ? Math.log10(v.life) / 7 * 100 : 92;
-        h += '<div class="row"><span>Fatigue life (minimum)</span><b>' + lifeTxt + '</b></div>' + bar(lifePct, !v.life || v.life >= 1e6, 6 / 7 * 100, "10⁶ target");
-        h += '<div class="row"><span>Mass</span><b>' + v.mass.toFixed(1) + ' g</b></div>' + bar(v.mass / 900 * 100, v.mass <= 600, 600 / 900 * 100, "600 g limit");
-        h += '<div class="row"><span>Peak von Mises stress</span><b>' + v.stress.toFixed(2) + ' MPa</b></div>';
-        h += '<div class="row"><span>Max deformation</span><b>' + v.def.toFixed(1) + ' mm</b></div>';
+        h += '<div class="g-row"><span>Fatigue life (minimum)</span><b>' + lifeTxt + '</b></div>' + bar(lifePct, !v.life || v.life >= 1e6, 6 / 7 * 100, "10⁶ target");
+        h += '<div class="g-row"><span>Mass</span><b>' + v.mass.toFixed(1) + ' g</b></div>' + bar(v.mass / 900 * 100, v.mass <= 600, 600 / 900 * 100, "600 g limit");
+        h += '<div class="g-row"><span>Peak von Mises stress</span><b>' + v.stress.toFixed(2) + ' MPa</b></div>';
+        h += '<div class="g-row"><span>Max deformation</span><b>' + v.def.toFixed(1) + ' mm</b></div>';
         h += '<div class="verdict ' + (v.ok ? "ok" : "bad") + '">' + v.verdict + '</div>';
         $("feaG").innerHTML = h;
       }
@@ -551,7 +559,7 @@
 
   (function () {
     var MAX = 3, FRICTION = 0.996, GAIN = 1.6;
-    Array.prototype.forEach.call(document.querySelectorAll(".brand, .nav-icon"), function (host) {
+    Array.prototype.forEach.call(document.querySelectorAll(".brand-mark, .nav-icon"), function (host) {
       var icon = host.querySelector("svg");
       if (!icon) return;
       var angle = 0, vel = 0, down = false, moved = false, raf = null;
@@ -616,6 +624,61 @@
       }, true);
       host.addEventListener("dragstart", function (e) { e.preventDefault(); });
     });
+  })();
+
+  (function () {
+    var root = document.documentElement, btn = $("themeBtn"), meta = document.querySelector('meta[name="theme-color"]');
+    if (!btn) return;
+    function current() { return root.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+    function sync() {
+      var dark = current() === "dark";
+      btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+      if (meta) meta.setAttribute("content", dark ? "#111213" : "#F3F3F1");
+    }
+    btn.addEventListener("click", function () {
+      var next = current() === "dark" ? "light" : "dark";
+      root.classList.add("theme-fade");
+      root.setAttribute("data-theme", next);
+      try { sessionStorage.setItem("ys-theme", next); } catch (e) { }
+      sync();
+      setTimeout(function () { root.classList.remove("theme-fade"); }, 500);
+    });
+    sync();
+  })();
+
+  (function () {
+    var grid = $("moreGrid"); if (!grid || !window.matchMedia("(hover: hover)").matches) return;
+    var t = null;
+    window.addEventListener("scroll", function () {
+      if (!t) grid.classList.add("noflip"); else clearTimeout(t);
+      t = setTimeout(function () { grid.classList.remove("noflip"); t = null; }, 180);
+    }, { passive: true });
+  })();
+
+  (function () {
+    if (reduced || !window.matchMedia("(hover: none)").matches || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("lit"); io.unobserve(en.target); } });
+    }, { rootMargin: "-30% 0px -30% 0px" });
+    document.querySelectorAll(".tile:not(.wip)").forEach(function (t) { io.observe(t); });
+  })();
+
+  (function () {
+    var els = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+    if (reduced || !("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      var k = 0;
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target, d = k++ * 70;
+        el.style.transitionDelay = d + "ms";
+        el.classList.add("in");
+        io.unobserve(el);
+        setTimeout(function () { el.classList.remove("rv", "in"); el.style.transitionDelay = ""; }, 900 + d);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
   })();
 
   $("year").textContent = new Date().getFullYear();
