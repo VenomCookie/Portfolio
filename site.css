@@ -24,6 +24,7 @@
   --r-sm: 10px;
   --sans: "Manrope", "Segoe UI", system-ui, sans-serif;
   --ease: cubic-bezier(.2,.8,.2,1);
+  --wash: .16;
   color-scheme: light;
 }
 :root[data-theme="dark"] {
@@ -33,14 +34,16 @@
   --accent: #4cb0bf; --accent-ink: #72c8d4; --accent-wash: rgba(76,176,191,.14); --on-accent: #0b1315;
   --face-t: #232627; --face-l: #191B1C; --face-r: #131516;
   --ok: #5cc28d; --bad: #e57a74; --scrim: rgba(0,0,0,.62); --img-dim: brightness(.9);
+  --wash: .1;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: url(/assets/images/limewash.webp) 0 0 / 768px repeat; opacity: var(--wash); }
 html { scroll-behavior: smooth; background: var(--bg); }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
-html.theme-fade body, html.theme-fade .nav, html.theme-fade dialog.sheet { transition: background-color .45s var(--ease), color .45s var(--ease); }
+body { margin: 0; background: transparent; color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+html.theme-fade, html.theme-fade .nav, html.theme-fade dialog.sheet { transition: background-color .45s var(--ease), color .45s var(--ease); }
 a { color: inherit; }
 img { max-width: 100%; display: block; }
 main img, dialog img { filter: var(--img-dim); }
