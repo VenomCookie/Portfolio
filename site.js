@@ -46,7 +46,7 @@
       did: ["Worked on the car and the battery analysis sections of the report.", "Charlie Salt led the hand calculations and battery analysis, Zayn Muntazir the car and the CFD comparison, and Zipei Weng the CFD setup, simulation and optimisation."],
       stats: [["4", "person team"], ["0.32", "CFD drag coefficient at 30.5 m/s"], ["3%", "gap between CFD and wind-tunnel Cd (0.33)"], ["−0.05", "lift coefficient: slight downforce"], ["35.3 °C", "predicted battery temperature"]],
       media: [["bat0.webp", "Cover: the fastback and the cooling plate"], ["bat1.webp", "Project summary and CFD findings"], ["bat3.webp", "Wind tunnel testing"], ["bat2.webp", "Cooling plate design"], ["bat4.webp", "Cooling plate 3D modelling"]],
-      cover: "c-tf2.webp", reports: [["Full report (PDF)", "assets/docs/Battery_Pipeline.pdf"]],
+      reports: [["Full report (PDF)", "assets/docs/Battery_Pipeline.pdf"]],
       credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"], ["Charlie Salt", "https://www.linkedin.com/in/charlie-salt-307168335/"], ["Zipei Weng", "https://www.linkedin.com/in/zipeiweng/"]]
     },
     {
@@ -56,7 +56,7 @@
       summary: "A fully playable build of Azul for 2 to 4 players, written in JavaScript as a web app.",
       did: ["Implemented the full ruleset as a pure functional module, independent of the interface and covered by unit tests.", "Built the browser UI in vanilla JavaScript: drafting, pattern lines, wall tiling, scoring and end-game bonuses.", "Added full keyboard play and a high-contrast mode for colour-blind players."],
       stats: [["2–4", "players"], ["100%", "keyboard playable"]],
-      media: [["azul1.webp", "Game board"]], live: "azul/index.html"
+      media: [["azul1.webp", "Game board"]], cover: "azul0.webp", live: "azul/index.html"
     },
     {
       slug: "electronics", order: 75, code: "ESP", title: "Electronics Games", year: 2025, scope: "Individual", role: "Embedded, firmware & prototyping",
@@ -126,7 +126,7 @@
       hook: "A crisper site with colour and depth that react to scrolling.",
       summary: "A redesign of the First Gen Doctors website: sleeker and more consistent, with colour and depth that shift subtly as you scroll. Desktop first, mobile in progress.",
       did: ["Redesigned the visual system and key pages.", "Added gradient and shadow shifts on scroll."],
-      media: [["fgd0.webp", "Homepage"]], cover: "c-fgd.webp"
+      media: [["fgd0.webp", "Homepage"]]
     }
   ];
   P.sort(function (a, b) { return (b.order || 0) - (a.order || 0); });
@@ -137,7 +137,7 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function pad(n, w) { n = String(n); while (n.length < w) n = "0" + n; return n; }
   function valHtml(v) { return esc(v); }
-  var DIM = {"azul1.webp":[900,679],"bat0.webp":[900,636],"bat1.webp":[900,636],"bat2.webp":[900,636],"bat3.webp":[900,636],"bat4.webp":[900,636],"c-drinks.webp":[856,532],"c-fea.webp":[1083,726],"c-pde.webp":[1400,788],"c-fgd.webp":[800,785],"c-ipad.webp":[416,335],"c-shaver.webp":[656,558],"c-tf2.webp":[612,459],"c-ventara.webp":[1400,868],"drinks0.webp":[900,500],"elec0.webp":[900,600],"elec1.webp":[900,2010],"fea0.webp":[900,545],"fea1.webp":[900,626],"fea2.webp":[612,629],"fea3.webp":[900,683],"fea4.webp":[900,544],"fea5.webp":[900,516],"fgd0.webp":[900,502],"hydro0.webp":[900,637],"hydro1.webp":[900,637],"hydro2.webp":[900,637],"ipad0.webp":[900,506],"pde0.webp":[900,506],"pde1.webp":[900,637],"pde2.webp":[900,637],"rr0.webp":[900,506],"sde0.webp":[900,637],"shaver0.webp":[900,506],"thermo0.webp":[900,636],"thermo1.webp":[900,636]};
+  var DIM = {"azul0.webp":[499,500],"azul1.webp":[900,679],"bat0.webp":[900,636],"bat1.webp":[900,636],"bat2.webp":[900,636],"bat3.webp":[900,636],"bat4.webp":[900,636],"c-drinks.webp":[856,532],"c-fea.webp":[1083,726],"c-pde.webp":[1400,788],"c-ipad.webp":[416,335],"c-shaver.webp":[656,558],"c-ventara.webp":[1400,868],"drinks0.webp":[900,500],"elec0.webp":[900,600],"elec1.webp":[900,2010],"fea0.webp":[900,545],"fea1.webp":[900,626],"fea2.webp":[612,629],"fea3.webp":[900,683],"fea4.webp":[900,544],"fea5.webp":[900,516],"fgd0.webp":[900,502],"hydro0.webp":[900,637],"hydro1.webp":[900,637],"hydro2.webp":[900,637],"ipad0.webp":[900,506],"pde0.webp":[900,506],"pde1.webp":[900,637],"pde2.webp":[900,637],"rr0.webp":[900,506],"sde0.webp":[900,637],"shaver0.webp":[900,506],"thermo0.webp":[900,636],"thermo1.webp":[900,636]};
   function dims(f) { var d = DIM[f]; return d ? ' width="' + d[0] + '" height="' + d[1] + '"' : ""; }
   function cover(p) { return p.cover || p.media[0][0]; }
   var ICON = {
