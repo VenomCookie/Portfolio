@@ -199,8 +199,8 @@ section.sec + section.sec { border-top: 1px solid var(--line); }
 .feat-n { font-size: var(--fs-sm); font-weight: 700; color: var(--accent-ink); font-variant-numeric: tabular-nums; }
 .meta { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-4); }
 .feat h3 { font-size: var(--fs-h3); line-height: 1.02; letter-spacing: -.04em; font-weight: 600; margin: var(--sp-1) 0 0 -.02em; }
-.feat h3 a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .1em; text-decoration-color: transparent; transition: text-decoration-color .3s var(--ease); }
-.feat:hover h3 a, .feat h3 a:focus-visible { text-decoration-color: currentColor; }
+.feat h3 a { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 calc(100% - .19em) / 0 2px no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; transition: background-size .45s var(--ease); }
+.feat:hover h3 a, .feat h3 a:focus-visible { background-size: 100% 2px; }
 .feat p { margin: 0; color: var(--ink-2); max-width: 48ch; }
 .with { font-size: var(--fs-sm); color: var(--ink-3); }
 .with a { color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
