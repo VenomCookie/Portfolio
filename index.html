@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="/site.css?v=79" />
+  <link rel="stylesheet" href="/site.css?v=80" />
 </head>
 <body>
 <header class="nav">
@@ -53,9 +53,9 @@
       <a href="#work">Work</a><a href="#index">More projects</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <div class="nav-tools">
-      <a class="btn btn-tonal nav-icon nav-mail" href="#contact" aria-label="Contact me" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/></svg></a>
+      <a class="btn btn-tonal nav-icon nav-mail" href="#contact" aria-label="Contact me" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/><path d="m4 7 8 6 8-6"/></svg></a>
       <a class="btn btn-linkedin nav-icon nav-li" href="https://www.linkedin.com/in/yousuf-shb" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-      <a class="btn btn-solid nav-cv" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+      <a class="btn btn-solid nav-cv" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV <svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </div>
   </div>
 </header>
@@ -64,18 +64,18 @@
   <section class="hero" id="top">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="kicker"><span>Design Engineer / Imperial College London</span></p>
         <h1>Yousuf<br>Shahabuddin</h1>
         <p class="lede"><a href="https://www.imperial.ac.uk/study/courses/undergraduate/design-engineering/" target="_blank" rel="noopener">MEng Design Engineering</a> at Imperial. I take products from interviews and sketches through CAD and simulation to a working prototype, and I like proving each decision with a number.</p>
         <div class="cta">
-          <a class="btn btn-solid" href="#work">Flagship work <span aria-hidden="true">→</span></a>
-          <a class="btn btn-tonal" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV (PDF) <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-cta btn-lg" href="#work">Flagship work <svg class="i i-go" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-tonal btn-lg" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV (PDF) <svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
         </div>
       </div>
       <figure class="stage" id="stage">
         <canvas class="xv3" id="xv3" data-src="/assets/models/boa.bin?v=73" role="img" aria-label="3D model of the AlignΞd BOA tightening mechanism, exploded into its parts"></canvas>
+        <div class="stage-load" aria-hidden="true"><span>Loading model</span><i></i></div>
         <img class="xv-still" src="/assets/images/web/boa-still.webp" alt="AlignΞd BOA tightening mechanism, exploded into its parts" width="776" height="815" loading="lazy" decoding="async">
-        <figcaption><span>Fig. 00</span><span>AlignΞd tightening mechanism, a BOA-style ratchet. Scroll to pull it apart, drag to turn it.</span></figcaption>
+        <figcaption>AlignΞd tightening mechanism, a BOA-style ratchet. Scroll to pull it apart, drag to turn it.</figcaption>
       </figure>
     </div>
   </section>
@@ -87,8 +87,8 @@
   <section class="sec" id="work">
     <div class="wrap">
       <div class="sec-head rv">
-        <p class="label">Sheet 02 / Flagship work</p>
-        <h2 class="h-sec">Three projects, <em>in depth</em></h2>
+        <p class="label">Flagship work</p>
+        <h2 class="h-sec">Three projects, in depth</h2>
         <p class="sec-note">Open any project for a summary: figures, the key numbers, what I did, and the full report.</p>
       </div>
       <div class="feats" id="flags"></div>
@@ -98,7 +98,6 @@
   <section class="sec" id="index">
     <div class="wrap">
       <div class="sec-head rv">
-        <p class="label">Sheet 03 / More projects</p>
         <h2 class="h-sec">More work</h2>
         <p class="sec-note">Smaller and earlier projects.</p>
       </div>
@@ -109,8 +108,8 @@
   <section class="sec" id="about">
     <div class="wrap">
       <div class="sec-head rv">
-        <p class="label">Sheet 04 / About</p>
-        <h2 class="h-sec">Off the <em>drawing board</em></h2>
+        <p class="label">About</p>
+        <h2 class="h-sec">Off the drawing board</h2>
       </div>
       <div class="about-grid">
         <div class="about-copy rv">
@@ -120,18 +119,18 @@
         </div>
         <figure class="portrait rv">
           <img src="/assets/images/web/me.webp" alt="Portrait of Yousuf Shahabuddin" width="900" height="900">
-          <figcaption><span>Fig. 01</span><span>that's me!</span></figcaption>
+          <figcaption>that's me!</figcaption>
         </figure>
         <dl class="facts rv">
-          <dt>Course</dt><dd><a href="https://www.imperial.ac.uk/study/courses/undergraduate/design-engineering/" target="_blank" rel="noopener">MEng Design Engineering ↗</a></dd>
+          <dt>Course</dt><dd><a href="https://www.imperial.ac.uk/study/courses/undergraduate/design-engineering/" target="_blank" rel="noopener">MEng Design Engineering <svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></dd>
           <dt>University</dt><dd>Imperial College London</dd>
           <dt>Graduating</dt><dd>2028</dd>
           <dt>Placement</dt><dd>Apr to Sep 2027</dd>
-          <dt>Team</dt><dd><a href="https://felixonline.co.uk/articles/imperial-team-2nd-shell-eco-marathon/" target="_blank" rel="noopener">Shell Eco-marathon ↗</a></dd>
+          <dt>Team</dt><dd><a href="https://felixonline.co.uk/articles/imperial-team-2nd-shell-eco-marathon/" target="_blank" rel="noopener">Shell Eco-marathon <svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></dd>
           <dt>Research</dt><dd>UROP, Imperial</dd>
           <dt>Based</dt><dd>London, UK</dd>
           <dt>Interests</dt><dd>Aviation · Climbing · Archery · Karting</dd>
-          <dt>Tutoring</dt><dd><a href="https://latimertuition.com/find-a-tutor/3998456-yousuf-shahabuddin" target="_blank" rel="noopener">STEM, Year 7 to 13 ↗</a></dd>
+          <dt>Tutoring</dt><dd><a href="https://latimertuition.com/find-a-tutor/3998456-yousuf-shahabuddin" target="_blank" rel="noopener">STEM, Year 7 to 13 <svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></dd>
         </dl>
       </div>
       <div class="skills-block rv">
@@ -165,7 +164,6 @@
   <section class="sec contact" id="contact">
     <div class="wrap">
       <div class="sec-head rv">
-        <p class="label">Sheet 05 / Contact</p>
         <h2 class="h-sec">If you'd like to talk, feel free to drop me a message below</h2>
       </div>
       <form class="form rv" id="msgForm" novalidate>
@@ -177,13 +175,13 @@
           <input type="text" id="msgName" name="name" placeholder="Name (optional)" autocomplete="name">
           <label class="sr" for="msgEmail">Your email (optional, needed for a reply)</label>
           <input type="email" id="msgEmail" name="email" placeholder="Email (optional, for a reply)" autocomplete="email">
-          <button class="btn btn-solid" type="submit" id="msgSend">Send</button>
+          <button class="btn btn-cta btn-lg" type="submit" id="msgSend">Send</button>
         </div>
         <p class="status" id="msgStatus" role="status" aria-live="polite"></p>
         <p class="hint">Name and email are optional. Leave them blank to send anonymously.</p>
       </form>
       <div class="contact-alt">
-        <a class="btn btn-latimer" href="https://latimertuition.com/find-a-tutor/3998456-yousuf-shahabuddin" target="_blank" rel="noopener">Latimer Tuition · STEM tutor, Year 7 to 13 ↗</a>
+        <a class="btn btn-latimer" href="https://latimertuition.com/find-a-tutor/3998456-yousuf-shahabuddin" target="_blank" rel="noopener">Latimer Tuition · STEM tutor, Year 7 to 13 <svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </div>
     </div>
   </section>
@@ -206,7 +204,7 @@
   </div>
 </dialog>
 
-<script src="/site.js?v=79"></script>
-<script src="/hero3d.js?v=79" defer></script>
+<script src="/site.js?v=80"></script>
+<script src="/hero3d.js?v=80" defer></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
       did: ["Modelled the blade in Fusion 360 and set up static structural, stress-life fatigue and modal analyses in Ansys Mechanical.", "Ran global and local mesh convergence studies (5 mm global, 3 mm at the inner radius, 0.09% error) and checked mesh quality.", "Validated the model: reaction force within 0.03% of the applied load, physical deformation, and peak stress where curved-beam theory predicts.", "Iterated the geometry (larger bend radius, variable thickness) and compared three configurations against a 1,000,000-cycle fatigue target, a 50 Hz floor and a 600 g limit."],
       stats: [["−25.1%", "peak stress, design 1 → 2 (403 → 302 MPa)", 10], ["97.4 Hz", "fundamental frequency, CFRP design 2 (floor 50 Hz)", 11], ["4.97", "safety margin on UTS, up from 3.72", 10], ["422 g", "mass of CFRP design 2 (limit 600 g)", 10]],
       media: [["fea5.webp", "Aluminium von Mises stress, 314 MPa peak"], ["fea1.webp", "Design 1 and design 2 renders"], ["fea0.webp", "Design 1 CFRP, von Mises stress"], ["fea2.webp", "Converged mesh, design 1"], ["fea3.webp", "Design 2 CFRP, mode 1 at 97.4 Hz"], ["fea4.webp", "Aluminium fatigue life, minimum 26,670 cycles"]],
-      pdf: "assets/docs/FEA_RunningBlade_YS.pdf", lab: "fea"
+      cover: "c-fea.webp", pdf: "assets/docs/FEA_RunningBlade_YS.pdf", lab: "fea"
     },
     {
       slug: "pdet2folio", order: 95, code: "PDE", flagship: true, title: "AlignΞd: Knee Brace for Gym Beginners", year: 2026, scope: "Pair", role: "Mechanism design, assembly & user research",
@@ -25,7 +25,7 @@
       did: ["Designed the one-handed tightening mechanism and adapted it to the brace.", "Designed the enclosure with Zayn, who built the sensors and code, then assembled the final product.", "Wrote the A3 report; Zayn wrote the technical report.", "Interviewed members of the public and gym staff with Zayn."],
       stats: [["Working", "prototype, assembled by me"], ["2 gyms", "Equinox and Retro Fit, plus members of the public"], ["2", "person team, with Zayn Muntazir"]],
       media: [["pde0.webp", "Cover render"], ["pde1.webp", "Research and problem framing"], ["pde2.webp", "Concept development"]],
-      reports: [["A3 report (PDF)", "assets/docs/PDE2.pdf?v=2"], ["Technical report (PDF)", "assets/docs/PDE_Technical.pdf"]], credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"]], lab: "tempo"
+      cover: "c-pde.webp", reports: [["A3 report (PDF)", "assets/docs/PDE2.pdf?v=2"], ["Technical report (PDF)", "assets/docs/PDE_Technical.pdf"]], credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"]], lab: "tempo"
     },
     {
       slug: "thermo1", order: 92, code: "CFD", flagship: true, title: "Ventara: Aerodynamic Pick-up Truck", year: 2026, scope: "Individual", role: "Design & CFD",
@@ -36,7 +36,7 @@
       did: ["Ran the CFD in Fluent: 1:18 model at 30.5 m/s, 1 mm local mesh, polyhedral fill.", "Iterated the body to reduce drag and improve efficiency.", "Presented findings and recommendations for further development."],
       stats: [["0.3864", "drag coefficient, Cd"], ["0.2396", "lift coefficient, Cl"], ["293.87 N", "full-scale drag estimate at 30.5 m/s"], ["1:18", "scale model in Ansys Fluent"]],
       media: [["thermo0.webp", "Concept and benchmarks"], ["thermo1.webp", "Form development"]],
-      reports: [["Full report (PDF)", "assets/docs/YousufShahabuddin_Thermo1.pdf"]], lab: "drag"
+      cover: "c-ventara.webp", reports: [["Full report (PDF)", "assets/docs/YousufShahabuddin_Thermo1.pdf"]], lab: "drag"
     },
     {
       slug: "thermo2-battery", order: 85, code: "TF2", title: "Fastback Aero & Battery Cooling Plate", year: 2026, scope: "Group", role: "Car and battery analysis",
@@ -46,7 +46,7 @@
       did: ["Worked on the car and the battery analysis sections of the report.", "Charlie Salt led the hand calculations and battery analysis, Zayn Muntazir the car and the CFD comparison, and Zipei Weng the CFD setup, simulation and optimisation."],
       stats: [["4", "person team"], ["0.32", "CFD drag coefficient at 30.5 m/s"], ["3%", "gap between CFD and wind-tunnel Cd (0.33)"], ["−0.05", "lift coefficient: slight downforce"], ["35.3 °C", "predicted battery temperature"]],
       media: [["bat0.webp", "Cover: the fastback and the cooling plate"], ["bat1.webp", "Project summary and CFD findings"], ["bat3.webp", "Wind tunnel testing"], ["bat2.webp", "Cooling plate design"], ["bat4.webp", "Cooling plate 3D modelling"]],
-      reports: [["Full report (PDF)", "assets/docs/Battery_Pipeline.pdf"]],
+      cover: "c-tf2.webp", reports: [["Full report (PDF)", "assets/docs/Battery_Pipeline.pdf"]],
       credits: [["Zayn Muntazir", "https://www.linkedin.com/in/zayn-muntazir-44721b281/"], ["Charlie Salt", "https://www.linkedin.com/in/charlie-salt-307168335/"], ["Zipei Weng", "https://www.linkedin.com/in/zipeiweng/"]]
     },
     {
@@ -56,7 +56,7 @@
       summary: "A fully playable build of Azul for 2 to 4 players, written in JavaScript as a web app.",
       did: ["Implemented the full ruleset as a pure functional module, independent of the interface and covered by unit tests.", "Built the browser UI in vanilla JavaScript: drafting, pattern lines, wall tiling, scoring and end-game bonuses.", "Added full keyboard play and a high-contrast mode for colour-blind players."],
       stats: [["2–4", "players"], ["100%", "keyboard playable"]],
-      media: [["azul0.webp", "Game board"]], live: "azul/index.html"
+      media: [["azul1.webp", "Game board"]], live: "azul/index.html"
     },
     {
       slug: "electronics", order: 75, code: "ESP", title: "Electronics Games", year: 2025, scope: "Individual", role: "Embedded, firmware & prototyping",
@@ -102,7 +102,7 @@
       hook: "A countertop dispenser for MEDD Café, Jeddah: fast, hygienic, repairable.",
       summary: "A countertop soft-drinks dispenser so baristas at MEDD Café in Jeddah can focus on speciality coffee, built to be simple to clean and repair. I'm now in discussion with MEDD about a possible UK branch.",
       did: ["Took the brief through research, concept and prototype on my own.", "Designed for quick cleaning, simple repair and a form that fits behind a café counter.", "In ongoing discussion with the client as they consider opening in the UK."],
-      media: [["drinks0.webp", "Prototype"]]
+      media: [["drinks0.webp", "Prototype"]], cover: "c-drinks.webp"
     },
     {
       slug: "pocket-shaver", order: 50, code: "SHV", title: "Pocket Shaver Redesign", year: 2025, scope: "Individual", role: "Design & engineering",
@@ -110,7 +110,7 @@
       hook: "A Braun shaver reverse-engineered for lower mass and better repairability.",
       summary: "A reverse-engineering and redesign of a Braun pocket shaver, rebuilt for lighter weight, better repairability and lower end-of-life impact.",
       did: ["Detailed a redesigned shaver with materials and processes specified."],
-      media: [["shaver0.webp", "Redesign"]]
+      media: [["shaver0.webp", "Redesign"]], cover: "c-shaver.webp"
     },
     {
       slug: "ipad-stand", order: 45, code: "IPD", title: "iPad Stand", year: 2025, scope: "Individual", role: "Design & engineering",
@@ -118,7 +118,7 @@
       hook: "An adjustable printed stand with a curved, no-slip front lip.",
       summary: "An adjustable 3D-printed iPad stand with a curved front lip, so the device sits securely at several angles and your finger never fouls the screen when swiping up.",
       did: ["Modelled the stand in Fusion 360 with several viewing angles and a no-slip front edge.", "Printed and tested it for stability and angle adjustment."],
-      media: [["ipad0.webp", "Render"]]
+      media: [["ipad0.webp", "Render"]], cover: "c-ipad.webp"
     },
     {
       slug: "firstgendocs", order: 40, code: "FGD", title: "First Gen Doctors Website", year: 2025, scope: "Individual", role: "Design & front-end",
@@ -126,7 +126,7 @@
       hook: "A crisper site with colour and depth that react to scrolling.",
       summary: "A redesign of the First Gen Doctors website: sleeker and more consistent, with colour and depth that shift subtly as you scroll. Desktop first, mobile in progress.",
       did: ["Redesigned the visual system and key pages.", "Added gradient and shadow shifts on scroll."],
-      media: [["fgd0.webp", "Homepage"]]
+      media: [["fgd0.webp", "Homepage"]], cover: "c-fgd.webp"
     }
   ];
   P.sort(function (a, b) { return (b.order || 0) - (a.order || 0); });
@@ -136,38 +136,55 @@
   function $(id) { return document.getElementById(id); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function pad(n, w) { n = String(n); while (n.length < w) n = "0" + n; return n; }
-  function valHtml(v) { return v === "NEEDS" ? '<span class="needs">NEEDS</span>' : esc(v); }
+  function valHtml(v) { return esc(v); }
+  var DIM = {"azul1.webp":[900,679],"bat0.webp":[900,636],"bat1.webp":[900,636],"bat2.webp":[900,636],"bat3.webp":[900,636],"bat4.webp":[900,636],"c-drinks.webp":[856,532],"c-fea.webp":[1083,726],"c-pde.webp":[1400,788],"c-fgd.webp":[800,785],"c-ipad.webp":[416,335],"c-shaver.webp":[656,558],"c-tf2.webp":[612,459],"c-ventara.webp":[1400,868],"drinks0.webp":[900,500],"elec0.webp":[900,600],"elec1.webp":[900,2010],"fea0.webp":[900,545],"fea1.webp":[900,626],"fea2.webp":[612,629],"fea3.webp":[900,683],"fea4.webp":[900,544],"fea5.webp":[900,516],"fgd0.webp":[900,502],"hydro0.webp":[900,637],"hydro1.webp":[900,637],"hydro2.webp":[900,637],"ipad0.webp":[900,506],"pde0.webp":[900,506],"pde1.webp":[900,637],"pde2.webp":[900,637],"rr0.webp":[900,506],"sde0.webp":[900,637],"shaver0.webp":[900,506],"thermo0.webp":[900,636],"thermo1.webp":[900,636]};
+  function dims(f) { var d = DIM[f]; return d ? ' width="' + d[0] + '" height="' + d[1] + '"' : ""; }
+  function cover(p) { return p.cover || p.media[0][0]; }
+  var ICON = {
+    ext: '<svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
+    go: '<svg class="i i-go" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    back: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+    tick: '<svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
+  };
+  function fadeIn(root) {
+    Array.prototype.forEach.call(root.querySelectorAll(".media-ld img"), function (img) {
+      if (img.complete && img.naturalWidth) { img.classList.add("is-in"); return; }
+      img.addEventListener("load", function () { img.classList.add("is-in"); }, { once: true });
+      img.addEventListener("error", function () { img.classList.add("is-in"); }, { once: true });
+    });
+  }
 
   var flags = P.filter(function (p) { return p.flagship; });
   $("flags").innerHTML = flags.map(function (p, i) {
     var withLine = p.credits ? '<div class="with">with ' + p.credits.map(function (c) { return c[1] ? '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>' : esc(c[0]); }).join(" &amp; ") + '</div>' : "";
-    var links = '<button type="button" class="primary" data-open="' + p.slug + '">Read summary <i>→</i></button>';
-    if (p.reports) links += '<a href="' + LIVE + p.reports[0][1] + '" target="_blank" rel="noopener">Report PDF ↗</a>';
-    if (p.live) links += '<a href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play ↗</a>';
+    var links = '<button type="button" class="primary" data-open="' + p.slug + '">Read summary ' + ICON.go + '</button>';
+    if (p.reports) links += '<a href="' + LIVE + p.reports[0][1] + '" target="_blank" rel="noopener">Report PDF ' + ICON.ext + '</a>';
+    if (p.live) links += '<a href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play ' + ICON.ext + '</a>';
+    var f = cover(p);
     return '<article class="feat rv" data-open="' + p.slug + '">' +
-      '<div class="feat-body"><div>' +
+      '<div class="feat-body"><div class="feat-intro">' +
       '<div class="feat-top"><span class="feat-n">' + pad(i + 1, 2) + '</span><div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + esc(p.scope) + '</span><span>' + p.year + '</span></div></div>' +
-      '<h3 style="margin:14px 0 12px"><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3>' + withLine + '<p style="margin-top:10px">' + esc(p.hook) + '</p></div>' +
-      '<div><div class="feat-stat"><b>' + valHtml(p.big[0]) + '</b><span>' + esc(p.big[1]) + '</span></div>' +
-      '<div class="links" style="margin-top:18px">' + links + '</div></div></div>' +
-      '<figure class="feat-media"><img src="/assets/images/web/' + p.media[0][0] + '" alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"><span class="fig">Fig. ' + pad(i + 2, 2) + '</span></figure>' +
+      '<h3><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3>' + withLine + '<p>' + esc(p.hook) + '</p></div>' +
+      '<div class="feat-out"><div class="feat-stat"><b>' + valHtml(p.big[0]) + '</b><span>' + esc(p.big[1]) + '</span></div>' +
+      '<div class="links">' + links + '</div></div></div>' +
+      '<figure class="feat-media media-ld"><img src="/assets/images/web/' + f + '"' + dims(f) + ' alt="' + esc(p.media[0][1]) + '" loading="lazy" decoding="async"></figure>' +
       '</article>';
   }).join("");
 
   var others = P.filter(function (p) { return !p.flagship; });
   $("moreGrid").innerHTML = others.map(function (p, i) {
-    var f = p.media[0][0];
-    var img = '<img src="/assets/images/thumb/' + f + '" srcset="/assets/images/thumb/' + f + ' 600w, /assets/images/web/' + f + ' 900w" sizes="(min-width: 1700px) 300px, (min-width: 1300px) 22vw, (min-width: 980px) 30vw, (min-width: 640px) 45vw, 92vw" alt="" loading="lazy" decoding="async">';
-    var fig = '<span class="fig">Fig. ' + pad(i + flags.length + 2, 2) + '</span>';
+    var f = cover(p);
+    var img = '<img src="/assets/images/thumb/' + f + '" srcset="/assets/images/thumb/' + f + ' 600w, /assets/images/web/' + f + ' 900w" sizes="(min-width: 1700px) 300px, (min-width: 1300px) 22vw, (min-width: 980px) 30vw, (min-width: 640px) 45vw, 92vw"' + dims(f) + ' alt="" loading="lazy" decoding="async">';
     var meta = '<div class="meta"><span>' + esc(p.disc[0]) + '</span><span>' + p.year + '</span></div>';
     return '<article class="tile rv" data-open="' + p.slug + '"><div class="tile-in">' +
-      '<div class="face front" aria-hidden="true"><div class="media">' + img + fig + '</div>' +
+      '<div class="face front" aria-hidden="true"><div class="media media-ld">' + img + '</div>' +
       '<div class="body">' + meta + '<h3>' + esc(p.title) + '</h3><p>' + esc(p.hook) + '</p></div></div>' +
-      '<div class="face back"><div class="media">' + img.replace('alt=""', 'alt="' + esc(p.media[0][1]) + '"') + fig +
-      (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play now</a>' : '') + '</div>' +
+      '<div class="face back"><div class="media media-ld">' + img.replace('alt=""', 'alt="' + esc(p.media[0][1]) + '"') +
+      (p.live ? '<a class="play" href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play now ' + ICON.ext + '</a>' : '') + '</div>' +
       '<div class="body">' + meta + '<h3><a href="#' + p.slug + '">' + esc(p.title) + '</a></h3><p>' + esc(p.hook) + '</p></div></div>' +
       '</div></article>';
   }).join("") + '<article class="tile wip rv"><div class="wip-in"><div class="meta"><span>Currently building</span></div><ul><li>A wearable biosensor aimed at early disease detection.</li><li>An airline seat-selection tool that helps travellers get value for money.</li></ul></div></article>';
+  fadeIn(document);
 
   var dlg = $("sheet"), body = $("shBody"), current = null, originImg = null, labStop = null;
 
@@ -175,32 +192,35 @@
     current = p;
     $("shCode").textContent = pad(p.n, 2) + " / " + pad(P.length, 2);
     var h = "";
-    h += '<div class="sh-head"><h2 id="shTitle">' + esc(p.title) + '</h2><div class="tb">' +
+    h += '<div class="sh-group"><div class="sh-head"><h2 id="shTitle">' + esc(p.title) + '</h2><div class="tb">' +
       '<div><small>Year</small><span>' + p.year + '</span></div><div><small>Scope</small><span>' + esc(p.scope) + '</span></div>' +
       '<div><small>Role</small><span>' + esc(p.role) + '</span></div><div><small>Discipline</small><span>' + esc(p.disc[0]) + '</span></div></div></div>';
-    if (p.live) h += '<div class="live-cta"><a class="btn btn-solid" href="' + LIVE + p.live + '" target="_blank" rel="noopener">▶ Play it live ↗</a><span>Runs in your browser, nothing to download.</span></div>';
+    if (p.live) h += '<div class="live-cta"><a class="btn btn-cta" href="' + LIVE + p.live + '" target="_blank" rel="noopener">Play it live ' + ICON.ext + '</a><span>Runs in your browser, nothing to download.</span></div>';
+    h += '</div>';
     h += '<div class="gal"><div class="gal-track' + (p.media.length > 1 ? ' multi' : '') + '" id="galTrack" tabindex="0" aria-label="Figures, scroll sideways">' + p.media.map(function (m, i) {
-      return '<figure class="gal-slide' + (i ? '' : ' on') + '"><img src="/assets/images/web/' + m[0] + '" alt="' + esc(m[1]) + '" decoding="async" draggable="false"></figure>';
+      return '<figure class="gal-slide' + (i ? '' : ' on') + '"><img src="/assets/images/web/' + m[0] + '"' + dims(m[0]) + ' alt="' + esc(m[1]) + '" decoding="async" draggable="false"></figure>';
     }).join("") + '</div>';
     h += '<div class="gal-bar"><b id="galFig">Fig. 01' + (p.media.length > 1 ? ' / ' + pad(p.media.length, 2) : '') + '</b><span id="galCap">' + esc(p.media[0][1]) + '</span>' +
-      (p.media.length > 1 ? '<button class="icon-btn" type="button" id="galPrev" aria-label="Previous figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="icon-btn" type="button" id="galNext" aria-label="Next figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>' : '') + '</div>';
+      (p.media.length > 1 ? '<button class="icon-btn" type="button" id="galPrev" aria-label="Previous figure" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button class="icon-btn" type="button" id="galNext" aria-label="Next figure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>' : '') + '</div>';
     if (p.media.length > 1) {
       h += '<div class="thumbs" id="galThumbs" aria-label="All figures">' + p.media.map(function (m, i) {
-        return '<button type="button" data-i="' + i + '" aria-current="' + (i === 0) + '" aria-label="Figure ' + (i + 1) + ': ' + esc(m[1]) + '" title="' + esc(m[1]) + '"><img src="/assets/images/web/' + m[0] + '" alt="" decoding="async" draggable="false"><span>' + pad(i + 1, 2) + '</span></button>';
+        return '<button type="button" data-i="' + i + '" aria-current="' + (i === 0) + '" aria-label="Figure ' + (i + 1) + ': ' + esc(m[1]) + '" title="' + esc(m[1]) + '"><img src="/assets/images/web/' + m[0] + '" alt="" decoding="async" draggable="false"></button>';
       }).join("") + '</div>';
     }
     h += '</div>';
-    if (p.stats) h += '<div class="stats">' + p.stats.map(function (s) { return '<div><b>' + valHtml(s[0]) + '</b><span>' + esc(s[1]) + '</span>' + (s[2] && p.pdf ? '<a class="pg" href="' + LIVE + p.pdf + '#page=' + (s[2] + 1) + '" target="_blank" rel="noopener">Report p. ' + s[2] + ' ↗</a>' : '') + '</div>'; }).join("") + '</div>';
+    if (p.stats) h += '<div class="stats">' + p.stats.map(function (s) { return '<div><b>' + valHtml(s[0]) + '</b><span>' + esc(s[1]) + '</span>' + (s[2] && p.pdf ? '<a class="pg" href="' + LIVE + p.pdf + '#page=' + (s[2] + 1) + '" target="_blank" rel="noopener">Report p. ' + s[2] + ' ' + ICON.ext + '</a>' : '') + '</div>'; }).join("") + '</div>';
     h += '<div class="cols"><div><h3 class="h-sm">Summary</h3><p>' + p.summary + '</p></div><div><h3 class="h-sm">' + esc(p.didTitle || "What I did") + '</h3><ul class="did">' + p.did.map(function (d) { return '<li>' + esc(d) + '</li>'; }).join("") + '</ul></div></div>';
     if (p.lab) h += '<div id="labMount"></div>';
-    h += '<div><h3 class="h-sm">Tools & methods</h3><div class="tags">' + p.tools.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join("") + '</div></div>';
+    h += '<div class="sh-group"><div><h3 class="h-sm">Tools & methods</h3><div class="tags">' + p.tools.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join("") + '</div></div>';
     if (p.credits) h += '<div class="credits"><h3 class="h-sm">With</h3>' + p.credits.map(function (c) { return c[1] ? '<a href="' + c[1] + '" target="_blank" rel="noopener">' + esc(c[0]) + '</a>' : esc(c[0]); }).join(", ") + '</div>';
+    h += '</div>';
     var acts = [];
-    if (p.reports) p.reports.forEach(function (r, i) { acts.push('<a class="btn ' + (i ? 'btn-tonal' : 'btn-solid') + '" href="' + LIVE + r[1] + '" target="_blank" rel="noopener">' + esc(r[0]) + ' ↗</a>'); });
-    if (p.extra) acts.push('<a class="btn btn-tonal" href="' + p.extra[1] + '" target="_blank" rel="noopener">' + esc(p.extra[0]) + ' ↗</a>');
+    if (p.reports) p.reports.forEach(function (r, i) { acts.push('<a class="btn ' + (i ? 'btn-tonal' : 'btn-solid') + '" href="' + LIVE + r[1] + '" target="_blank" rel="noopener">' + esc(r[0]) + ' ' + ICON.ext + '</a>'); });
+    if (p.extra) acts.push('<a class="btn btn-tonal" href="' + p.extra[1] + '" target="_blank" rel="noopener">' + esc(p.extra[0]) + ' ' + ICON.ext + '</a>');
+    h += '<div class="sh-group">';
     if (acts.length) h += '<div class="acts">' + acts.join("") + '</div>';
     var i = P.indexOf(p), prev = P[(i - 1 + P.length) % P.length], next = P[(i + 1) % P.length];
-    h += '<div class="sh-next"><button type="button" data-open="' + prev.slug + '"><small>← Previous</small><span>' + esc(prev.title) + '</span></button><button type="button" data-open="' + next.slug + '"><small>Next →</small><span>' + esc(next.title) + '</span></button></div>';
+    h += '<div class="sh-next"><button type="button" data-open="' + prev.slug + '"><small>' + ICON.back + 'Previous</small><span>' + esc(prev.title) + '</span></button><button type="button" data-open="' + next.slug + '"><small>Next' + ICON.go + '</small><span>' + esc(next.title) + '</span></button></div></div>';
     if (labStop) { labStop(); labStop = null; }
     body.innerHTML = h;
     $("shScroll").scrollTop = 0;
@@ -222,6 +242,9 @@
       slides.forEach(function (sl, i) { sl.classList.toggle("on", i === k); });
       $("galFig").textContent = "Fig. " + pad(k + 1, 2) + (n > 1 ? " / " + pad(n, 2) : "");
       $("galCap").textContent = p.media[k][1];
+      var gp = $("galPrev"), gn = $("galNext");
+      if (gp) gp.disabled = k === 0;
+      if (gn) gn.disabled = k === n - 1;
       var th = $("galThumbs");
       if (th) {
         var btns = th.querySelectorAll("button");
@@ -333,17 +356,20 @@
         al: { name: "Al 2014-T4 · design 2", stress: 314.01, sf: null, f: 76.0, mass: 859.2, def: 78.2, life: 26670, img: "fea4.webp", alt: "Aluminium fatigue life contour", ok: false, verdict: "Rejected · fails fatigue and the 600 g limit, yields locally" }
       };
       var k = "c2";
-      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Compare the configurations</h3><span class="mono" style="color:var(--ink-3)">3 configurations analysed</span></div>' +
+      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Compare the configurations</h3></div>' +
         '<div class="ctrls"><span class="seg" id="segV"><button type="button" data-v="c1">CFRP · D1</button><button type="button" data-v="c2">CFRP · D2</button><button type="button" data-v="al">Al · D2</button></span></div>' +
         '<div class="fea-lab"><img id="feaImg" alt=""><div class="gauge" id="feaG"></div></div>' +
         '<p class="lab-note">All values from the report. CFRP fatigue is checked with a 3× safety factor on UTS (1,500 MPa) because standard S-N data for composites isn\'t available; aluminium uses a full stress-life analysis with Goodman mean-stress correction. Aluminium was only run on design 2.</p></div>';
       function bar(pct, ok, mark, label) {
-        return '<div class="bar"><i class="' + (ok ? "ok" : "bad") + '" style="width:' + Math.max(2, Math.min(pct, 100)) + '%"></i><em style="left:' + mark + '%" data-l="' + label + '"></em></div><div style="height:14px"></div>';
+        return '<div class="bar"><i class="' + (ok ? "ok" : "bad") + '" style="transform:scaleX(' + (Math.max(2, Math.min(pct, 100)) / 100).toFixed(3) + ')"></i><em style="left:' + mark + '%" data-l="' + label + '"></em></div><div class="gap"></div>';
       }
       function upd() {
         var v = V[k];
         mount.querySelectorAll("#segV button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-v") === k)); });
-        var img = $("feaImg"); img.src = "/assets/images/web/" + v.img; img.alt = v.alt;
+        var img = $("feaImg"), src = "/assets/images/web/" + v.img;
+        if (img.getAttribute("src") !== src) { img.classList.add("loading"); img.onload = img.onerror = function () { img.classList.remove("loading"); }; img.src = src; }
+        img.alt = v.alt;
+        var prevBars = Array.prototype.map.call($("feaG").querySelectorAll(".bar i"), function (b) { return b.style.transform; });
         var h = "";
         h += '<div class="g-row"><span>Fundamental frequency</span><b>' + v.f.toFixed(1) + ' Hz</b></div>' + bar(v.f / 120 * 100, v.f >= 50, 50 / 120 * 100, "50 Hz floor");
         var lifeTxt = v.life ? v.life.toLocaleString("en-GB") + " cycles" : "> 10⁶ cycles (SF " + v.sf.toFixed(2) + ")";
@@ -352,8 +378,13 @@
         h += '<div class="g-row"><span>Mass</span><b>' + v.mass.toFixed(1) + ' g</b></div>' + bar(v.mass / 900 * 100, v.mass <= 600, 600 / 900 * 100, "600 g limit");
         h += '<div class="g-row"><span>Peak von Mises stress</span><b>' + v.stress.toFixed(2) + ' MPa</b></div>';
         h += '<div class="g-row"><span>Max deformation</span><b>' + v.def.toFixed(1) + ' mm</b></div>';
-        h += '<div class="verdict ' + (v.ok ? "ok" : "bad") + '">' + v.verdict + '</div>';
-        $("feaG").innerHTML = h;
+        h += '<div class="verdict swap ' + (v.ok ? "ok" : "bad") + '">' + v.verdict + '</div>';
+        var g = $("feaG");
+        g.innerHTML = h;
+        var bars = g.querySelectorAll(".bar i");
+        if (prevBars.length === bars.length && !reduced) {
+          Array.prototype.forEach.call(bars, function (b, j) { var to = b.style.transform; b.style.transition = "none"; b.style.transform = prevBars[j]; b.getBoundingClientRect(); b.style.transition = ""; b.style.transform = to; });
+        }
       }
       mount.addEventListener("click", function (e) {
         var b = e.target.closest("#segV button"); if (!b) return;
@@ -373,7 +404,7 @@
       var grid = "";
       [0, 15, 30, 45].forEach(function (v) { grid += '<line class="gr" x1="' + sx(v) + '" y1="14" x2="' + sx(v) + '" y2="' + Y0 + '"/><text x="' + sx(v) + '" y="' + (Y0 + 13) + '" text-anchor="middle">' + v + '</text>'; });
       [0, 200, 400, 600].forEach(function (f) { grid += '<line class="gr" x1="' + X0 + '" y1="' + sy(f) + '" x2="' + (W - 12) + '" y2="' + sy(f) + '"/><text x="' + (X0 - 5) + '" y="' + (sy(f) + 3) + '" text-anchor="end">' + f + '</text>'; });
-      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Drag at speed</h3><span class="mono" style="color:var(--ink-3)">F = ½ ρ v² Cd A</span></div>' +
+      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Drag at speed</h3><span class="lab-sub">F = ½ ρ v² Cd A</span></div>' +
         '<div class="ctrls"><label for="vSl">Road speed</label><input type="range" id="vSl" min="5" max="45" step="0.5" value="30.5"></div>' +
         '<div class="readouts"><div><small>Speed</small><b id="dV"></b></div><div><small>Drag force</small><b id="dF"></b></div><div><small>Power to overcome drag</small><b id="dP"></b></div></div>' +
         '<svg class="chart" viewBox="0 0 ' + W + ' ' + (H + 6) + '" role="img" aria-label="Drag force against speed">' + grid +
@@ -400,9 +431,9 @@
         var a = i / 16 * 2 * Math.PI, r = 84;
         return '<span data-h="' + c + '" style="transform:translate(' + (Math.sin(a) * r).toFixed(1) + 'px,' + (-Math.cos(a) * r).toFixed(1) + 'px)">' + c + '</span>';
       }).join("");
-      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Hex relay</h3><span class="mono" style="color:var(--ink-3)">ASCII → hex → pointer</span></div>' +
+      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Hex relay</h3><span class="lab-sub">ASCII → hex → pointer</span></div>' +
         '<div class="hex"><div class="dial" id="dial">' + ring + '<div class="needle" id="needle"></div><div class="hub"></div></div>' +
-        '<div style="display:grid;gap:12px;min-width:0"><div class="ctrls"><label for="hexIn">Message</label><input type="text" id="hexIn" maxlength="16" value="HELLO MARS"><button class="btn btn-solid" type="button" id="hexGo">Transmit</button></div>' +
+        '<div class="hex-side"><div class="ctrls"><label for="hexIn">Message</label><input type="text" id="hexIn" maxlength="16" value="HELLO MARS"><button class="btn btn-solid" type="button" id="hexGo">Transmit</button></div>' +
         '<div class="seq" id="seq"></div><p class="lab-note">Each character becomes two hex digits and the pointer visits them in turn, like the camera and hex cards in The Martian. This is a browser version of the idea, not the device firmware.</p></div></div></div>';
       var inp = $("hexIn"), seq = $("seq"), needle = $("needle"), dial = $("dial");
       function digits() { return inp.value.toUpperCase().split("").map(function (c) { var h = c.charCodeAt(0).toString(16).toUpperCase(); return [c, h.length < 2 ? "0" + h : h.slice(-2)]; }); }
@@ -434,10 +465,10 @@
 
     tempo: function (mount) {
       var presets = { "3-1-3": [3, 1, 3], "2-0-2": [2, 0, 2], "4-2-1": [4, 2, 1] }, pat = presets["3-1-3"], raf = null, t0 = 0, lastBeat = -1;
-      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Tempo cue</h3><span class="mono" style="color:var(--ink-3)">down · hold · up</span></div>' +
+      mount.innerHTML = '<div class="lab"><div class="lab-head"><h3>Tempo cue</h3><span class="lab-sub">down · hold · up</span></div>' +
         '<div class="ctrls"><span class="seg" id="segT"><button type="button" data-v="3-1-3">3-1-3</button><button type="button" data-v="2-0-2">2-0-2</button><button type="button" data-v="4-2-1">4-2-1</button></span><button class="btn btn-solid" type="button" id="tGo">Start</button></div>' +
-        '<div class="tempo"><div class="track"><div class="knob" id="knob"></div><small style="top:-4px">Stand</small><small style="bottom:-4px">Depth</small></div>' +
-        '<div style="display:grid;gap:12px"><div class="phase" id="phase">Ready</div><div class="beats" id="beats"></div><p class="lab-note">Illustrative: a browser sketch of the tempo idea, not the brace\'s own firmware.</p></div></div></div>';
+        '<div class="tempo"><div class="track"><div class="knob" id="knob"></div><small>Stand</small><small>Depth</small></div>' +
+        '<div class="tempo-side"><div class="phase" id="phase">Ready</div><div class="beats" id="beats"></div><p class="lab-note">Illustrative: a browser sketch of the tempo idea, not the brace\'s own firmware.</p></div></div></div>';
       var knob = $("knob"), phase = $("phase"), beats = $("beats");
       function seg() { mount.querySelectorAll("#segT button").forEach(function (b) { b.setAttribute("aria-pressed", String(presets[b.getAttribute("data-v")] === pat)); }); }
       function drawBeats(n, on) { var h = ""; for (var i = 0; i < n; i++) h += '<i class="' + (i <= on ? "on" : "") + '"></i>'; beats.innerHTML = h; }
@@ -466,7 +497,11 @@
     var b = e.target.closest("[data-tab]"); if (!b) return;
     var k = b.getAttribute("data-tab");
     tabs.querySelectorAll("[data-tab]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); x.setAttribute("aria-selected", String(x === b)); });
-    document.querySelectorAll("[data-panel]").forEach(function (pn) { pn.hidden = pn.getAttribute("data-panel") !== k; });
+    document.querySelectorAll("[data-panel]").forEach(function (pn) {
+      var on = pn.getAttribute("data-panel") === k;
+      if (on && pn.hidden) { pn.classList.remove("swap"); void pn.offsetWidth; pn.classList.add("swap"); }
+      pn.hidden = !on;
+    });
   });
 
   if (bySlug[location.hash.slice(1)]) open(location.hash.slice(1), null, false);
@@ -708,26 +743,35 @@
   function setStatus(text, kind) {
     clearTimeout(statusTimer);
     statusEl.textContent = text;
-    statusEl.className = "status" + (kind ? " " + kind : "");
+    statusEl.className = "status";
+    if (text) { void statusEl.offsetWidth; statusEl.className = "status show" + (kind ? " " + kind : ""); }
     if (kind === "ok") statusTimer = setTimeout(function () { setStatus(""); }, 6000);
+  }
+  function flag(el) {
+    el.classList.remove("invalid"); void el.offsetWidth; el.classList.add("invalid");
+    el.addEventListener("input", function () { el.classList.remove("invalid"); }, { once: true });
+    el.focus();
+  }
+  function sendState(state) {
+    sendBtn.disabled = state === "busy";
+    sendBtn.classList.toggle("sent", state === "sent");
+    sendBtn.innerHTML = state === "busy" ? '<span class="spin" aria-hidden="true"></span>Sending' : state === "sent" ? ICON.tick + "Sent" : "Send";
   }
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (form.botcheck.checked) return;
     var msg = $("msgText").value.trim(), name = $("msgName").value.trim(), email = $("msgEmail").value.trim();
-    if (!msg) { setStatus("Write a message first.", "err"); $("msgText").focus(); return; }
-    if (email && !$("msgEmail").checkValidity()) { setStatus("That email address doesn't look right. Fix it or leave it blank.", "err"); $("msgEmail").focus(); return; }
+    if (!msg) { setStatus("Write a message first.", "err"); flag($("msgText")); return; }
+    if (email && !$("msgEmail").checkValidity()) { setStatus("That email address doesn't look right. Fix it or leave it blank.", "err"); flag($("msgEmail")); return; }
     if (!FORM_KEY) { setStatus("Preview only: the form isn't connected yet, so nothing was sent.", "err"); return; }
-    sendBtn.disabled = true;
-    sendBtn.textContent = "Sending...";
+    sendState("busy");
     var who = name || email || "Anonymous visitor";
     var payload = { access_key: FORM_KEY, subject: "Portfolio message from " + who, from_name: who, message: msg };
     if (name) payload.name = name;
     if (email) payload.email = email;
     fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.success) throw new Error(d.message || "failed"); }); })
-      .then(function () { setStatus("Sent. Thanks for getting in touch.", "ok"); form.reset(); })
-      .catch(function () { setStatus("That didn't send. Try again, or message me on LinkedIn.", "err"); })
-      .then(function () { sendBtn.disabled = false; sendBtn.textContent = "Send"; });
+      .then(function () { setStatus("Sent. Thanks for getting in touch.", "ok"); form.reset(); sendState("sent"); setTimeout(function () { sendState("idle"); }, 4000); })
+      .catch(function () { setStatus("That didn't send. Try again, or message me on LinkedIn.", "err"); sendState("idle"); });
   });
 })();
