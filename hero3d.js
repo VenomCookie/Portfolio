@@ -88,8 +88,9 @@
 
   function goal() {
     var r = stage.getBoundingClientRect(), vh = window.innerHeight || 1;
-    var c = (r.top + r.height / 2) / vh;
-    return Math.max(0.3, Math.min(1, 0.3 + (0.72 - c) * 1.15));
+    var nav = document.querySelector(".nav");
+    var end = (nav ? nav.offsetHeight : 0) - r.height * 0.04, span = vh * 0.17;
+    return Math.max(0.3, Math.min(1, 0.3 + 0.7 * (end + span - r.top) / span));
   }
 
   function size() {
@@ -165,7 +166,7 @@
       az = -0.75 - 0.9 * (1 - intro);
       dirty = true;
     }
-    var de = reduced ? eTarget - e : (eTarget - e) * 0.12;
+    var de = reduced ? eTarget - e : (eTarget - e) * 0.09;
     if (Math.abs(de) > 0.0004) { e += de; dirty = true; } else if (e !== eTarget) { e = eTarget; dirty = true; }
     if (!dragging && Math.abs(azV) > 0.0002) { az += azV; azV *= 0.94; dirty = true; } else if (!dragging) azV = 0;
     if (dirty) draw();
