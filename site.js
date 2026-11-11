@@ -333,9 +333,11 @@
     dlg.style.setProperty("--os", Math.max(0.2, Math.min(0.92, c.width / d.width)).toFixed(3));
   }
 
+  var closeTimer = null;
   function open(slug, fromEl, push) {
     var p = bySlug[slug]; if (!p) return;
     track("project_open", { slug: slug });
+    if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; dlg.classList.remove("closing", "drop"); dlg.style.transform = ""; }
     if (dlg.open) { render(p); if (push !== false) setHash(slug); return; }
     dlg.classList.remove("closing", "drop");
     dlg.style.transform = "";
@@ -355,7 +357,7 @@
       if (how === "drop") dlg.classList.add("drop");
       else { dlg.style.transform = ""; setOrigin(current ? current.slug : "", null); }
       dlg.classList.add("closing");
-      setTimeout(function () { dlg.classList.remove("closing", "drop"); dlg.style.transform = ""; dlg.close(); }, 240);
+      closeTimer = setTimeout(function () { closeTimer = null; dlg.classList.remove("closing", "drop"); dlg.style.transform = ""; dlg.close(); }, how === "drop" ? 240 : 440);
     } else { dlg.style.transform = ""; dlg.close(); }
     if (!fromPop) setHash(null);
   }

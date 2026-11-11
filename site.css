@@ -343,11 +343,12 @@ dialog.sheet[open] { display: flex; flex-direction: column; animation: popMove .
 dialog.sheet.measure { animation: none; }
 dialog.sheet::backdrop { background: var(--scrim); }
 dialog.sheet[open]::backdrop { animation: fade .3s ease; }
-dialog.sheet.closing { animation: popOut .24s cubic-bezier(.5,0,.85,.45) forwards; }
+dialog.sheet.closing { animation: popOut .44s cubic-bezier(.45,0,.2,1) forwards; }
 dialog.sheet.closing.drop { animation: dropOut .24s ease-in forwards; }
-dialog.sheet.closing::backdrop { animation: fade .22s ease reverse forwards; }
+dialog.sheet.closing::backdrop { animation: fade .44s ease reverse forwards; }
+dialog.sheet.closing.drop::backdrop { animation-duration: .24s; }
 @keyframes popMove { from { transform: translate(var(--ox, 0px), var(--oy, 14px)) scale(var(--os, .97)); } to { transform: none; } }
-@keyframes popOut { to { transform: translate(var(--ox, 0px), var(--oy, 10px)) scale(var(--os, .98)); opacity: 0; } }
+@keyframes popOut { 45% { opacity: 1; } to { transform: translate(var(--ox, 0px), var(--oy, 10px)) scale(var(--os, .98)); opacity: 0; } }
 @keyframes dropOut { to { transform: translateY(105vh); opacity: .5; } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 @media (max-width: 759px) { dialog.sheet { width: calc(100% - 16px); max-height: calc(100dvh - 16px); border-radius: var(--r-md); } }
