@@ -83,7 +83,7 @@
 
   var parts = [], head = null;
   var az = -0.75, el = 0.42, azV = 0;
-  var e = 0, eTarget = 0, intro = reduced ? 1 : 0, introStart = 0;
+  var eTarget = 0, intro = reduced ? 1 : 0, introStart = 0, lastT = 0;
   var visible = true, raf = null, dirty = true, dragging = null;
 
   function goal() {
@@ -108,9 +108,9 @@
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     gl.enable(gl.DEPTH_TEST);
 
-    var k = e * intro, zLo = Infinity, zHi = -Infinity, rMax = 0;
+    var zLo = Infinity, zHi = -Infinity, rMax = 0;
     parts.forEach(function (p) {
-      p.off = p.dz * (1 - k);
+      p.off = p.dz * (1 - p.k);
       zLo = Math.min(zLo, p.zmin + p.off);
       zHi = Math.max(zHi, p.zmax + p.off);
       rMax = Math.max(rMax, p.r);
@@ -166,11 +166,25 @@
       az = -0.75 - 0.9 * (1 - intro);
       dirty = true;
     }
-    var de = reduced ? eTarget - e : (eTarget - e) * 0.09;
-    if (Math.abs(de) > 0.0004) { e += de; dirty = true; } else if (e !== eTarget) { e = eTarget; dirty = true; }
-    if (!dragging && Math.abs(azV) > 0.0002) { az += azV; azV *= 0.94; dirty = true; } else if (!dragging) azV = 0;
+    var dt = lastT ? Math.min((now - lastT) / 1000, 0.05) : 0.016, target = eTarget * intro, moving = false;
+    lastT = now;
+    parts.forEach(function (p) {
+      if (reduced) { if (p.k !== target) { p.k = target; dirty = true; } p.kv = 0; return; }
+      var n = Math.max(1, Math.ceil(dt / 0.004)), h = dt / n;
+      for (var i = 0; i < n; i++) { p.kv += (-p.ks * (p.k - target) - p.kc * p.kv) * h; p.k += p.kv * h; }
+      if (Math.abs(p.k - target) > 0.0006 || Math.abs(p.kv) > 0.004) { moving = true; dirty = true; }
+      else if (p.k !== target) { p.k = target; p.kv = 0; dirty = true; }
+    });
+    var f = dt * 60, spinning = !dragging && Math.abs(azV) > 0.0002;
+    if (spinning) { az += azV * f; azV *= Math.pow(0.94, f); dirty = true; } else if (!dragging) azV = 0;
     if (dirty) draw();
-    if (intro < 1 || e !== eTarget || (!dragging && Math.abs(azV) > 0.0002)) kick();
+    if (intro < 1 || moving || spinning) kick(); else lastT = 0;
+  }
+  function nudge() {
+    if (reduced || !parts.length) return;
+    var dir = eTarget > 0.65 ? -1 : 1;
+    parts.forEach(function (p) { p.kv += dir * (1.6 + 2.2 * p.lag); });
+    kick();
   }
   function kick() { if (!raf && visible) raf = requestAnimationFrame(loop); }
   function onScroll() { if (!visible) return; eTarget = goal(); kick(); }
@@ -202,7 +216,13 @@
       var eb = gl.createBuffer(); gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, eb); gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, edg, gl.STATIC_DRAW);
       gl.bindVertexArray(null);
 
-      parts.push({ vao: vao, lvao: lvao, tris: m.tris, edges: m.edges, dz: m.dz, zmin: m.zmin, zmax: m.zmax, r: m.r, off: 0 });
+      parts.push({ vao: vao, lvao: lvao, tris: m.tris, edges: m.edges, dz: m.dz, zmin: m.zmin, zmax: m.zmax, r: m.r, off: 0, k: 0, kv: 0, ks: 0, kc: 0, lag: 0 });
+    });
+    var far = parts.reduce(function (a, p) { return Math.max(a, Math.abs(p.dz)); }, 1);
+    parts.forEach(function (p) {
+      p.lag = Math.abs(p.dz) / far;
+      p.ks = 150 - 70 * p.lag;
+      p.kc = 2 * 0.6 * Math.sqrt(p.ks);
     });
   }
 
@@ -228,8 +248,10 @@
   });
   function endDrag(ev) {
     if (!dragging || (ev && ev.pointerId !== dragging.id)) return;
+    var tapped = !dragging.moved && ev && ev.type === "pointerup";
     dragging = null;
     stage.classList.remove("turning");
+    if (tapped) nudge();
     kick();
   }
   canvas.addEventListener("pointerup", endDrag);
@@ -251,7 +273,7 @@
   }).then(function (buf) {
     parse(buf);
     eTarget = goal();
-    e = reduced ? eTarget : 0;
+    parts.forEach(function (p) { p.k = reduced ? eTarget : 0; });
     stage.classList.add("ready");
     dirty = true;
     kick();

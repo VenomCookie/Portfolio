@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="/site.css?v=85" />
+  <link rel="stylesheet" href="/site.css?v=86" />
 </head>
 <body>
 <header class="nav">
@@ -50,9 +50,10 @@
       <a class="brand-name" href="#top" aria-label="Back to top">Yousuf Shahabuddin</a>
     </div>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#work">Work</a><a href="#index">More projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <i class="nav-pill" aria-hidden="true"></i><a href="#work">Work</a><a href="#index">More projects</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <div class="nav-tools">
+      <button class="btn btn-tonal nav-icon nav-find" type="button" id="findBtn" aria-label="Search projects, tools and sections" title="Search (press /)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></button>
       <a class="btn btn-tonal nav-icon nav-mail" href="#contact" aria-label="Contact me" title="Contact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z"/><path d="m4 7 8 6 8-6"/></svg></a>
       <a class="btn btn-linkedin nav-icon nav-li" href="https://www.linkedin.com/in/yousuf-shb" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
       <a class="btn btn-solid nav-cv" href="/assets/docs/CV.pdf" target="_blank" rel="noopener">CV <svg class="i i-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
@@ -212,7 +213,17 @@
   </div>
 </dialog>
 
-<script src="/site.js?v=85"></script>
-<script src="/hero3d.js?v=85" defer></script>
+<dialog class="find" id="find" aria-label="Search">
+  <label class="sr" for="findIn">Search projects, tools and sections</label>
+  <div class="find-row">
+    <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+    <input id="findIn" type="text" placeholder="Search projects, tools, sections" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="findList" aria-autocomplete="list">
+    <kbd>Esc</kbd>
+  </div>
+  <ul class="find-list" id="findList" role="listbox" aria-label="Results"></ul>
+</dialog>
+
+<script src="/site.js?v=86"></script>
+<script src="/hero3d.js?v=86" defer></script>
 </body>
 </html>
