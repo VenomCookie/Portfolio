@@ -272,6 +272,10 @@ section.sec-panel, section.sec-panel + section.sec { border-top: 0; }
 .portrait:hover .window img { filter: grayscale(0) var(--img-dim); }
 .portrait:hover .shade::before { transform: translateY(-100%); }
 .portrait figcaption { font-size: var(--fs-xs); color: var(--ink-3); padding: 12px 0 0 var(--win-pad); }
+@media (max-width: 759px) {
+  .portrait { justify-self: center; }
+  .portrait figcaption { padding-left: 0; text-align: center; }
+}
 
 .sec-panel { --panel: #1a5f69; position: relative; isolation: isolate; background: var(--panel); color: #fff;
   --ink: #fff; --ink-2: rgba(255,255,255,.86); --ink-3: rgba(255,255,255,.74); --line: rgba(255,255,255,.2); --line-2: rgba(255,255,255,.38); --accent: #9fe0e8; --accent-ink: #9fe0e8; }
